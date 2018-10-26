@@ -1,0 +1,194 @@
+\floatstyle{boxed}
+\restylefloat{figure}
+
+\usetikzlibrary{matrix}
+
+
+\newcommand{\ds}[1]{$\displaystyle #1$}
+\newcommand{\xtoy}{ $(x,y)\to(x_0,y_0)$ }
+
+\newcommand{\proj}[2]{\textrm{proj}_{#2}(#1)}
+\newcommand{\perps}[2]{\textrm{perp}_{#2}(#1)}
+
+\newcommand{\van}[1]{\langle #1 \rangle}
+
+\newcommand{\TT}{{\bf T}}
+\newcommand{\NN}{{\bf N}}
+\newcommand{\BIN}{{\bf B}}
+
+%\newcommand{\ss}{{\bf s}}
+\newcommand{\ac}{{\bf a}}
+\newcommand{\rr}{{\bf r}}
+\newcommand{\pp}{{\bf p}}
+\newcommand{\qq}{{\bf q}}
+\newcommand{\nn}{{\bf n}}
+\newcommand{\ic}{\textrm{\bf i}}
+\newcommand{\jc}{\textrm{\bf j}}
+\newcommand{\kc}{\textrm{\bf k}}
+\newcommand{\ww}{{\bf w}}
+\newcommand{\vv}{{\bf v}}
+\newcommand{\uu}{{\bf u}}
+\newcommand{\xx}{{\bf x}}
+\newcommand{\yy}{{\bf y}}
+\newcommand{\zz}{\mathbf{0}}
+
+
+
+
+\newcommand{\sqb}[1]{[\,{#1}\,]}
+
+\newcommand{\dep}[1]{{\textrm{depth}(#1)}}
+
+%\newcommand{\zz}{\mathbf{0}}
+
+\newcommand{\II}{[\,-1,1\,]}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\tF}{\thicktilde{\F}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\RP}{\mathbb{RP}}
+\newcommand{\RPP}{\R_+}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\RR}{\R^2}
+\newcommand{\RRN}{\R^n}
+\newcommand{\RRM}{\R^m}
+\newcommand{\RNP}{\R_+^n}
+\newcommand{\RNPP}{\R_{++}^n}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\D}{ D}
+\newcommand{\DD}{\D^2}
+\newcommand{\DN}{\D^n}
+\newcommand{\B}{ B}
+\newcommand{\BB}{\B^2}
+\newcommand{\BN}{\B^n}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\HN}{\mathbb{H}^n}
+\newcommand{\HM}{\HH^m}
+\newcommand{\dd}{\; \mathrm{d}}
+\newcommand{\res}{\;\mathrm{res}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\img}{\,\mathrm{im}\,}
+\newcommand{\coker}{\,\mathrm{coker}\,}
+
+\newcommand{\MA}{\mathcal{A}}
+\newcommand{\MD}{\mathcal{D}}
+\newcommand{\MP}{\mathcal{P}}
+
+\newcommand{\gm}{\mathfrak{m}}
+\newcommand{\gp}{\mathfrak{p}}
+\newcommand{\tensr}{\otimes_R}
+\newcommand{\tens}{\otimes}
+
+
+\newcommand{\ddz}{\;\mathrm{d}z}
+\newcommand{\ddx}{\;\mathrm{d}x}
+\newcommand{\ddy}{\;\mathrm{d}y}
+\newcommand{\ddt}{\;\mathrm{d}t}
+\newcommand{\pd}{\partial}
+\newcommand{\pdx}{\partial_x}
+\newcommand{\pdy}{\partial_y}
+
+\newcommand{\dxdt}{\frac{dx}{dt}}
+\newcommand{\dydt}{\frac{dy}{dt}}
+\newcommand{\dydx}{\frac{dy}{dx}}
+
+\newcommand{\Ddx}{\frac{d}{dx}}
+\newcommand{\Ddt}{\frac{d}{dt}}
+\newcommand{\Ddz}{\frac{d}{dz}}
+
+\newcommand{\im}{\mathrm{Im}}
+\newcommand{\real}{\mathrm{Re}}
+\newcommand{\cl}{\mathrm{cl}}
+\newcommand{\CCp}{\CC_p}
+
+\newcommand{\nth}{^{\text{th}}}
+\newcommand{\nst}{^{\text{st}}}
+\newcommand{\nrd}{^{\text{rd}}}
+\newcommand{\inv}{^{\,\text{-}1}}
+
+\newcommand{\smin}{\text{-}}
+\newcommand{\smh}{C^{\infty}}
+
+\newcommand{\ttilde}[1]{\mathbf{\tilde{\text{$#1$}}}}
+
+\newcommand{\tps}{\thicktilde{\psi}}
+\newcommand{\tph}{\thicktilde{\varphi}}
+\newcommand{\tstph}{\thicktilde{\varphi}^*}
+\newcommand{\tsig}{\thicktilde{\sigma}}
+
+\newcommand{\orth}[2]{\mathcal{O}_{#1}({#2})}
+\newcommand{\sym}{\textrm{S}_n(\RR)}
+%\newcommand{\gen}{\textrm{GL}_n(\RR)}
+\newcommand{\gl}[2]{\textrm{GL}_{#1}(#2)}
+\newcommand{\glp}[2]{\textrm{GL}_{#1}^+(#2)}
+\newcommand{\gln}[2]{\textrm{GL}_{#1}^-(#2)}
+\newcommand{\MN}{M^{n\times n}}
+\newcommand{\tr}{\textrm{tr}}
+\newcommand{\comp}{\,\mathsmaller{\circ}\,}
+\newcommand{\into}{\hookrightarrow }
+\newcommand{\onto}{\twoheadrightarrow }
+\newcommand{\ident}[1]{\textrm{id}_{#1}}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+
+\newcommand{\imp}{\Rightarrow}
+
+\newcommand{\tet}{\Delta^3}
+\newcommand{\ttet}{\blacktriangle^3}
+\newcommand{\thrc}{\ocircle^3}
+\newcommand{\tri}{\Delta^2}
+\newcommand{\ttri}{\blacktriangle^2}
+\newcommand{\twoc}{\ocircle^2}
+\newcommand{\nplex}{\Delta^n}
+\newcommand{\tnplex}{\blacktriangle^i}
+\newcommand{\ncell}{\ocircle^2}
+
+
+\theoremstyle{definition}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lem}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{cor}[theorem]{Corollary}
+\newtheorem{defn}[theorem]{Definition}
+\newtheorem{rmk}[theorem]{Remark}
+\newtheorem{ex}[theorem]{Example}
+\numberwithin{theorem}{section}
+
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+%\newcommand{\qed}{\nobreak \ifvmode \relax \else
+%      \ifdim\lastskip<1.5em \hskip-\lastskip
+%      \hskip1.5em plus0em minus0.5em \fi \nobreak
+%      \vrule height0.75em width0.5em depth0.25em\fi}
+      
+\newcommand\restr[2]{\ensuremath{\left.#1\right|_{#2}}}
+
+\makeatletter
+\def\Biggn#1{\mathclose{\hbox{$\left#1\vbox to17.5\p@{}\right.\n@space$}}\mathopen{}}
+\makeatother
+
+\makeatletter
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+\def\quotient#1#2{%
+    \:\raise1ex\hbox{$#1$}\Biggn/\lower1ex\hbox{$#2$}%
+}
+
+\newcommand{\Sing}{\textrm{Sing}}
+\newcommand{\sone}{S^1}
+\newcommand{\stwo}{S^2}
+\newcommand{\sthr}{S^3}
+\newcommand{\glm}{\texttt{gl}}
+\newcommand{\inter}[1]{\mathtt{int}(#1)}
+\newcommand{\lk}[1]{\texttt{lk}(#1)}
+\newcommand{\rk}[1]{\texttt{rank}(#1)}
+\newcommand{\dimn}[1]{\texttt{dim}(#1)}
+\newcommand{\nbhd}[1]{\overline{\nu}(#1)}
+\newcommand{\supp}{\textrm{supp}}
+\newcommand{\Aut}{\textrm{Aut}}

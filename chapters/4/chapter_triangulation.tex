@@ -1,0 +1,39 @@
+% !TeX root = ../../smc-thesis.tex
+\startchapter{Algorithm for constructing a triangulated 4--manifold with prescribed 3--manifold boundary}
+\label{chapter:triangulation}
+
+The steps to construct a triangulated 4--manifold with prescribed 3--manifold boundary broadly follow the steps to construct a 4--manifold with prescribed smooth, orientable 3--manifold boundary.
+Let $N$ be a 3--manifold triangulation.
+Then the steps of construction are:
+\begin{enumerate}
+	\item[Step 1:] Define a projection $f:N\to\RR$.
+	
+	\item[Step 2:] Induce a subdivision of $N$ from $f$.  The result is a 3--manifold triangulation $M$ that is equivalent to $N$ in the sense of triangulations.
+
+	\item[Step 3:] Let $W=M\times\Ilit$ be a 4--manifold with boundary components $M_0 = M\times\{0\}$ and $M_1 = M\times\{1\}$.
+	
+	\item[Step 4:] Attach 4--dimensional 2--handles to $W$ over its $M_0$ boundary as prescribed by the subdivision of $M$ from $f$.  Call the result $W'$ and call the boundary of $W'$ different from $M_1$ by $M_0'$.
+	
+	\item[Step 5:] Attach 4--dimensional 3--handles to $W'$ over $M_0'$ as prescribed by the subdivision induced by $f$ and the surgery induced by 2--handle attachment.  Call the result $W''$.
+	
+	\item[Step 6:] The boundary of $W''$ consists of $M_1$ and a collection of copies of $S^3$ that we now cone off.  The result is a 4--manifold whose boundary is exactly $M$.
+\end{enumerate}
+
+Each of these steps is made algorithmic, and these algorithms are chained in series to form a single algorithm.
+The result has input a closed, orientable 3--manifold triangulation $M$ and output a 4--manifold triangulation $W$ whose sole boundary component is a triangulated 3--manifold that is equivalent to $M$ in the sense of triangulations.
+In this case, we find that $\pd W$ is a subdivision of $M$, and this subdivision is the subdivision induced by the projection $f$ in Step 1.
+
+Throughout this chapter, $N$ will refer to the initial input 3--manifold triangulation.
+
+\input{chapters/4/steps/pl-projection}
+
+\input{chapters/4/steps/subdivision}
+
+\input{chapters/4/steps/base4}
+
+\input{chapters/4/steps/2handles}
+
+\input{chapters/4/steps/3handles}
+
+\input{chapters/4/steps/4handles}
+

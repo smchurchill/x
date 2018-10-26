@@ -1,0 +1,41 @@
+\documentclass[12pt,oneside]{book}
+\include{macros/style}
+\include{macros/use_packages}
+\include{macros/smc-macros}
+
+\begin{document}
+
+% Front Matter
+% Uncomment near end of writing
+%\input{frontmatter/fm}
+
+% Temp TOC, should be added in frontmatter/fm
+\TOCadd{Table of Contents}\tableofcontents
+
+
+\newpage
+
+	\input{chapters/1/chapter_intro}
+	\input{chapters/2/chapter_problem}
+	\input{chapters/3/chapter_smooth}
+	\input{chapters/4/chapter_triangulation}
+	\input{chapters/5/chapter_evaluation}
+	\input{chapters/6/chapter_conclusion}
+%	\appendix
+%	\input{chapters/appendix/chapter_app}
+
+% The style of bibliography exemplified here is the "plain",
+% normally used in science theses. This is shown
+% by the entry {plain} below. Substitute the
+% appropriate bibliography style. See also the
+% PDF file "InformationOnBibliographyStyles" in this
+% directory for more choices.
+
+% The Bibliography file is a BibTex file named
+% UVicThesis.bib and called below
+
+	\TOCadd{Bibliography}
+	\bibliographystyle{plain}
+	\bibliography{smc-thesis}
+
+\end{document}
