@@ -2,3 +2,14 @@
 
 The projection's utility is in defining a subdivision of the initial closed, orientable 3--manifold triangulation $N$ such that attaching regions for triangulated 2-- and 3--handles can be found.
 This is done before forming the base 4--manifold so that the subdivided triangulation is used in the base.
+
+Our subdivision is obtained by imposing four conditions on the $f:N\to\RR$:
+\begin{enumerate}
+	\item $f$ maps vertices to the circle.  i.e.\ for each vertex $v\in N^0$, $f(v)$ lies on the unit circle in $\RR$.
+	
+	\item The images of vertices are distinct.  i.e.\ for every pair of vertices $u,v\in N^0$, $f(u)\neq f(v)$.
+	
+	\item $f$ is linear on each simplex of $N$ and piecewise-linear on $N$.  i.e.\ if $x\in\sigma$ is a point in the simplex $\sigma$ with vertices $v_i$, then $x=\sum_i a_i v_i$ with $\sum_i a_i = 1$ and $f(x) = \sum_i a_i f(v_i)$.
+	
+	\item Edge intersections are distinct. i.e.\ for every triple of edges $e_1, e_2, e_3\in N^1$ that share no vertices, $f(e_1)\cap f(e_2)\neq f(e_2)\cap f(e_3)$.
+\end{enumerate}
