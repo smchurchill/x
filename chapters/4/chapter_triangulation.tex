@@ -16,14 +16,14 @@ Then the steps of construction are:
 	
 	\item[Step 5:] Attach 4--dimensional 3--handles to $W'$ over $M_0'$ as prescribed by the subdivision induced by $f$ and the surgery induced by 2--handle attachment.  Call the result $W''$.
 	
-	\item[Step 6:] The boundary of $W''$ consists of $M_1$ and a collection of copies of $S^3$ that we now cone off.  The result is a 4--manifold whose boundary is exactly $M$.
+	\item[Step 6:] The boundary of $W''$ consists of $M_1$ and a collection of copies of $S^3$ that we now cone off.  The result is a 4--manifold whose boundary is exactly $M_1$.
 \end{enumerate}
 
 Each of these steps is made algorithmic, and these algorithms are chained in series to form a single algorithm.
 The result has input a closed, orientable 3--manifold triangulation $M$ and output a 4--manifold triangulation $W$ whose sole boundary component is a triangulated 3--manifold that is equivalent to $M$ in the sense of triangulations.
 In this case, we find that $\pd W$ is a subdivision of $M$, and this subdivision is the subdivision induced by the projection $f$ in Step 1.
 
-Throughout this chapter, $N$ will refer to the initial input 3--manifold triangulation.
+Throughout this chapter $N$ refers to the initial input 3--manifold triangulation, $f$ to the projection defined in Section ~\ref{section:pl-projection}, $M$ is the subdivision of $N$ induced by $f$, $W$ is the 4--manifold $M\times\Ilit$, $W'$ is the result of attaching 2--handles to $W$, and $W''$ is the result of attaching 3--handles to $W'$.
 
 \input{chapters/4/steps/pl-projection}
 

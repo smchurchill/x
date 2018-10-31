@@ -1,6 +1,9 @@
 \section{Induce subdivision}
 
-The goal of subdividing $N$ here is to create and identify analogues to the face- edge- and vertex-blocks of Chapter \ref{chapter:smooth} where we may iteratively attach 2--, 3--, then 4-- handles.
+The goal of subdividing $N$ is to create and identify analogues to the face- edge- and vertex-blocks of Chapter \ref{chapter:smooth} where we may iteratively attach 2--, 3--, then 4-- handles.
 We use a similar technique to that found in Chapter \ref{chapter:smooth}, first decomposing $\RR$ with the projection, then examining preimages to define our subdivision.
 
 The image of the 1--skeleton of $N$ in the plane divides $\RR$ into regions, and we take the preimages of these regions to be attachment neighbourhoods for 2--handles.
+
+The algorithm presented in this section takes as input a closed, orientable 3--manifold triangulation $N$ and a projection $f:N\to\RR$ and produces as output a closed, orientable 3--manifold triangulation $M$ that is a subdivision of $N$.
+Furthermore, the tetrahedra of $M$ are partitioned into subsets that serve the same purpose as the face-blocks of Chapter ~\ref{chapter:smooth}: attaching regions for 2--handles.
