@@ -22,6 +22,5 @@
 *.toc
 *.loa
 *.lof
-*.pdf
 figures/pspictures/*
 geogebra/*

@@ -1,19 +1,16 @@
 \startchapter{How do you obtain a 4--manifold with a specific boundary?}
 \label{chapter:problem}
 
-
-
 Given a smooth, closed 3--manifold $M$, there are infinitely many 4--manifolds with boundary $M$.
-We do not ensure that the constructed 4--manifold has any properties other than a specified boundary, so our construction is for easy verification that the constructed 4--manifold's boundary is exactly $M$.
-This is done by first setting $W=M\times I$ where $I$ is the unit interval $[0,1]$.
-As defined, $W$ has boundary 
+We do not ensure that the constructed 4--manifold has any properties other than a specified boundary, so our construction ensures easy verification that the constructed 4--manifold's boundary is exactly $M$.
+This is done by setting $W=M\times \Ilit$, so $W$ has boundary 
 \[
 	\pd W = (M\times\{0\}) \cup (M\times\{1\}) = M_0 \cup M_1.
 \]
-We choose a boundary component to remain, and ``fill in'' the other component via iterative attachment of stratified 4--dimensional handles.
+We then attach handles to the boundary of $W$ away from $M_0$ until only $M_0$ remains.
 
 The concept of a stratified handle attachment needs some explanation.
-First, we define attachment of topological spaces.
+First, we define attachment of topological spaces, and use that language to define handle attachment.
 
 \begin{defn}[Attachment]
 	Let $X$ and $Y$ be topological spaces, $A\subset X$ a subspace, and $f:A\to Y$ a continuous map.
@@ -27,29 +24,30 @@ First, we define attachment of topological spaces.
 	Here, the adjunction is formed by taking $i_X(a)\sim i_Y(a)$ for every $a\in A$ and we denote the adjunction space by $X\cup_A Y$.
 \end{defn}
 
-Handle attachment is defined for smooth manifolds, but the resulting attachment space is not a smooth manifold.
-
 \begin{defn}[Handle]
 	\label{def:handle}
 	Take $n=\lambda+\mu$ and $M$ a smooth $n$--manifold with nonempty boundary $\pd M$.
-	Denote the closed $k$--disk by $D^k$.
+	Let $D^\lambda$ be the closed $\lambda$--disk and put $H^\lambda = D^\lambda\times D^\mu$.
 	Let $\varphi:\pd D^\lambda\times D^\mu\to\pd M$ be an embedding and an attaching map between $M$ and $H^\lambda$.
 	The attached space $H^\lambda$ is an \emph{$n$--dimensional $\lambda$--handle}, and $M\cup_\varphi H^\lambda$ is the result of an $n$--dimensional \emph{$\lambda$--handle attachment}.
 \end{defn}
 
+Handle attachment is defined for smooth manifolds, but the resulting attachment space is not a smooth manifold.
 Rather, the result is a stratified manifold.
 We use the definition from \cite{wein94}.
 
 \begin{defn}[Stratification]
 	$X$ is a \emph{filtered space} on a finite partially ordered indexing set $S$ if 
 	\begin{enumerate}
-		\item one has a closed subset $X_s$ for each $s\in S$ such that $s\leq s'$ implies that $X_s\subset S_{s'}$, and
+		\item there is a closed subset $X_s$ for each $s\in S$,
+		\item $s\leq s'$ implies that $X_s\subset X_{s'}$, and
 		\item the inclusions $X_s \into X_{s'}$ satisfy the homotopy lifting property.
 	\end{enumerate}
 	The $X_s$ are the \emph{closed strata} of $X$, and the differences
 	$$X_s\setminus \bigcup_{r < s} X_r$$
-	are \emph{pure stratum}.
-	The pure stratum are denoted $X^s$.
+	are \emph{pure strata}.
+	The pure strata are denoted $X^s$.
+	The singular declension of the word strata is \emph{stratum}.
 	
 	A \emph{filtered map} between spaces filtered over the same indexing set is a continuous function $f:X\to Y$ such that $f(X_s)\subset Y_s$, and such a map is \emph{stratified} if $f(X^s) \subset Y^s$.
 	This leads to definitions of stratified homotopy, therefore stratified homotopy equivalence.

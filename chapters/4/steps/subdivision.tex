@@ -3,7 +3,15 @@
 The goal of subdividing $N$ is to create and identify analogues to the face- edge- and vertex-blocks of Chapter \ref{chapter:smooth} where we may iteratively attach 2--, 3--, then 4-- handles.
 We use a similar technique to that found in Chapter \ref{chapter:smooth}, first decomposing $\RR$ with the projection, then examining preimages to define our subdivision.
 
-The image of the 1--skeleton of $N$ in the plane divides $\RR$ into regions, and we take the preimages of these regions to be attachment neighbourhoods for 2--handles.
+Decomposition of $\RR$ is done through $f(N_1)$.
+A point in $f(N_1)$ is the image of either a vertex, exactly one edge, or exactly two edges (i.e.\ is an edge crossing), so we refer to these as the \emph{vertices}, \emph{edges}, and \emph{crossings} of the decomposition.
+Because $f(N)\setminus f(N_1)$  is a disjoint collection of simply connected regions, we call the connected components of $f(N)\setminus f(N_1)$ the \emph{regions} of the decomposition.
+
+Edges and crossings of the 
+
+We subdivide $N$ by subdividing every tetrahedron of $N$ with the 
+
+The preimages of the regions of the decomposition 
 
 The algorithm presented in this section takes as input a closed, orientable 3--manifold triangulation $N$ and a projection $f:N\to\RR$ and produces as output a closed, orientable 3--manifold triangulation $M$ that is a subdivision of $N$.
 Furthermore, the tetrahedra of $M$ are partitioned into subsets that serve the same purpose as the face-blocks of Chapter ~\ref{chapter:smooth}: attaching regions for 2--handles.
