@@ -13,4 +13,8 @@ Inside of an individual tetrahedron of $N$, edge and crossing preimages are well
 Then, the subdivision of a cell complex into a triangulation is well-defined.
 
 The algorithm presented in this section takes as input a closed, orientable 3--manifold triangulation $N$ and a projection $f:N\to\RR$ and produces as output a closed, orientable 3--manifold triangulation $M$ that is a subdivision of $N$.
-Furthermore, the 3--cells of $M$ are partitioned into subsets that serve the same purpose as the face-blocks of Chapter ~\ref{chapter:smooth}: attaching regions for 2--handles.
+Furthermore,
+\begin{enumerate}
+	\item the 3--cells of $M$ are partitioned into subsets that serve the same purpose as the face-blocks of Chapter ~\ref{chapter:smooth}: attaching regions for 2--handles,
+	\item the 2--cells of $M$ are partitioned into subsets that are either interior to face-blocks, or subsets that serve the same purpose as the edge-blocks of Chapter ~\ref{chapter:smooth}, i.e.\ buffers between face-blocks.	
+\end{enumerate}
