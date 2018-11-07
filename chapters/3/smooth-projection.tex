@@ -1,26 +1,39 @@
 \section{Projections from 3--manifolds to $\RR$}
 \label{section:smooth-projection}
 
-We begin by stating the conditions required of the projection $f:M\to\RR$ for the desired decomposition of $\RR$, hence stratification of $M$, to exist.
-For proof that an $f$ satisfying these conditions exists and that such functions are generic, see \cite{Levine65}.
-We use the following notation and definitions to describe $f$:
-\begin{enumerate}
-	\item $f_\ast$ is the pushforward of $f$.
-	
-	\item $S_r(f)$ is the set of points in $M$ such that $f_\ast$ has rank $r$.
-	
-	\item Because $f$ is a smooth map from a closed orientable 3--manifold to an orientable 2--manifold, $S_1$ consists of smooth non-intersecting curves called the \emph{fold curves} of $f$.
-	
-	\item Let $S_1^c(f)$ be the set of points on $S_1(f)$ at which $f|_{S_1(f)}$ has zero differential.
-	Such points appear in the image of $S_1(f)$ as cusps in the plane.
-	Then $S_1^c(f)$ is a finite set of points.
-\end{enumerate}
+Our stratification of $M$ is induced by a decomposition of the plane, itself induced by the singular values of a smooth map $M\to\RR$.
+To prove that a stratification suitable for our construction exists for any smooth orientable 3--manifold, we show first that an inducing decomposition of $\RR$ exists.
+To prove that such a decomposition of $\RR$ exists, we present the properties we of $f:M\to\RR$ required to induce the decomposition, and argue why a map possessing such properties exists for any smooth, orientable 3--manifold.
 
-The conditions required of $f$ are:
-
+Let $f:M\to\RR$ be a smooth map, let $df$ be the differential of $f$, and let $S_r(f)$ be the set of points in $M$ such that $df$ has rank $r$.
+Then we require that the following be true of $f$:
 \begin{enumerate}
 	\item $S_0(f)$ is empty.
-	\item $S_1^c(f)$ is empty.
-	\item If $p\in S_1(f)$
 	
+	\item $S_1(f)$ consists of smooth non-intersecting curves.  We call these the \emph{fold curves} of $f$.
+	
+	\item The set of points where $f|_{S_1(f)}$ has zero differential (these appear as in the image of $S_1(f)$ as cusps in the plane) is empty.
+	
+	\item If $p\in S_1(f)$ then there exist coordinates $(u, z_1, z_2)$ centred at $p$ and $(x,y)$ centred at $f(p)$ such that $f$ takes the form of either
+	\begin{enumerate}
+		\item\label{property:paraboloid} $(x,y)=(u,\pm(z_1^2+z_2^2))$, or
+		\item\label{property:saddle} $(x,y)=(u,\pm(z_1^2+z_2^2))$
+	\end{enumerate}
+	in a neighbourhood of $p$.
+	If $f$ takes the form of \ref{property:paraboloid} then we further classify $p$ as a \emph{definite fold}, and if $f$ takes the form of \ref{property:saddle} then $p$ is an \emph{indefinite fold}.
+	
+	\item The set of singular values of $f$ in the plane is connected.
 \end{enumerate}
+
+Before proving that an $f$ satisfying these conditions exists, let's explore the implications.
+First, a definition.
+\begin{defn}
+	Because $M$ is closed, $f$ is proper.
+	Thus, for any point $q$ in $f(M)$, a fiber of $f$ above $q$ (i.e.\ a connected component of $f\inv(q)$) is either a closed 1--manifold (i.e.\ $S^1$) or contains a critical point of $f$.
+
+	We define a \emph{singular fiber} to be a fiber that contains a critical point of $f$, and a \emph{regular fiber} to be a fiber consisting entirely of regular points.	
+\end{defn}
+
+
+We call these five conditions the \emph{stratification conditions} on $f$.
+Let $f:M\to\RR$ be a smooth map possessing properties 1-5.
