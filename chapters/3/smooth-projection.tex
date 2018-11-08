@@ -12,7 +12,16 @@ Then we require that the following be true of $f$:
 	
 	\item $S_1(f)$ consists of smooth non-intersecting curves.  We call these the \emph{fold curves} of $f$.
 	
-	\item The set of points where $f|_{S_1(f)}$ has zero differential (these appear as in the image of $S_1(f)$ as cusps in the plane) is empty.
+	\item The set of points where $f|_{S_1(f)}$ has zero differential (these can appear in the image of $S_1(f)$ as cusps in the plane) is empty.
+	
+	\item Let $\gamma_i, \gamma_j, \gamma_k \in S_1(f)$ be fold curves. Then $f(\gamma_{i,j,k})$ are submanifolds of $\RR$ such that
+	\begin{enumerate}
+		\item $f(\gamma_i)$ and $f(\gamma_j)$ intersect transversely,
+		
+		\item $f(\gamma_i)\cap f(\gamma_j)\cap f(\gamma_k)$ is empty (i.e. there are no triple-intersections), and
+		
+		\item self-intersections of $f(\gamma_i)$ are transverse
+	\end{enumerate}
 	
 	\item If $p\in S_1(f)$ then there exist coordinates $(u, z_1, z_2)$ centred at $p$ and $(x,y)$ centred at $f(p)$ such that $f$ takes the form of either
 	\begin{enumerate}
@@ -22,18 +31,8 @@ Then we require that the following be true of $f$:
 	in a neighbourhood of $p$.
 	If $f$ takes the form of \ref{property:paraboloid} then we further classify $p$ as a \emph{definite fold}, and if $f$ takes the form of \ref{property:saddle} then $p$ is an \emph{indefinite fold}.
 	
-	\item The set of singular values of $f$ in the plane is connected.
+	\item The set of singular values of $f$ in the plane is connected
 \end{enumerate}
 
-Before proving that an $f$ satisfying these conditions exists, let's explore the implications.
-First, a definition.
-\begin{defn}
-	Because $M$ is closed, $f$ is proper.
-	Thus, for any point $q$ in $f(M)$, a fiber of $f$ above $q$ (i.e.\ a connected component of $f\inv(q)$) is either a closed 1--manifold (i.e.\ $S^1$) or contains a critical point of $f$.
-
-	We define a \emph{singular fiber} to be a fiber that contains a critical point of $f$, and a \emph{regular fiber} to be a fiber consisting entirely of regular points.	
-\end{defn}
-
-
+The first four conditions ensure that the set of singular values in the plane is well-behaved, the fifth allows classification of singular fibers of $f$ using the work of Saeki \cite{Saeki}, and the sixth guarantees that the set of singular values of $f$ partitions the plane into discs.
 We call these five conditions the \emph{stratification conditions} on $f$.
-Let $f:M\to\RR$ be a smooth map possessing properties 1-5.
