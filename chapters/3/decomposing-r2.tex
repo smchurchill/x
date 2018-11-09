@@ -1,7 +1,45 @@
 \section{Decomposing $\RR$}
 
 Let $f:M\to\RR$ be a smooth map possessing the stratification conditions of Section \ref{section:smooth-projection} and let $X_f = f(S(f))$, the set of singular values of $f$.
-Then $X_f$ is a connected collection of arcs in the plane that intersect only transversely.
+$X_f$ is a connected collection of arcs in the plane that intersect only transversely.
 
-We fit closed neighbourhoods around the singular values of $f$ and classify these sleeves by the maximum codimension (with respect to $\RR$) of singular values they contain.
+We fit closed neighbourhoods (\emph{sleeves}) around the singular values of $f$ and classify these sleeves by the maximum codimension (with respect to $\RR$) of singular values they contain.
 Because $X_f$ consists of codimension 1 and codimension 2 singular values (i.e.\ arcs and arc-crossings respectively), we decompose $\RR$ into face-regions that contain no singular values, edge-regions that contain only codimension 1 singular values, and vertex-regions, each of which contain exactly 1 codimension 2 singular value.
+Figures \ref{fig:vertex-sleeve}-\ref{fig:face-sleeve} are used to illustrate the decomposition resulting from sleeve-fitting.
+
+\begin{figure}[h!]
+	\label{fig:vertex-sleeve}
+	\caption{
+		\textbf{Forming vertex-regions.}
+		Octagonal sleeves are fit around codimension 2 singular values to form vertex-regions.
+	}
+\end{figure}
+
+We begin by fitting octagonal sleeves around codimension 2 singular values as in Figure \ref{fig:vertex-sleeve}.
+Octagons are used here solely to simplify descriptions further down the line of proof.
+
+Let $x$ be a codimension 2 singular value.
+$x$ is the result of an arc crossing, and a small neighbourhood around an arc crossing is divided into four regions of regular values.
+The octagon around $x$ is fit so its edges alternate between being fully contained in a region of regular values and transversely intersecting one of the arcs of singular values that creates $x$.
+See Figure \ref{fig:vertex-sleeve} for a model fitting.
+
+The interiors of the octagons along with the octagonal boundaries form the vertex regions of this decomposition.
+The octagons are chosen to be small enough that no two vertex regions overlap
+
+\begin{figure}[h!]
+	\label{fig:edge-sleeve}
+	\caption{
+		\textbf{Forming edge-regions.}
+		Vertex-region corners are connected to fit sleeves around arcs of codimension 1 singular values to form edge-regions.
+	}
+\end{figure}
+
+
+
+\begin{figure}[h!]
+	\label{fig:face-sleeve}
+	\caption{
+		\textbf{Forming face-regions.}
+		All remaining regions contain no singular values, and we take these to be the face regions.
+	}
+\end{figure}
