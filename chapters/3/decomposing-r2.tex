@@ -20,11 +20,11 @@ Octagons are used here solely to simplify descriptions further down the line of 
 
 Let $x$ be a codimension 2 singular value.
 $x$ is the result of an arc crossing, and a small neighbourhood around an arc crossing is divided into four regions of regular values.
-The octagon around $x$ is fit so its edges alternate between being fully contained in a region of regular values and transversely intersecting one of the arcs of singular values that creates $x$.
+The octagon around $x$ is fit so its edges alternate between being fully contained in a region of regular values and orthogonally intersecting one of the arcs of singular values that creates $x$.
 See Figure \ref{fig:vertex-sleeve} for a model fitting.
 
 The interiors of the octagons along with the octagonal boundaries form the vertex regions of this decomposition.
-The octagons are chosen to be small enough that no two vertex regions overlap
+The octagons are chosen to be small enough that no two vertex regions overlap and such that the octagonal edges that intersect arcs of codimension 1 singular values are all the same length.
 
 \begin{figure}[h!]
 	\label{fig:edge-sleeve}
@@ -34,7 +34,12 @@ The octagons are chosen to be small enough that no two vertex regions overlap
 	}
 \end{figure}
 
+Let $\gamma$ be an arc of codimension 1 singular values with endpoints a pair codimension 2 singular values.
+$\gamma$ orthogonally intersects one edge from each of the octagonal vertex regions fit around its endpoints, and we use these edges to form the edge region associated to $\gamma$ by connecting the endpoints of these edges to one another using a pair of arcs parallel to $\gamma$.
+See Figure \ref{fig:edge-sleeve} for a model fitting.
 
+The interiors of the shapes formed by the arcs and octagon edges form the edge regions of this decomposition.
+The octagonal edge endpoints are also vertices of the octagons, and the formation of edge regions uses every octagonal vertex as the endpoint of exactly one arc.
 
 \begin{figure}[h!]
 	\label{fig:face-sleeve}
@@ -43,3 +48,6 @@ The octagons are chosen to be small enough that no two vertex regions overlap
 		All remaining regions contain no singular values, and we take these to be the face regions.
 	}
 \end{figure}
+
+Let $R$ be a connected region of regular values.
+The boundary $\pd R$ consists of codimension 1 and 2 singular values
