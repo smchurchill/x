@@ -1,6 +1,6 @@
 \section{Induce subdivision}
 
-The goal of subdividing $N$ is to create and identify analogues to the face- edge- and vertex-blocks of Chapter \ref{chapter:smooth} where we may iteratively attach 2--, 3--, then 4-- handles.
+The goal of subdividing $N$ is to create and identify analogues to the face, edge, and vertex blocks of Chapter \ref{chapter:smooth} where we may iteratively attach 2--, 3--, then 4-- handles.
 We use a similar technique to that found in Chapter \ref{chapter:smooth}, first decomposing $\RR$ with the projection, then examining preimages to define our subdivision.
 
 Decomposition of $\RR$ is done through $f(N_1)$.
@@ -8,13 +8,13 @@ A point in $f(N_1)$ is the image of either a vertex, exactly one edge, or exactl
 Because $f(N)\setminus f(N_1)$  is a disjoint collection of simply connected regions, we call the connected components of $f(N)\setminus f(N_1)$ the \emph{faces} of the decomposition.
 
 We construct our subdivision of $N$ using the decomposition component preimages.
-The preimage of a face component defines substructures analogous to face-blocks, of edge components to edge blocks, and vertices and crossings to vertex-blocks.
+The preimage of a face component defines substructures analogous to face blocks, of edge components to edge blocks, and vertices and crossings to vertex blocks.
 Inside of an individual tetrahedron of $N$, edge and crossing preimages are well-defined, supplying a natural subdivision of $N$ into a cell complex.
 Then, the subdivision of a cell complex into a triangulation is well-defined.
 
 The algorithm presented in this section takes as input a closed, orientable 3--manifold triangulation $N$ and a projection $f:N\to\RR$ and produces as output a closed, orientable 3--manifold triangulation $M$ that is a subdivision of $N$.
 Furthermore,
 \begin{enumerate}
-	\item the 3--cells of $M$ are partitioned into subsets that serve the same purpose as the face-blocks of Chapter ~\ref{chapter:smooth}: attaching regions for 2--handles,
-	\item the 2--cells of $M$ are partitioned into subsets that are either interior to face-blocks, or subsets that serve the same purpose as the edge-blocks of Chapter ~\ref{chapter:smooth}, i.e.\ buffers between face-blocks.	
+	\item the 3--cells of $M$ are partitioned into subsets that serve the same purpose as the face blocks of Chapter ~\ref{chapter:smooth}: attaching regions for 2--handles,
+	\item the 2--cells of $M$ are partitioned into subsets that are either interior to face blocks, or subsets that serve the same purpose as the edge blocks of Chapter ~\ref{chapter:smooth}, i.e.\ buffers between face blocks.	
 \end{enumerate}
