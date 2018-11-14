@@ -38,7 +38,7 @@ Let $\gamma$ be an arc of codimension 1 singular values with endpoints a pair co
 $\gamma$ orthogonally intersects one edge from each of the octagonal vertex regions fit around its endpoints, and we use these edges to form the edge region associated to $\gamma$ by connecting the endpoints of these edges to one another using a pair of arcs parallel to $\gamma$.
 See Figure \ref{fig:edge-sleeve} for a model fitting.
 
-The interiors of the shapes formed by the arcs and octagon edges form the edge regions of this decomposition.
+The closures of the interiors of the shapes formed by the arcs and octagon edges form the edge regions of this decomposition.
 The octagonal edge endpoints are also vertices of the octagons, and the formation of edge regions uses every octagonal vertex as the endpoint of exactly one arc.
 
 \begin{figure}[h!]
@@ -49,5 +49,16 @@ The octagonal edge endpoints are also vertices of the octagons, and the formatio
 	}
 \end{figure}
 
-Let $R$ be a connected region of regular values.
-The boundary $\pd R$ consists of codimension 1 and 2 singular values
+Removing from $f(M)$ all vertex and edge regions, we are left with a collection of simply connected regions in the plane, each of which consists entirely of regular values.
+We take the closures of these to be the face regions of this decomposition.
+The boundary of each face region is an alternating collection of arcs from edge regions and octagonal edges from vertex regions.
+See Figure \ref{fig:face-sleeve} for a model fitting.
+%
+%Before moving on to the stratification of $M$ induced by our decomposition of $\RR$, we need to iron out the corner cases of when $X_f$ contains no codimension 2 singular values.
+%
+%
+%Because $X_f$ is connected, $X_f=f(S_1(f))$, and $S_1(f)$ is a collection of smooth non-intersecting curves in $M$, we conclude that $S_1(f)$ contains exactly one curve.
+%Furthermore, $f(M\setminus S_1(f))$ lies entirely within $X_f$ so $S_1(f)$ is everywhere a definite fold.
+%
+%...
+
