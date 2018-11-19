@@ -14,6 +14,19 @@ To understand the structure of face, edge, and vertex blocks we investigate the 
 
 The subsets used to stratify $M$ are the fibers of $f$ above the corners of the octagonal vertex regions, the edges of the vertex and edge regions, and the regions themselves.
 Because the corners of the vertex regions are regular values, their fibers are regular, hence a finite collection of disjointly embedded circles in $M$.
-We take these circles as the first collection of subsets that filter $M$, and assign to them the indices $(1,i)$ for $i = i\dots N_1$, where $N_1$ is the number of circles.
+We take these circles as the first collection of subsets that filter $M$, and assign to them the indices $(1,i)$ for $i = 1\dots N_1$, where $N_1$ is the number of circles.
 These circles are disjoint, so $(1,i)\nleq (1,j)$ for any $i,j$.
+
+The arcs of the decomposition connect the vertices and either consist entirely of regular values or contain exactly one singular value.
+When an arc contains exactly one singular value, exactly one fiber above that value is a singular fiber, with the rest regular fibers.
+A decomposing arc is diffeomorphic to the unit interval and $f$ is a smooth submersion between smooth manifolds, so a fiber above a decomposing arc is a surface with boundary the fibers above the arc endpoints.
+When the fiber is regular, the surface is diffeomorphic to an annulus $S^1\times\Ilit$.
+When the fiber is singular, the surface classification depends on the type of singularity.
+The following theorem and illustration (Theorem 2.1 from \cite{Saeki}) shows that the fiber containing the singularity either has the structure of a figure-of-eight or is a single point, hence the singular fiber above the arc is diffeomorphic to either a 2--disc or a pair of pants.
+
+The surface fibers above the decomposing arcs are the second collection of subsets that filter $M$, and they are assigned the indices $(2,i)$ for $i=1\dots N_2$, where $N_2$ is the number of surfaces.
+The boundary circles of the surfaces are each subsets of the filtration, indexed by the $(1,k)$ indices, so $(1,k)\leq (2,i)$ if and only if $M_{(1,k)}$ is one of the boundary components of $M_{(2,i)}$.
+These surfaces intersect one another only when they share a boundary circle, so $(2,i)\nleq (2,j)$ for any $i,j$.
+
+
 
