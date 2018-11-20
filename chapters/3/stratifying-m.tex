@@ -22,11 +22,68 @@ When an arc contains exactly one singular value, exactly one fiber above that va
 A decomposing arc is diffeomorphic to the unit interval and $f$ is a smooth submersion between smooth manifolds, so a fiber above a decomposing arc is a surface with boundary the fibers above the arc endpoints.
 When the fiber is regular, the surface is diffeomorphic to an annulus $S^1\times\Ilit$.
 When the fiber is singular, the surface classification depends on the type of singularity.
-The following theorem and illustration (Theorem 2.1 from \cite{Saeki}) shows that the fiber containing the singularity either has the structure of a figure-of-eight or is a single point, hence the singular fiber above the arc is diffeomorphic to either a 2--disc or a pair of pants.
+The following theorem and illustration (Theorem 3.15 from \cite{Saeki}) shows that the fiber containing the singularity either has the structure of a figure-of-eight or is a single point, hence the singular fiber above the arc is diffeomorphic to either a 2--disc or a pair of pants.
 
-The surface fibers above the decomposing arcs are the second collection of subsets that filter $M$, and they are assigned the indices $(2,i)$ for $i=1\dots N_2$, where $N_2$ is the number of surfaces.
-The boundary circles of the surfaces are each subsets of the filtration, indexed by the $(1,k)$ indices, so $(1,k)\leq (2,i)$ if and only if $M_{(1,k)}$ is one of the boundary components of $M_{(2,i)}$.
-These surfaces intersect one another only when they share a boundary circle, so $(2,i)\nleq (2,j)$ for any $i,j$.
+\begin{theorem}[Adapted Theorem 3.15 in Saeki \cite{Saeki}]
+	Let $f:M\to N$ be a proper $C^\infty$ stable map of an orientable 3--manifold $M$ into a surface $N$.
+	Then, every singular fiber of $f$ is equivalent to the disjoint union of one of the fibers as in Figure \ref{fig:saeki-fibers} and a finite number of copies of a fiber of the trivial unit circle bundle.
+	Furthermore, no two fibers in the list are equivalent to each other even after taking the union with regular circle components.		
+\end{theorem}
 
+\begin{figure}[h!]
+	\label{fig:saeki-fibers}
+	\caption{
+		\textbf{Singular fibers.}
+		List of singular fibers of proper $C^\infty$ stable maps of orientable 3--manifolds into surfaces.
+		$\kappa$ is the codimension of the singularity in the surface.
+	}	
+\end{figure}
 
+The surface fibers above the decomposing arcs are the second collection of subsets that filter $M$, and they are assigned the indices $(2,j)$ for $j=1\dots N_2$, where $N_2$ is the number of surfaces.
+The boundary circles of the surfaces are each subsets of the filtration, indexed by the $(1,i)$ indices, so $(1,i)\leq (2,j)$ if and only if $M_{(1,i)}$ is one of the boundary components of $M_{(2,j)}$.
+These surfaces intersect one another only when they share a boundary circle, so $(2,j)\nleq (2,k)$ for any $j,k$.
 
+There are three types of region in the decomposition: face, edge, and vertex.
+Regardless of the type of region, they are indexed in our filtration similarly to the edges.
+A fiber above a region is a 3--manifold with corners formed by the $(1,i)$- and $(2,j)$-level strata, and fibers are disjoint away from their boundaries.
+We therefore index fibers above regions with the indices $(3,k)$ for $k=1\dots N_3$ where $N_3$ is the total number of fibers above regions, put $(n,i)\leq (3,k)$ if and only if $M_{(n,i)}$ is contained in the boundary of $M_{(3,k)}$.
+
+Recall that we call a closed 3--dimensional stratum of $M$ a \emph{block}.
+We now prove that the stratification conditions impose the desired structure on the blocks of $M$, as discussed in the introduction to this chapter.
+
+\begin{theorem}
+	\label{thm:block-structure}
+	Let $M$ be a closed, smooth, orientable 3--manifold, let $f:M\to\RR$ be a map satisfying the \emph{stratification conditions} of Section \ref{section:smooth-projection}, suppose $\RR$ has been decomposed as in Section \ref{section:smooth-decompose} and $M$ has been stratified as in this section.
+	Then each closed strata $M_{(3,k)}$ is classified as either a \emph{face}, \emph{edge}, or \emph{vertex block} depending on whether it is a fiber above a face, edge, or vertex region respectively, and a block has one of the following structures:
+	\begin{enumerate}
+		\item[\emph{face block}:]
+		Let $B$ be a face block and $F$ be the face region that $B$ is a fiber over.
+		Then $B$ is diffeomorphic to $S^1\times F$.
+		
+		\item[\emph{edge block}:]
+		Let $B$ be an edge block and $E$ be the edge region that $B$ is a fiber over.
+		Let $A$ be the annulus $S^1\times\Ilit$ and $P$ the pair-of pants surface (i.e.\ $D^2$ minus a pair of disjoint open balls).
+		If $B$ is a regular fiber over $E$ then $B$ is diffeomorphic to $S^1\times E$, hence also diffeomorphic to $A\times\Ilit$.
+		Otherwise, $B$ is a singular fiber over $E$ and contains part of definite or indefinite fold.
+		In this case we call $B$ a \emph{definite} or \emph{indefinite edge block}.
+		A definite edge block is diffeomorphic to $D^2\times\Ilit$ and an indefinite edge block is diffeomorphic to $P\times\Ilit$.
+
+		\item[\emph{vertex block}:]
+		Let $B$ be a vertex block and $V$ be the vertex region that $B$ is a fiber over.
+		If $B$ is a regular fiber then it is diffeomorphic to $S^1\times V$, therefore homeomorphic to a $(3,1)$-handlebody of genus 1.
+		Otherwise, we see from Figure \ref{fig:saeki-fibers} that the singular fiber above the codimension 2 singularity contained in $V$ is either connected or disconnected.
+		If the singular fiber is disconnected then there are a pair of disjoint vertex blocks, each containing one of the singular fibers, hence part of a definite or indefinite fold,  that can be classified as a \emph{definite} or \emph{indefinite vertex block}.
+		If the singular fiber is connected, then the block containing it is an \emph{interactive vertex block}.
+		A definite(resp.\ indefinite) vertex block extends and connects definite(resp.\ indefinite) edge blocks, and is homeomorphic to a $(3,1)$-handlebody of genus 0(resp.\ 2).
+		An interactive vertex block is homeomorphic to a $(3,1)$-handlebody of genus 3.
+	\end{enumerate}
+\end{theorem}
+
+\begin{rmk}
+	The structures of the blocks described in Theorem \ref{thm:block-structure} are roughly disc bundles over a representative fiber for the given region.
+	For regular block, the representative is a circle, for a definite or indefinite block, the representative is the fiber containing a definite or indefinite fold, and for an interactive block the representative fiber is the singular fiber above the codimension 2 singular value.
+\end{rmk}
+
+\begin{proof}[Proof of Theorem \ref{thm:block-structure}]
+	proof
+\end{proof}
