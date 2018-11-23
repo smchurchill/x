@@ -58,19 +58,19 @@ We now prove that the stratification conditions impose the desired structure on 
 	\begin{enumerate}
 		\item[\emph{face block}:]
 		Let $B$ be a face block and let $F$ be the face region that $B$ is a fiber over.
-		Then $B$ is diffeomorphic to $S^1\times F$.
+		Then $B$ is homeomorphic to $S^1\times F$.
 		
 		\item[\emph{edge block}:]
 		Let $B$ be an edge block and let $E$ be the edge region that $B$ is a fiber over.
 		Let $A$ be the annulus $S^1\times\Ilit$ and $P$ the pair-of pants surface (i.e.\ $D^2$ minus a pair of disjoint open balls).
-		If $B$ is a regular fiber over $E$ then $B$ is diffeomorphic to $S^1\times E$, hence also diffeomorphic to $A\times\Ilit$.
+		If $B$ is a regular fiber over $E$ then $B$ is homeomorphic to $S^1\times E$, hence also homeomorphic to $A\times\Ilit$.
 		Otherwise, $B$ is a singular fiber over $E$ and contains part of definite or indefinite fold.
 		In this case we call $B$ a \emph{definite} or \emph{indefinite edge block}.
-		A definite edge block is diffeomorphic to $D^2\times\Ilit$ and an indefinite edge block is diffeomorphic to $P\times\Ilit$.
+		A definite edge block is homeomorphic to $D^2\times\Ilit$ and an indefinite edge block is homeomorphic to $P\times\Ilit$.
 
 		\item[\emph{vertex block}:]
 		Let $B$ be a vertex block and let $V$ be the vertex region that $B$ is a fiber over.
-		If $B$ is a regular fiber then it is diffeomorphic to $S^1\times V$, therefore homeomorphic to a $(3,1)$-handlebody of genus 1.
+		If $B$ is a regular fiber then it is homeomorphic to $S^1\times V$, therefore homeomorphic to a $(3,1)$-handlebody of genus 1.
 		Otherwise, we see from Figure \ref{fig:saeki-fibers} that the singular fiber above the codimension 2 singularity contained in $V$ is either connected or disconnected.
 		If the singular fiber is disconnected then there are a pair of disjoint vertex blocks that each contain one of the singular fibers, hence part of a definite or indefinite fold.
 		We therefore classify these blocks as \emph{definite} or \emph{indefinite vertex blocks}.
@@ -82,18 +82,22 @@ We now prove that the stratification conditions impose the desired structure on 
 
 \begin{rmk}
 	The structures of the blocks described in Theorem \ref{thm:block-structure} are roughly disc bundles over a representative fiber for the given region.
-	For regular block, the representative is a circle, for a definite or indefinite block, the representative is the fiber containing a definite or indefinite fold, and for an interactive block the representative fiber is the singular fiber above the codimension 2 singular value.
+	For a block that is a regular fiber, the representative is a circle.
+	For a definite or indefinite block, the representative is the fiber containing a definite or indefinite fold, and for an interactive block the representative fiber is the singular fiber above the codimension 2 singular value.
 \end{rmk}
 
 \begin{proof}[Proof of Theorem \ref{thm:block-structure}]
 	We split the proof into three parts.
-	The first part proves that if a block $B$ is a regular fiber over the region $R$ then $B$ is diffeomorphic to $S^1\times R$.
-	In the second part, we prove that definite and indefinite blocks are equivalent to $D^2\times\Ilit$ or $P\times\Ilit$ respectively.
-	For edge blocks the equivalence is diffeomorphism, and for vertex blocks this equivalence is homeomorphism.
+	The first part proves that if a block $B$ is a regular fiber over the region $R$ then $B$ is homeomorphic to $S^1\times R$.
+	In the second part, we prove that definite and indefinite blocks are homeomorphic to $D^2\times\Ilit$ or $P\times\Ilit$ respectively.
 	In the final part we discuss interactive vertex blocks, and show that they are homeomorphic to $(3,1)$-handlebodies of genus 3.
 	Figures are provided in each part.
 	
 	\textbf{Part 1:}
+	Let $B$ be a block over a region $R$, and suppose $B$ consists entirely of regular fibers over $R$.
+	Then $(B, R, f|_B, S^1)$ has the structure of a circle bundle over $R$.
+	A fiber bundle over a contractible space is trivial, so $B$ is homeomorphic to $S^1 \times R$.
+	Furthermore, we ensure that 
 	
 	\textbf{Part 2:}
 	
