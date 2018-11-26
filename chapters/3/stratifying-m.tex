@@ -31,12 +31,12 @@ The following theorem and illustration (Theorem 3.15 from \cite{Saeki}) shows th
 \end{theorem}
 
 \begin{figure}[h!]
-	\label{fig:saeki-fibers}
 	\caption{
 		\textbf{Singular fibers.}
 		List of singular fibers of proper $C^\infty$ stable maps of orientable 3--manifolds into surfaces.
 		$\kappa$ is the codimension of the singularity in the surface.
-	}	
+	}
+	\label{fig:saeki-fibers}	
 \end{figure}
 
 The surface fibers above the decomposing arcs are the second collection of subsets that filter $M$, and they are assigned the indices $(2,j)$ for $j=1\dots N_2$, where $N_2$ is the number of surfaces.
@@ -97,9 +97,48 @@ We now prove that the stratification conditions impose the desired structure on 
 	Let $B$ be a block over a region $R$, and suppose $B$ consists entirely of regular fibers over $R$.
 	Then $(B, R, f|_B, S^1)$ has the structure of a circle bundle over $R$.
 	A fiber bundle over a contractible space is trivial, so $B$ is homeomorphic to $S^1 \times R$.
-	Furthermore, we ensure that 
+	Furthermore, this homeomorphism is stratified by ensuring the strata of $B$ are mapped to the strata of $S^1 \times R$, where the stratification of $S^1 \times R$ is defined by the manifold with corners structure induced by the product topology.
+	See Figure \ref{fig:regular-blocks}.
+	
+	\begin{figure}[h!]
+		\caption{
+			\textbf{Regular blocks.}
+			Three types of regular blocks.
+			These are found as regular fibers over face, edge, and vertex regions.
+		}
+		\label{fig:regular-blocks}
+	\end{figure}
 	
 	\textbf{Part 2:}
+	Let $B$ be a definite block over a region $R$.
+	Then $B$ contains an arc $\gamma$ that is part of a definite fold in $S_1(f)$, and $f(\gamma)$ is an arc of codimension 1 singular values that runs from one edge of $R$ to another (see Figure \ref{fig:definite-blocks}).
+	By definition, for every point $p$ of $\gamma$ there exist local coordinates $(x,z_1,z_2)$ at $p$ and $(x,y)$ at $f(p)$ such that 
+	\[(x,y) = (u,\pm(z_1^2+z_2^2)).\]
+%	First, we need to connect the singular fibers to the type of fold
+	Let $\nu(\gamma)$ be a tubular neighbourhood around $\gamma$ inside of $B$ with these coordinates, and let $\bar\nu(\gamma)$ be its closure.
+	These coordinates ensure that $f(B\setminus\nu(\gamma))$ falls entirely on one side of $f(\gamma)$ in $R$.
+	By Part 1 of this proof, $B\setminus\nu(\gamma)$ is a circle bundle over the image of $B\setminus\nu(\gamma)$ through $f$, while $\bar\nu(\gamma)$ is .
+	The local coordinates around $\gamma$ tell us that the circles collapse into single points, yielding the singular fibers
+	
+	
+	\begin{figure}[h!]
+		\caption{
+			\textbf{Definite blocks.}
+			The two types of definite blocks.
+			These are found as singular fibers over edge and vertex regions.
+		}
+		\label{fig:definite-blocks}
+	\end{figure}
+
+	\begin{figure}[h!]
+	\caption{
+		\textbf{Inefinite blocks.}
+		The two types of indefinite blocks.
+		These are found as singular fibers over edge and vertex regions.
+	}
+	\label{fig:indefinite-blocks}
+	\end{figure}
+	
 	
 	\textbf{Part 3:}
 \end{proof}
