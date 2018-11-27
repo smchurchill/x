@@ -22,7 +22,7 @@ When an arc contains exactly one singular value, exactly one fiber above that va
 A decomposing arc is diffeomorphic to the unit interval and $f$ is a smooth submersion between smooth manifolds, so a fiber above a decomposing arc is a surface with boundary the fibers above the arc endpoints.
 When the fiber is regular, the surface is diffeomorphic to an annulus $S^1\times\Ilit$.
 When the fiber is singular, the surface classification depends on the type of singularity.
-The following theorem and illustration (Theorem 3.15 from \cite{Saeki}) shows that the fiber containing the singularity either has the structure of a figure-of-eight or is a single point, hence the singular fiber above the arc is diffeomorphic to either a 2--disc or a pair of pants.
+The following theorem and illustration (Theorem 3.15 from \cite{Saeki}) shows that the fiber containing the singularity either has the structure of a figure-of-eight (when the singularity is part of an indefinite fold) or is a single point (when the singularity is part of a definite fold), hence the singular fiber above the arc is diffeomorphic to either a 2--disc or a pair of pants.
 
 \begin{theorem}[Adapted Theorem 3.15 in Saeki \cite{Saeki}]
 	Let $f:M\to N$ be a proper $C^\infty$ stable map of an orientable 3--manifold $M$ into a surface $N$.
@@ -83,7 +83,7 @@ We now prove that the stratification conditions impose the desired structure on 
 \begin{rmk}
 	The structures of the blocks described in Theorem \ref{thm:block-structure} are roughly disc bundles over a representative fiber for the given region.
 	For a block that is a regular fiber, the representative is a circle.
-	For a definite or indefinite block, the representative is the fiber containing a definite or indefinite fold, and for an interactive block the representative fiber is the singular fiber above the codimension 2 singular value.
+	For a definite or indefinite block, the representative is the singular fiber containing a definite or indefinite fold, and for an interactive block the representative fiber is the singular fiber above the codimension 2 singular value.
 \end{rmk}
 
 \begin{proof}[Proof of Theorem \ref{thm:block-structure}]
@@ -91,10 +91,10 @@ We now prove that the stratification conditions impose the desired structure on 
 	The first part proves that if a block $B$ is a regular fiber over the region $R$ then $B$ is homeomorphic to $S^1\times R$.
 	In the second part, we prove that definite and indefinite blocks are homeomorphic to $D^2\times\Ilit$ or $P\times\Ilit$ respectively.
 	In the final part we discuss interactive vertex blocks, and show that they are homeomorphic to $(3,1)$-handlebodies of genus 3.
-	Figures are provided in each part.
+	Figures illustrate the block structures.
 	
 	\textbf{Part 1:}
-	Let $B$ be a block over a region $R$, and suppose $B$ consists entirely of regular fibers over $R$.
+	Let $B$ be a block over the region $R$, and suppose $B$ consists entirely of regular fibers over $R$.
 	Then $(B, R, f|_B, S^1)$ has the structure of a circle bundle over $R$.
 	A fiber bundle over a contractible space is trivial, so $B$ is homeomorphic to $S^1 \times R$.
 	Furthermore, this homeomorphism is stratified by ensuring the strata of $B$ are mapped to the strata of $S^1 \times R$, where the stratification of $S^1 \times R$ is defined by the manifold with corners structure induced by the product topology.
@@ -110,35 +110,58 @@ We now prove that the stratification conditions impose the desired structure on 
 	\end{figure}
 	
 	\textbf{Part 2:}
-	Let $B$ be a definite block over a region $R$.
-	Then $B$ contains an arc $\gamma$ that is part of a definite fold in $S_1(f)$, and $f(\gamma)$ is an arc of codimension 1 singular values that runs from one edge of $R$ to another (see Figure \ref{fig:definite-blocks}).
-	By definition, for every point $p$ of $\gamma$ there exist local coordinates $(x,z_1,z_2)$ at $p$ and $(x,y)$ at $f(p)$ such that 
-	\[(x,y) = (u,\pm(z_1^2+z_2^2)).\]
-%	First, we need to connect the singular fibers to the type of fold
-	Let $\nu(\gamma)$ be a tubular neighbourhood around $\gamma$ inside of $B$ with these coordinates, and let $\bar\nu(\gamma)$ be its closure.
-	These coordinates ensure that $f(B\setminus\nu(\gamma))$ falls entirely on one side of $f(\gamma)$ in $R$.
-	By Part 1 of this proof, $B\setminus\nu(\gamma)$ is a circle bundle over the image of $B\setminus\nu(\gamma)$ through $f$, while $\bar\nu(\gamma)$ is .
-	The local coordinates around $\gamma$ tell us that the circles collapse into single points, yielding the singular fibers
-	
+	Let $B$ be a definite or indefinite block over the region $R$.
+	$R$ is a subset of the plane homeomorphic to $D^2$ with an arc $\gamma_s \subset X_f$ of singular values running from one of its edges to another.
+	Let $\gamma_t$ be a second simple arc that crosses $\gamma_s$ transversely, and consider the cross-sectional surface obtained by $f\inv(\gamma_t)$.
+	Figure \ref{fig:codim-1-surfaces} illustrates the possible surfaces containing the singular fiber over $x=\gamma_s\cap\gamma_t$.
 	
 	\begin{figure}[h!]
 		\caption{
-			\textbf{Definite blocks.}
-			The two types of definite blocks.
+			\textbf{Surfaces over codimension 1 singularities.}
+			$\gamma_s$ is an arc of singular values and $\gamma_t$ is an arc with endpoints $\pd\gamma_t = \{p,q\}$ that intersects $\gamma_s$ transversely at $x=\gamma_s\cap\gamma_t$.
+			The three surfaces shown are the three possible cross-sectional surfaces that can project through $f$ over $\gamma_t$.
+		}
+		\label{fig:codim-1-surfaces}
+	\end{figure}
+	
+	This cross section is general, so we fit a tubular neighbourhood $\nu(\gamma_s)$ about $\gamma_s$ in $R$ to obtain a bundle structure for $f\inv(\nu(\gamma_s))$ whose fiber is one of the cross-sectional surfaces (a disc or a pair of pants) and whose base is the arc $\gamma_s$, i.e. an interval.
+	The interval is contractible, so $f\inv(\nu(\gamma_s))$ is homeomorphic to $\Sigma\times\Ilit$ for $\Sigma$ a disc or a pair of pants surface.
+	Away from $\nu(\gamma_s)$, $R$ consists entirely of regular values so we obtain solid tori (cf. Part 1) that extend the $\Sigma\times\Ilit$ structure as seen in Figure \ref{fig:codim-1-blocks}.
+		
+	\begin{figure}[h!]
+		\caption{
+			\textbf{Definite and indefinite blocks.}
+			The blocks containing sections of definite and indefinite folds that project over codimension 1 singular values.
 			These are found as singular fibers over edge and vertex regions.
 		}
-		\label{fig:definite-blocks}
+		\label{fig:codim-1-blocks}
 	\end{figure}
-
-	\begin{figure}[h!]
-	\caption{
-		\textbf{Inefinite blocks.}
-		The two types of indefinite blocks.
-		These are found as singular fibers over edge and vertex regions.
-	}
-	\label{fig:indefinite-blocks}
-	\end{figure}
-	
 	
 	\textbf{Part 3:}
+	
+	Let $B$ be an interactive block over the region $R$.
+	Interactive blocks occur only over our octagonal vertex regions, and each vertex region was created by fitting with an octagon around an intersection of $X_f$.
+	Let $\gamma_1$ and $\gamma_2$ be the arcs of codimension 1 singular values that intersect inside of $R$, and let $x=\gamma_1\cap\gamma_2$.	
+	We have explored the possible surfaces that can project through $f$ over the edges of $R$: cylinders project over the edges of $R$ shared with face regions, and pairs of cylinders, discs, or pairs of pants may project over the edges of $R$ shared with edge regions.
+	This is illustrated in Figure \ref{fig:codim-2-surfaces}.
+	
+	\begin{figure}[h!]
+		\caption{
+			\textbf{Surfaces on the boundary of vertex regions.}
+			note
+		}
+		\label{fig:codim-2-surfaces}
+	\end{figure}
+
+	
+
+	\begin{figure}[h!]
+		\caption{
+			\textbf{Interactive blocks.}
+			nope
+		}
+		\label{fig:codim-2-block}
+	\end{figure}
+	
+
 \end{proof}
