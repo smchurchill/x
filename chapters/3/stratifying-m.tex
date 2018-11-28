@@ -22,7 +22,7 @@ When an arc contains exactly one singular value, exactly one fiber above that va
 A decomposing arc is diffeomorphic to the unit interval and $f$ is a smooth submersion between smooth manifolds, so a fiber above a decomposing arc is a surface with boundary the fibers above the arc endpoints.
 When the fiber is regular, the surface is diffeomorphic to an annulus $S^1\times\Ilit$.
 When the fiber is singular, the surface classification depends on the type of singularity.
-The following theorem and illustration (Theorem 3.15 from \cite{Saeki}) shows that the fiber containing the singularity either has the structure of a figure-of-eight (when the singularity is part of an indefinite fold) or is a single point (when the singularity is part of a definite fold), hence the singular fiber above the arc is diffeomorphic to either a 2--disc or a pair of pants.
+The following theorem and illustration (Theorem 3.15 from \cite{Saeki}) shows that the fiber containing the singularity either has the structure of a figure-of-eight (when the singularity is part of an indefinite fold) or is a single point (when the singularity is part of a definite fold), hence the singular fiber above the arc is diffeomorphic to either a 2--disc or a pair-of-pants.
 
 \begin{theorem}[Adapted Theorem 3.15 in Saeki \cite{Saeki}]
 	Let $f:M\to N$ be a proper $C^\infty$ stable map of an orientable 3--manifold $M$ into a surface $N$.
@@ -124,8 +124,8 @@ We now prove that the stratification conditions impose the desired structure on 
 		\label{fig:codim-1-surfaces}
 	\end{figure}
 	
-	This cross section is general, so we fit a tubular neighbourhood $\nu(\gamma_s)$ about $\gamma_s$ in $R$ to obtain a bundle structure for $f\inv(\nu(\gamma_s))$ whose fiber is one of the cross-sectional surfaces (a disc or a pair of pants) and whose base is the arc $\gamma_s$, i.e. an interval.
-	The interval is contractible, so $f\inv(\nu(\gamma_s))$ is homeomorphic to $\Sigma\times\Ilit$ for $\Sigma$ a disc or a pair of pants surface.
+	This cross section is general, so we fit a tubular neighbourhood $\nu(\gamma_s)$ about $\gamma_s$ in $R$ to obtain a bundle structure for $f\inv(\nu(\gamma_s))$ whose fiber is one of the cross-sectional surfaces (a disc or a pair-of-pants) and whose base is the arc $\gamma_s$, i.e. an interval.
+	The interval is contractible, so $f\inv(\nu(\gamma_s))$ is homeomorphic to $\Sigma\times\Ilit$ for $\Sigma$ a disc or a pair-of-pants surface.
 	Away from $\nu(\gamma_s)$, $R$ consists entirely of regular values so we obtain solid tori (cf. Part 1) that extend the $\Sigma\times\Ilit$ structure as seen in Figure \ref{fig:codim-1-blocks}.
 		
 	\begin{figure}[h!]
@@ -140,7 +140,42 @@ We now prove that the stratification conditions impose the desired structure on 
 	\textbf{Part 3:}
 	
 	Let $B$ be an interactive block over the region $R$.
-	Interactive blocks occur only over our octagonal vertex regions, and each vertex region was created by fitting with an octagon around an intersection of $X_f$.
+	Interactive blocks occur over octagonal vertex regions where the singular fiber above the region's codimension 2 singularity is connected, so we investigate these fibers.
+	The codimension 2 singular value lies at the intersection of a pair of arcs of codimension 1 singular values.
+	Call the arcs $\gamma_1$ and $\gamma_2$ and let $x = \gamma_1\cap \gamma_2$.
+	Our method of investigation begins by examining the possible resolutions of the interactive singular fiber above $x$ and combining those resolutions to form a genus 3 surface.
+	 
+	Figure \ref{fig:codim-2-interactive-fiber-1} demonstrates resolutions of the singular points in the first interactive fiber.
+	We first note that all of the displayed fibers have inherited an orientation from $M$.
+	This forces fiber resolution to be unambiguous, and allows us to identify fibers when forming the surface shown in Figure \ref{fig:codim-2-surface-1}.
+	
+	\begin{figure}[h!]
+		\caption{
+			\textbf{Resolutions of the singular points in the first interactive fiber.}
+			The fiber and its possible resolutions over nearby codimension 1 singular values and regular values.
+			The fibers inherit orientation from $M$, and this illustration is presented without loss of generality.
+		}
+		\label{fig:codim-2-interactive-fiber-1}
+	\end{figure}
+
+	We form the surface shown in Figure \ref{fig:codim-2-surface-1} by gluing together the surfaces that project over simple arcs transversing over the codimension 1 singular values.
+	Gluing is performed over the boundary circles of these surfaces, and is prescribed by the resolutions in Figure \ref{fig:codim-2-interactive-fiber-1}.
+	In the first case, we obtain four pair-of-pants surfaces and two cylinders, and these glue together to form a genus 3 surface.
+	%% The surface displayed is embedded in S^3
+
+	\begin{figure}[h!]
+	\caption{
+		\textbf{Surface near the first interactive fiber that projects over $\pd\nu(x)$ }
+		The fiber and its possible resolutions over nearby codimension 1 singular values and regular values.
+		The fibers inherit orientation from $M$, and this illustration is presented without loss of generality.
+	}
+	\label{fig:codim-2-surface-1}
+\end{figure}
+	
+	
+	
+	
+	, and each vertex region was created by fitting with an octagon around an intersection of $X_f$.
 	Let $\gamma_1$ and $\gamma_2$ be the arcs of codimension 1 singular values that intersect inside of $R$, and let $x=\gamma_1\cap\gamma_2$.	
 	We have explored the possible surfaces that can project through $f$ over the edges of $R$: cylinders project over the edges of $R$ shared with face regions, and pairs of cylinders, discs, or pairs of pants may project over the edges of $R$ shared with edge regions.
 	This is illustrated in Figure \ref{fig:codim-2-surfaces}.
