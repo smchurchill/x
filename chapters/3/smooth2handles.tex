@@ -6,5 +6,46 @@ This investigation is performed by comparing $\pd W$ to $\pd W'$, where
 	W' = W\cup\{H_\alpha^2\}_{\alpha\in A} / \sim,
 \]
 the 4--manifold obtained by attaching stratified 2-handles to $W$.
+Our first step is to precisely define the structure of the stratified 2--handles that we are attaching.
 
-Attaching these stratified 2--handles to $W$ alters the boundary of $W$ via surgery on $M_1$ that is equivalent to replacing the interiors of each face block with a solid torus whose meridians are longitudes of the replaced face block.
+Let $B$ be a face block of $M_1$.
+By Theorem \ref{thm:block-structure}, $B$ is a closed solid torus that is stratified-homeomorphic to $S^1\times G_n$, where $G_n$ is an $n$--gon for some $n$.
+Consider an unknotted embedding of $B$ in $S^3$, as illustrated in Figure \ref{fig:face-block-complement}.
+The complement of the interior of $B$ is another stratified closed solid torus $B'$, and we extend the stratification of $B'$ by introducing discs that are bounded by the $(1,i)$--indexed strata in $B$, i.e.\ the boundary curves in $B$ corresponding to $S^1\times c_m$ where $c_m$ is a corner of $G_n$, $m=1\dots n$.
+Taking $S_B^3$ to be the stratified $S^3$ formed as the union of $B$ and $B'$, we form a stratified 2--handle structure as $C(S_B^3)$, the cone of $S_B^3$.
+
+\begin{figure}[h!]
+	\caption{
+		\textbf{A face block and its complement inside of $S^3$.}
+		A face block $B$ is a stratified closed solid torus that is stratified-homeomorphic to $S^1\times G_n$ for some $n$--gon $G_n$.
+		The complement of its interior in $S^3$ is another stratified closed solid torus $B'$, and this stratification is extended by introducing meridinal discs bounded by the $S^1\times c_m$ longitudes of $B$, where $c_m$ is a corner of $G_n$, $m=1\dots n$.
+	}
+	\label{fig:face-block-complement}
+\end{figure}
+
+Attaching $C(S_B^3)$ to $W$ over $B\subset M_1$ alters the boundary of $W$ by replacing $B\subset M_1$ with $B'$.
+The full extent of this surgery can be detected by examining the edge and vertex blocks of the stratification that are incident to $B$.
+
+Edge blocks occur in three possible forms: regular edge blocks as $A\times\Ilit$, definite edge blocks as $D^2\times\Ilit$, and indefinite edge blocks as $P\times\Ilit$.
+Figure \ref{fig:edge-block-incidence} displays the possible edge block forms and indicates the boundary components of an edge block that are shared by face blocks.
+Figure \ref{fig:edge-face-shared-boundary}
+
+\begin{figure}[h!]
+	\caption{
+		\textbf{Edge blocks.}
+		The possible edge blocks of $M_1$.
+		Annular boundary components that are incident with face blocks of $M_1$ have been indicated.
+		Gluing cylinders are over the indicated annular boundary components results in a stratified 3--manifold homeomorphic to $S^2\times\Ilit$.
+	}
+	\label{fig:edge-block-incidence}
+\end{figure}
+
+\begin{figure}[h!]
+	\caption{
+		\textbf{The effect of stratified 2--handle attachment on a model edge block.}
+		A model edge block $E$, a face block $B$, its complement $B'$, and the effect of attaching $C(S_B^3)$ to $W$ over $B$ on $E$.
+		The boundary component shared by $E$ and $B$ in $M_1$ is indicated, as is the corresponding boundary component of $B'$ in $S_B^3$.
+	}
+	\label{fig:edge-face-shared-boundary}
+\end{figure}
+
