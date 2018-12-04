@@ -53,14 +53,14 @@ We now prove that the stratification conditions impose the desired structure on 
 
 \begin{theorem}
 	\label{thm:block-structure}
-	Let $M$ be a closed, smooth, orientable 3--manifold, let $f:M\to\RR$ be a map satisfying the \emph{stratification conditions} of Section \ref{section:smooth-projection}, suppose $\RR$ has been decomposed as in Section \ref{section:smooth-decompose} and $M$ has been stratified as in this section.
+	Let $M$ be a smooth, closed, orientable 3--manifold, let $f:M\to\RR$ be a stratifying map, suppose $\RR$ has been decomposed as in Section \ref{section:smooth-decompose} and $M$ has been stratified as in this section.
 	Then each closed strata $M_{(3,k)}$ is classified as either a \emph{face}, \emph{edge}, or \emph{vertex block} depending on whether it is a fiber above a face, edge, or vertex region respectively, and a block has one of the following structures:
-	\begin{enumerate}
-		\item[\emph{face block}:]
+	\begin{itemize}
+		\item \emph{face block}:
 		Let $B$ be a face block and let $F$ be the face region that $B$ is a fiber over.
 		Then $B$ is homeomorphic to $S^1\times F$.
 		
-		\item[\emph{edge block}:]
+		\item \emph{edge block}:
 		Let $B$ be an edge block and let $E$ be the edge region that $B$ is a fiber over.
 		Let $A$ be the annulus $S^1\times\Ilit$ and $P$ the pair-of pants surface (i.e.\ $D^2$ minus a pair of disjoint open balls).
 		If $B$ is a regular fiber over $E$ then $B$ is homeomorphic to $S^1\times E$, hence also homeomorphic to $A\times\Ilit$.
@@ -68,7 +68,7 @@ We now prove that the stratification conditions impose the desired structure on 
 		In this case we call $B$ a \emph{definite} or \emph{indefinite edge block}.
 		A definite edge block is homeomorphic to $D^2\times\Ilit$ and an indefinite edge block is homeomorphic to $P\times\Ilit$.
 
-		\item[\emph{vertex block}:]
+		\item \emph{vertex block}:
 		Let $B$ be a vertex block and let $V$ be the vertex region that $B$ is a fiber over.
 		If $B$ is a regular fiber then it is homeomorphic to $S^1\times V$, therefore homeomorphic to a $(3,1)$-handlebody of genus 1.
 		Otherwise, we see from Figure \ref{fig:saeki-fibers} that the singular fiber above the codimension 2 singularity contained in $V$ is either connected or disconnected.
@@ -77,7 +77,7 @@ We now prove that the stratification conditions impose the desired structure on 
 		If the singular fiber is connected, then the block containing it is an \emph{interactive vertex block}.
 		A definite(resp.\ indefinite) vertex block extends and connects definite(resp.\ indefinite) edge blocks, and is homeomorphic to a $(3,1)$-handlebody of genus 0(resp.\ 2).
 		An interactive vertex block is homeomorphic to a $(3,1)$-handlebody of genus 3.
-	\end{enumerate}
+	\end{itemize}
 \end{theorem}
 
 \begin{rmk}
@@ -139,8 +139,7 @@ We now prove that the stratification conditions impose the desired structure on 
 
 	As with Part 1, the homeomorphism described is stratified by ensuring the strata of $B$ are mapped to the strata of $\Sigma \times \Ilit$, where the stratification of $\Sigma \times \Ilit$ is defined by the manifold with corners structure induced by the product topology.
 	
-	\textbf{Part 3:}
-	
+	\textbf{Part 3:}	
 	Let $B$ be an interactive block over the region $R$.
 	Interactive blocks occur over octagonal vertex regions where the singular fiber above the region's codimension 2 singularity is connected, so we investigate these fibers.
 	The codimension 2 singular value lies at the intersection of a pair of arcs of codimension 1 singular values.
@@ -200,7 +199,7 @@ We now prove that the stratification conditions impose the desired structure on 
 		\label{fig:codim-2-surface-2}
 	\end{figure}
 
-	Figure \ref{fig:codim-2-surface-12} displays both possible interactive block structures, highlighting their boundaries.
+	Figure \ref{fig:codim-2-blocks} displays both possible interactive block structures, highlighting their boundaries.
 	The figure explains that the blocks are the handlebodies on the `outside' of the illustrated surfaces.
 	This is specifically to aid visualization of the effects of 2-- and 3--handle attachment in the next two sections, as the result of these attachments will fill the genus-3 (3,1)--handlebody on the `inside' of the illustrated surface.
 
@@ -210,10 +209,23 @@ We now prove that the stratification conditions impose the desired structure on 
 		Interactive blocks with indicated boundary stratification induced by $f\inv \pd R$.
 		Blocks are embedded in $S^3$, outside of the illustrated stratified boundary surfaces.
 	}
-	\label{fig:codim-2-surface-12}
+	\label{fig:codim-2-blocks}
 	\end{figure}
 \end{proof}
 
-We have shown that the smooth map $f$ satisfying the stratification conditions of Section \ref{section:smooth-projection} induces a decomposition on $\RR$ and a stratification of $M$.
+A smooth map $f$ satisfying the stratification conditions of Section \ref{section:smooth-projection} induces a decomposition on $\RR$ and a stratification of $M$.
+It is important to note here that the restrictions on $f$ can induce a wide variety of possible stratifications of $M$, highlighting the variability of the resulting 4--manifold.
+We end this section with a lemma that guarantees the stratified 2--handle attachments of the next section can be made over our face blocks in any order, hence we can assume all attachments occur simultaneously.
+
+
+\begin{lem}
+	Let $M$ be a 3--manifold with stratification induced as in Theorem \ref{thm:block-structure}.
+	Then blocks of the same type (i.e. face, edge, vertex) are disjoint.
+\end{lem}
+
+\begin{proof}
+	The fibers of the blocks are disjoint, so blocks of the same type may only intersect on their boundary.
+	A block's boundary is induced by the boundary of the region it projects over and regions of the same type intersect nowhere, hence their corresponding blocks intersect nowhere.	
+\end{proof}
 
 

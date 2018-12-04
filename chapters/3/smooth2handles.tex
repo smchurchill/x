@@ -1,11 +1,7 @@
 \section{Attach 2--handles}
 
 We now investigate the consequences of stratified 2--handle attachment over the face blocks of the stratified $M_1$ boundary component of $W=M\times\Ilit$.
-This investigation is performed by comparing $\pd W$ to $\pd W'$, where
-\[
-	W' = W\cup\{H_\alpha^2\}_{\alpha\in A} / \sim,
-\]
-the 4--manifold obtained by attaching stratified 2-handles to $W$.
+This investigation is performed by comparing $\pd W$ to $\pd W'$, where $W'$ is the 4--manifold obtained by attaching stratified 2-handles to $W$.
 Our first step is to precisely define the structure of the stratified 2--handles that we are attaching.
 
 Let $B$ be a face block of $M_1$.
@@ -13,6 +9,7 @@ By Theorem \ref{thm:block-structure}, $B$ is a closed solid torus that is strati
 Consider an unknotted embedding of $B$ in $S^3$, as illustrated in Figure \ref{fig:face-block-complement}.
 The complement of the interior of $B$ is another stratified closed solid torus $B'$, and we extend the stratification of $B'$ by introducing discs that are bounded by the $(1,i)$--indexed strata in $B$, i.e.\ the boundary curves in $B$ corresponding to $S^1\times c_m$ where $c_m$ is a corner of $G_n$, $m=1\dots n$.
 Taking $S_B^3$ to be the stratified $S^3$ formed as the union of $B$ and $B'$, we form a stratified 2--handle structure as $C(S_B^3)$, the cone of $S_B^3$.
+We call $C(S_B^3)$ the \emph{stratified 2--handle induced by $B$}.
 
 \begin{figure}[h!]
 	\caption{
@@ -26,26 +23,88 @@ Taking $S_B^3$ to be the stratified $S^3$ formed as the union of $B$ and $B'$, w
 Attaching $C(S_B^3)$ to $W$ over $B\subset M_1$ alters the boundary of $W$ by replacing $B\subset M_1$ with $B'$.
 The full extent of this surgery can be detected by examining the edge and vertex blocks of the stratification that are incident to $B$.
 
-Edge blocks occur in three possible forms: regular edge blocks as $A\times\Ilit$, definite edge blocks as $D^2\times\Ilit$, and indefinite edge blocks as $P\times\Ilit$.
-Figure \ref{fig:edge-block-incidence} displays the possible edge block forms and indicates the boundary components of an edge block that are shared by face blocks.
-Figure \ref{fig:edge-face-shared-boundary}
+\begin{theorem}
+	Let $M$ be a smooth, closed, stratified, orientable 3--manifold with stratification induced by a stratifying map $f$, let $\mathfrak{B}$ be the set of face blocks of $M_1$, and let $W=M\times\Ilit$.
+	Consider the 4--manifold $W'$ constructed from $W$ as
+	\[
+		W' = W\cup\{C(S_B^3)\}_{B\in \mathfrak{B}} / \sim,
+	\]
+	where $\sim$ is defined by $b\sim \iota(b)$, $\iota$ the identity map $C(S_B^3)\supset B\overset{\iota}{\to} B\subset M_1$.
+	Then $M_1'=\pd W'\setminus M_0$ is a stratified 3--manifold with a decomposition into \emph{primed edge blocks} and \emph{primed vertex blocks} such that the decomposition is well-defined and the primed blocks have the following structure:
+	\begin{itemize}
+		\item \emph{primed edge block:}
+		Let $E'$ be a primed edge block.
+		Then $E'$ is identical to an edge block $E$ from Theorem \ref{thm:block-structure} with cylinders (copies of $D^2\times\Ilit$) glued over all annular boundary strata of $E$ (i.e. each closed strata $A$ of $E$ such that $A=E\cap B$ for some face block $B\in\mathfrak{B}$).
+		Thus $E'$ is a stratified 3--manifold homeomorphic to $S^2\times\Ilit$
+		
+		\item \emph{primed vertex block:}
+		Let $V$ be a primed vertex block.
+		Then $V$ is identical to a vertex block from Theorem \ref{thm:block-structure} with cylinders glued over each annular boundary stratum $A$ of $V$ such that $A=V\cap B$ for some face block $B\in\mathfrak{B}$.
+		Thus $V$ is a stratified 3--manifold whose boundary components are each homeomorphic to $S^2$.
+	\end{itemize}
+\end{theorem}
 
-\begin{figure}[h!]
-	\caption{
-		\textbf{Edge blocks.}
-		The possible edge blocks of $M_1$.
-		Annular boundary components that are incident with face blocks of $M_1$ have been indicated.
-		Gluing cylinders are over the indicated annular boundary components results in a stratified 3--manifold homeomorphic to $S^2\times\Ilit$.
-	}
-	\label{fig:edge-block-incidence}
-\end{figure}
+\begin{proof}
+	We split the proof of this theorem into three parts.
+	In the first two parts, we prove that we can find the prescribed primed edge and vertex block structures in $M_1'$.
+	In the third part, we show that these structures exhaust $M_1'$.
+	
+	\textbf{Part 1:}
+	Edge blocks occur in three possible forms: regular edge blocks as $A\times\Ilit$, definite edge blocks as $D^2\times\Ilit$, and indefinite edge blocks as $P\times\Ilit$.
+	Figure \ref{fig:edge-block-incidence} displays the possible edge block forms and indicates the boundary strata of an edge block that are shared by face blocks.
+	Figure \ref{fig:edge-face-shared-boundary} shows the annulus shared by a model edge block $E$ and $B$ in $M_1$ and its corresponding annulus shared by $B$ and $B'$ in $S_B^3$.
+	It also demonstrates how the attachment of $C(S_B^3)$ over $B$ introduces a well-defined cylinder from the stratification of $B'$ into $\pd W'$ by gluing it's annular boundary stratum over the annulus $E\cap B$.
 
-\begin{figure}[h!]
-	\caption{
-		\textbf{The effect of stratified 2--handle attachment on a model edge block.}
-		A model edge block $E$, a face block $B$, its complement $B'$, and the effect of attaching $C(S_B^3)$ to $W$ over $B$ on $E$.
-		The boundary component shared by $E$ and $B$ in $M_1$ is indicated, as is the corresponding boundary component of $B'$ in $S_B^3$.
-	}
-	\label{fig:edge-face-shared-boundary}
-\end{figure}
-
+	\begin{figure}[h!]
+		\caption{
+			\textbf{Edge blocks.}
+			The possible edge blocks of $M_1$.
+			Annular boundary strata that are incident with face blocks of $M_1$ have been indicated.
+			Gluing cylinders over the indicated annuli results in a stratified 3--manifold homeomorphic to $S^2\times\Ilit$.
+		}
+		\label{fig:edge-block-incidence}
+	\end{figure}
+	
+	\begin{figure}[h!]
+		\caption{
+			\textbf{The effect of stratified 2--handle attachment on a model edge block.}
+			A model edge block $E$, a face block $B$, its complement $B'$, and the effect of attaching $C(S_B^3)$ to $W$ over $B$ on $E$.
+			The boundary stratum shared by $E$ and $B$ in $M_1$ is indicated, as is the corresponding boundary stratum of $B'$ in $S_B^3$.
+		}
+		\label{fig:edge-face-shared-boundary}
+	\end{figure}
+	
+	\textbf{Part 2:}	
+	Vertex blocks occur in five possible forms: regular vertex blocks as $S^1$-bundles over the vertex region, indefinite and definite vertex blocks stratified-homeomorphic to those that appear in Figure \ref{fig:codim-1-blocks}, and interactive vertex blocks stratified-homeomorphic to those that appear in Figure \ref{fig:codim-2-blocks}.
+	Figure \ref{fig:vertex-block-incidence} displays the possible vertex block forms embedded in $S^3$ and indicates the boundary strata of a vertex block that are shared by face blocks.
+	Figure \ref{fig:vertex-face-shared-boundary} shows the annulus shared by a model vertex block $V$ and $B$ in $M_1$ and its corresponding annulus shared by $B$ and $B'$ in $S_B^3$.
+	It also demonstrates how the attachment of $C(S_B^3)$ over $B$ introduces a well-defined cylinder from the stratification of $B'$ into $\pd W'$ by gluing it's annular boundary stratum over the annulus $V\cap B$.
+	
+	\begin{figure}[h!]
+		\caption{
+			\textbf{Vertex blocks.}
+			The possible edge blocks of $M_1$.
+			Annular boundary strata that are incident with face blocks of $M_1$ have been indicated.
+			Gluing cylinders over the indicated annuli results in a stratified 3--manifold whose boundary is a collection of stratified 2--spheres.
+		}
+		\label{fig:vertex-block-incidence}
+	\end{figure}
+	
+	\begin{figure}[h!]
+		\caption{
+			\textbf{The effect of stratified 2--handle attachment on a model vertex block.}
+			A model edge block $V$, a face block $B$, its complement $B'$, and the effect of attaching $C(S_B^3)$ to $W$ over $B$ on $V$.
+			The boundary stratum shared by $V$ and $B$ in $M_1$ is indicated, as is the corresponding boundary stratum of $B'$ in $S_B^3$.
+		}
+		\label{fig:vertex-face-shared-boundary}
+	\end{figure}
+	
+	Comparing $\pd W$ to $\pd W'$, we find that for each face block $B$ of $M_1\subset \pd W$, $B$ has been removed and replaced by $B'$, which itself is a stratified closed solid torus whose meridians are longitudes of $B$.
+	$B'$ is stratified into a collection of cylinders that alternate 
+	
+	The result of attaching stratified 2--handles to $W$ over face blocks of $M_1$ is thus a 4--manifold $W'$ whose boundary 
+	
+	\textbf{Part 3:}
+	\emph{Insert part 3 here.}
+	
+\end{proof}
