@@ -2,8 +2,8 @@
 \chapter[Triangulated]{Algorithm for constructing a triangulated 4--manifold with prescribed 3--manifold boundary}
 \label{chapter:triangulation}
 
-The steps to construct a triangulated 4--manifold with prescribed 3--manifold boundary broadly follow the steps to construct a 4--manifold with prescribed smooth, orientable 3--manifold boundary.
-Let $N$ be a 3--manifold triangulation.
+The steps to construct a triangulated 4--manifold with prescribed closed, orientable 3--manifold boundary broadly follow the steps to construct a 4--manifold with prescribed smooth, orientable 3--manifold boundary.
+Let $N$ be a closed, orientable 3--manifold triangulation.
 Then the steps of construction are:
 \begin{enumerate}
 	\item Define a projection $f:N\to\RR$.
@@ -23,7 +23,11 @@ Each of these steps is made algorithmic, and these algorithms are chained in ser
 This algorithm has input a closed, orientable 3--manifold triangulation $N$ and output a 4--manifold triangulation $W$ whose sole boundary component is a triangulated 3--manifold that is equivalent to $N$ in the sense of triangulations.
 In this case, we find that $\pd W$ is a subdivision of $N$, and this subdivision is the subdivision induced by the projection $f$ in Step 1.
 
-Throughout this chapter $N$ refers to the initial input 3--manifold triangulation, $f$ to the projection defined in Section \ref{section:pl-projection}, $M$ is the subdivision of $N$ induced by $f$, $W$ is the 4--manifold $M\times\Ilit$, $W'$ is the result of attaching 2--handles to $W$, and $W''$ is the result of attaching 3--handles to $W'$.
+It is necessary that the input 3--manifold triangulation is \emph{edge-distinct}, i.e.\ if $u,v$ are vertices of $N$ then $\{u,v\}$ is the boundary of at most one edge.
+If this condition is not satisfied by a given $N$, then it is satisfied by the barycentric subdivision of $N$.
+We assume that $N$ is edge-distinct for the remainder of the chapter.
+
+Throughout this chapter $N$ refers to the initial input closed, orientable 3--manifold triangulation, $f$ refers to the subdividing map defined in Section \ref{section:pl-projection}, $M$ is the subdivision of $N$ induced by $f$, $W$ is the 4--manifold $M\times\Ilit$, $W'$ is the result of attaching 2--handles to $W$, and $W''$ is the result of attaching 3--handles to $W'$.
 
 \input{chapters/4/steps/pl-projection}
 

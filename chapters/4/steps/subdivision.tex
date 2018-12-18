@@ -12,9 +12,20 @@ The preimage of a face component defines substructures analogous to face blocks,
 Inside of an individual tetrahedron of $N$, edge and crossing preimages are well-defined, supplying a natural subdivision of $N$ into a cell complex.
 Then, the subdivision of a cell complex into a triangulation is well-defined.
 
-The algorithm presented in this section takes as input a closed, orientable 3--manifold triangulation $N$ and a projection $f:N\to\RR$ and produces as output a closed, orientable 3--manifold triangulation $M$ that is a subdivision of $N$.
-Furthermore,
-\begin{enumerate}
-	\item the 3--cells of $M$ are partitioned into subsets that serve the same purpose as the face blocks of Chapter ~\ref{chapter:smooth}: attaching regions for 2--handles,
-	\item the 2--cells of $M$ are partitioned into subsets that are either interior to face blocks, or subsets that serve the same purpose as the edge blocks of Chapter ~\ref{chapter:smooth}, i.e.\ buffers between face blocks.	
-\end{enumerate}
+The algorithm presented in this section takes as input a closed, orientable 3--manifold triangulation $N$ and a projection $f:N\to\RR$ and produces as output a closed, orientable 3--dimensional cell complex $M$ that is a subdivision of $N$.
+Furthermore, the 3--cells of $M$ are partitioned into subsets that serve the same purpose as the face blocks of Chapter \ref{chapter:smooth}: attaching regions for 2--handles.
+This 3--cell partitioning also induces a partition on the 2--cells of $M$ into subsets that are either interior to face blocks, or subsets that serve the same purpose as the edge blocks of Chapter ~\ref{chapter:smooth}, i.e.\ buffers between face blocks.
+
+\begin{algorithm}
+	\caption{Subdividing $N$}
+	\label{alg:subdividing-manifold}
+	\KwData{A closed, orientable 3--manifold triangulation $N$ with subdividing map $f:N\to\RR$}
+	\KwResult{A closed, orientable 3--dimensional cell complex $M$ that is a subdivision of $N$ whose 3--cells are partitioned into solid tori}
+	\Begin{
+		\ForEach{tetrahedron $\sigma$ of $N^3$}{
+			for each triangle t of $N$: cut sigma with t.
+			
+			if f(t1) crosses f(t2) then we get 1 cells from that corssing.
+		}
+	}
+\end{algorithm}

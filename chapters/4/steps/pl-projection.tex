@@ -20,6 +20,32 @@ Conditions 1 and 2 ensure that every simplex of $N$ is mapped to the plane in st
 This, along with conditions 3 and 4, allows us to use concepts and language from normal surface theory to describe the subdivision of $N$ in the next section.
 
 All conditions are satisfied by fixing an odd integer $k$ greater than or equal to the number of vertices in $N$, injecting the vertices of $N$ to the $k\nth$ complex roots of unity in the plane, then extending linearly over the skeletons of $N$.
-The first three conditions are clearly satisfied by this procedure, and the last is satisfied by applying the results in \cite{PoonRub98}.
+The first three conditions are clearly satisfied by this procedure, and the last is satisfied by the results in \cite{PoonRub98}.
 
-The algorithm presented in this section takes as input the triangulated 3--manifold $N$ and produces a projection $f:N\to\RR$ satisfying the subdivision conditions.
+Algorithm \ref{alg:subdividing-map} takes as input the closed, orientable 3--manifold triangulation $N$ and produces a subdividing map $f:N\to\RR$.
+
+
+\begin{algorithm}
+	\caption{Constructing a subdividing map $f:N\to\RR$}
+	\label{alg:subdividing-map}
+	\KwData{A closed, orientable 3--manifold triangulation $N$}
+	\KwResult{A subdividing map $f:N\to\RR$}
+	\Begin{
+		$k=$ the smallest odd number greater than or equal to $|N^0|$\;		
+		\ForEach{vertex $v_i$ in $N^0$, $i=1,\dots,|N^0|$}{
+			$f(v_i)=(\cos(\frac{2\pi i}{k}), \sin(\frac{2\pi i}{k}))$\;
+		}
+		\ForEach{$n$ in $\{1,2,3\}$}{
+			\ForEach{simplex $\sigma$ in $N^n$}{
+				by definition, $\sigma$ is the set of convex combinations of $\sigma^0$:\;
+				\Indp$\sigma^0=\{v_0,\dots, v_n\}$\;
+				$\sigma=\{x\;|\;x=\sum_{j=0}^n t_j v_j,\, \sum t_j = 1\}$\;
+				\Indm
+				
+				define $f$ on $x\in\sigma$ by requring linearity over simplices:\;
+				\Indp$f(x)=f(\sum_{j=0}^n t_j v_j)=\sum_{j=0}^n t_j f(v_j)$\;
+				\Indm
+			}
+		}
+	}
+\end{algorithm}
