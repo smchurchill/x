@@ -1,7 +1,22 @@
 \section{Induce subdivision}
 
 The goal of subdividing $N$ is to create and identify analogues to the face, edge, and vertex blocks of Chapter \ref{chapter:smooth} where we may iteratively attach 2--, 3--, then 4-- handles.
-We use a similar technique to that found in Chapter \ref{chapter:smooth}, first decomposing $\RR$ with the projection, then examining preimages to define our subdivision.
+We use a similar technique to that found in Chapter \ref{chapter:smooth}, iteratively subdividing the tetrahedra of $N$.
+Tetrahedron subdivisions are compatible, i.e.\ tetrahedron subdivisions fit together exactly as the undivided tetrahedra do inside of $N$.
+
+Let $\sigma$ be a tetrahedron of $N$.
+If $e$ is an edge of $N^1\setminus\sigma^1$ such that $f(e)\cap f(\sigma)$ is nonempty, then $f(e)\cap f(\sigma)$ is a line segment in $f(\sigma)$ away from any vertices or crossings of $f(\sigma)$.
+The possible configurations of these line segments are demonstrated in Figure \ref{fig:standard-position-intersection}.
+The preimages of these line segments inside of $\sigma$ are triangles and quads as seen in Figure \ref{fig:standard-position-intersection}.
+When a pair of these preimages intersect, the intersection is a line segment with endpoints interior to a pair of triangles of $\sigma^2$.
+
+\begin{figure}[h!]
+	\caption{
+		\textbf{A tetrahedron $\sigma$ in standard position, intersecting edges, and preimage triangles and quads.}
+	}
+	\label{fig:standard-position-intersection}
+\end{figure}
+
 
 Decomposition of $\RR$ is done through $f(N_1)$.
 A point in $f(N_1)$ is the image of either a vertex, exactly one edge, or exactly two edges (i.e.\ is an edge crossing), so we refer to these as the \emph{vertices}, \emph{edges}, and \emph{crossings} of the decomposition.
@@ -29,3 +44,6 @@ This 3--cell partitioning also induces a partition on the 2--cells of $M$ into s
 		}
 	}
 \end{algorithm}
+
+
+
