@@ -44,9 +44,7 @@ The interior triangles of $\sigma$ always intersect in a line segment with endpo
 \end{figure}
 
 The triangles, quads, and intersections discussed define a subdivision of $\sigma$ into a cell complex.
-%Each 3--cell of the subdivision is the preimage of a connected component of $f(\sigma)\setminus f(N^1)$, and every 2--cell that separates a pair of 3--cells inside of the subdivided $\sigma$ is the preimage of a line segment in the plane with endpoints a pair of edge crossings.
-Iterating this decomposition across all tetrahedra of $N$ yields a 3--dimensional cell complex $M$.
-Algorithm \ref{alg:subdividing-manifold} details the construction of $M$ from $f:N\to\RR$ in algorithmic form. 
+Iteration of this subdivision in Algorithm \ref{alg:subdividing-manifold} across all tetrahedra of $N$ yields a 3--dimensional cell complex $M$.
 
 \begin{algorithm}
 	\caption{Subdividing $N$}
@@ -55,34 +53,24 @@ Algorithm \ref{alg:subdividing-manifold} details the construction of $M$ from $f
 	\KwResult{A closed, orientable 3--dimensional cell complex $M$}
 	\Begin{
 		\ForEach{tetrahedron $\sigma$ of $N^3$}{
-			\ForEach{pair of distinct edges $e_i,e_j\in N^1$, $\pd e_i \cap\pd e_j=\emptyset$}{
-				\If{$f(e_i)\cap f(e_j)\neq\emptyset$ and $f(e_i)\cap f(e_j)\in f(\sigma)$}{
-					Add a 0--cell to $\sigma$ everywhere that $f\inv(f(e_i)\cap f(e_j)$ intersects the 2--skeleton of $\sigma$
+			\ForEach{edge $e$ of $N^1$}{
+				$\delta = $ the intersection of $\sigma$ with $f\inv\big(f(e)\cap f(\sigma)\big)$\;
+				\If{$\delta$ is a triangle or quad in $\sigma$}{
+					replace $\sigma$ with the 3--dimensional cell complex obtained as $\sigma$ subdivided by $\delta$
 				}
 			}
-			
-			
-			remove $\sigma^3$ from $\sigma$
-			\ForEach{interior edge $e$ of $\sigma^1$}{
-				Attach  by the interior triangle given by $f\inv (f(e))\cap\sigma$\;
-			}
-			\ForEach{edge $e$ of $N^1\setminus\sigma^1$}{
-				\If{$f(e)\cap f(\sigma)\neq \emptyset$}{
-					subdivide $N$ by the exterior triangle or quad given by
-					 $f\inv\big(f(e)\cap f(\sigma)\big)\cap\sigma$\;
-				}
-				
-			}
-			\ForEach{pair of edges}{foreach-block}
-			
-			
-			for each triangle t of $N$: cut sigma with t.
-			
-			if f(t1) crosses f(t2) then we get 1 cells from that corssing.
 		}
 	}
 \end{algorithm}
 
+We subdivided $M$ in to $N$ in order to identify analogues to the face, edge, and vertex blocks of Chapter \ref{chapter:smooth}.
+Face block analogues are the preimages of the components of $f(N)\setminus f(N_1)$, edge block analogues are the preimages of the line segments that comprise $f(e)$ for each $e\in N^1$, and vertex block analogues are the preimages of the vertices and edge crossings of $f$.
+These preimages exhaust the cells of $M$, providing a decomposition into subcomplexes.
+
+Let $R$ be a component of $f(N)\setminus f(N_1)$
+
+
+\newpage
 
 %Each 3--cell of $M$ maps through $f$ to a connected component of $f(N)\setminus f(N^1)$.
 Let $r$ be a connected component of $f(N)\setminus f(N^1)$.
