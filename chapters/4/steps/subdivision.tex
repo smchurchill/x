@@ -1,7 +1,8 @@
 \section{Induce subdivision}
+\label{section:pl-subdivide}
 
-The goal of subdividing $N$ is to create and identify analogues to the face, edge, and vertex blocks of Chapter \ref{chapter:smooth} where we may iteratively attach 2--, 3--, then 4-- handles.
-We use a similar technique to that found in Chapter \ref{chapter:smooth}, iteratively subdividing the tetrahedra of $N$.
+The goal of subdividing $N$ is to create and identify handle attachment sites analogous to the face, edge, and vertex blocks of Chapter \ref{chapter:smooth}.
+We use a similar technique to that found in Chapter \ref{chapter:smooth}, iteratively subdividing the tetrahedra of $N$ by certain preimages of $f$.
 Tetrahedron subdivisions are compatible, i.e.\ tetrahedron subdivisions fit together exactly as the undivided tetrahedra do inside of $N$.
 
 Let $\sigma$ be a tetrahedron of $N$.
@@ -22,10 +23,10 @@ When a pair of these preimages intersect, the intersection is a line segment wit
 
 There are two special preimage triangles in $\sigma$ that we refer to as \emph{interior triangles}.
 These occur as the preimages of the edges of $\sigma$ that map through $f$ across $f(\sigma)$ as in Figure \ref{fig:standard-position}, and we refer to these edges as \emph{interior edges}.
-The edge of an interior triangle consist of an edge $e$ of $\sigma$, along with a pair of edges that bisect the triangles of $\sigma$ that do not contain $e$ as an edge.
+The three edges of the interior triangle induced by $e$ are $e$ itself along with a pair of edges that bisect the triangles of $\sigma$ not containing $e$ as an edge.
 An interior triangle contains two of the vertices of $\sigma$, the endpoints of $e$, and the third vertex is located in the edge of $\sigma$ opposite $e$.
 Figure \ref{fig:standard-position-interior-exterior} shows one interior triangle along with its possible intersections with exterior triangles and quads.
-The interior triangles of $\sigma$ always intersect in a line segment with endpoints inside of the edges of $\sigma$ that induce interior triangles, shown in Figure \ref{fig:standard-position-interior-interior}
+The interior triangles of $\sigma$ always intersect in a line segment with endpoints inside of the interior edges of $\sigma$, shown in Figure \ref{fig:standard-position-interior-interior}
 
 \begin{figure}[h!]
 	\begin{subfigure}[t]{0.45\textwidth}
@@ -67,30 +68,30 @@ We subdivided $M$ in to $N$ in order to identify analogues to the face, edge, an
 Face block analogues are the preimages of the components of $f(N)\setminus f(N_1)$, edge block analogues are the preimages of the line segments that comprise $f(e)$ for each $e\in N^1$, and vertex block analogues are the preimages of the vertices and edge crossings of $f$.
 These preimages exhaust the cells of $M$, providing a decomposition into subcomplexes.
 
-Let $R$ be a component of $f(N)\setminus f(N_1)$
-
+The Cartesian product of a pair of cell complexes is again a cell complex, so we form the base 4--dimensional cell-complex to which we attach handles as $M\times\Ilit$.
+When all handles have been attached, we are left with a cell complex whose only boundary component is $M$, and the entire complex is subdivided into a triangulation.
 
 \newpage
 
 %Each 3--cell of $M$ maps through $f$ to a connected component of $f(N)\setminus f(N^1)$.
-Let $r$ be a connected component of $f(N)\setminus f(N^1)$.
-Then $f\inv(r)$ is a collection of 2-- and 3--cells in $M$ that form a  
-Their is a correspondence between the 3--cells of $M$ and the connected components of $f(N)\setminus f(N^1)$, and that correspondence 
-
-Decomposition of $\RR$ is done through $f(N_1)$.
-A point in $f(N_1)$ is the image of either a vertex, exactly one edge, or exactly two edges (i.e.\ is an edge crossing), so we refer to these as the \emph{vertices}, \emph{edges}, and \emph{crossings} of the decomposition.
-Because $f(N)\setminus f(N_1)$  is a disjoint collection of simply connected regions, we call the connected components of $f(N)\setminus f(N_1)$ the \emph{faces} of the decomposition.
-
-We construct our subdivision of $N$ using the decomposition component preimages.
-The preimage of a face component defines substructures analogous to face blocks, of edge components to edge blocks, and vertices and crossings to vertex blocks.
-Inside of an individual tetrahedron of $N$, edge and crossing preimages are well-defined, supplying a natural subdivision of $N$ into a cell complex.
-Then, the subdivision of a cell complex into a triangulation is well-defined.
-
-The algorithm presented in this section takes as input a closed, orientable 3--manifold triangulation $N$ and a projection $f:N\to\RR$ and produces as output a closed, orientable 3--dimensional cell complex $M$ that is a subdivision of $N$.
-Furthermore, the 3--cells of $M$ are partitioned into subsets that serve the same purpose as the face blocks of Chapter \ref{chapter:smooth}: attaching regions for 2--handles.
-This 3--cell partitioning also induces a partition on the 2--cells of $M$ into subsets that are either interior to face blocks, or subsets that serve the same purpose as the edge blocks of Chapter ~\ref{chapter:smooth}, i.e.\ buffers between face blocks.
-
-
-
-
-
+%Let $r$ be a connected component of $f(N)\setminus f(N^1)$.
+%Then $f\inv(r)$ is a collection of 2-- and 3--cells in $M$ that form a  
+%Their is a correspondence between the 3--cells of $M$ and the connected components of $f(N)\setminus f(N^1)$, and that correspondence 
+%
+%Decomposition of $\RR$ is done through $f(N_1)$.
+%A point in $f(N_1)$ is the image of either a vertex, exactly one edge, or exactly two edges (i.e.\ is an edge crossing), so we refer to these as the \emph{vertices}, \emph{edges}, and \emph{crossings} of the decomposition.
+%Because $f(N)\setminus f(N_1)$  is a disjoint collection of simply connected regions, we call the connected components of $f(N)\setminus f(N_1)$ the \emph{faces} of the decomposition.
+%
+%We construct our subdivision of $N$ using the decomposition component preimages.
+%The preimage of a face component defines substructures analogous to face blocks, of edge components to edge blocks, and vertices and crossings to vertex blocks.
+%Inside of an individual tetrahedron of $N$, edge and crossing preimages are well-defined, supplying a natural subdivision of $N$ into a cell complex.
+%Then, the subdivision of a cell complex into a triangulation is well-defined.
+%
+%The algorithm presented in this section takes as input a closed, orientable 3--manifold triangulation $N$ and a projection $f:N\to\RR$ and produces as output a closed, orientable 3--dimensional cell complex $M$ that is a subdivision of $N$.
+%Furthermore, the 3--cells of $M$ are partitioned into subsets that serve the same purpose as the face blocks of Chapter \ref{chapter:smooth}: attaching regions for 2--handles.
+%This 3--cell partitioning also induces a partition on the 2--cells of $M$ into subsets that are either interior to face blocks, or subsets that serve the same purpose as the edge blocks of Chapter ~\ref{chapter:smooth}, i.e.\ buffers between face blocks.
+%
+%
+%
+%
+%
