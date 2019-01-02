@@ -1,0 +1,27 @@
+\section{Attach Handles}
+\label{section:pl-handle}
+
+At this point in the chapter we have constructed a 4--dimensional cell complex with two boundary components, each identical to the 3--dimensional cell complex $M$ obtained in Section \ref{section:pl-subdivide}.
+Furthermore, the cells of $M$ are partitioned into subcomplexes analogous to the face, edge, and vertex blocks of Chapter \ref{chapter:smooth}.
+Explicit attachment sites are available for 2--handles, so our first step is construction of a 2--handle.
+
+\subsection{Attach 2--handles}
+\label{section:pl-2-handle}
+
+A face block analogue of $M$ is a 3--dimensional cell complex 
+
+
+The algorithm of this section takes as input a closed solid torus triangulation $T$ with a collection of triangulated parallel longitudes $\Gamma$ in its boundary (each $\gamma_i$ in $\Gamma$ is an explicit 0-framing for the 2--handle attachment) and produces as output a $D^4$ triangulation whose $S^3$ boundary triangulation has genus 1 Heegard splitting over $\pd T$, and $\gamma_i$ bounds a triangulated disk in $\pd D^4\setminus T$ for each $i$.
+Such a $D^4$ triangulation is taken as a 4--dimensional 2--handle and attached to $W$ over $T$.
+We then attach such a 2--handle over each closed solid torus in our partition of $M_0$.
+
+\subsection{Attach 3--handles}
+
+We now have a triangulated 4--manifold with boundary components $M_0$ and the result of surgery on $M_1$ induced by 2--handle attachment.
+This surgery had the following effect on $M_1$:
+\begin{enumerate}
+	\item Each solid torus in the partition of $M_1$ induced by the projection from Section ~\ref{section:pl-projection} is associated with a triangulated $D^4$ in Section ~\ref{section:pl-2-handle}.
+	\item For each (torus, 2--handle) pair $(T, H^2)$, the boundary of $H^2$ contains $T$ and $T^* = H^2\setminus \interior{T}$ is another solid torus whose boundary triangulation is identical to that of $T$.
+	\item Thus the effect of surgery on $M_1$ is of replacing each $T$ with $T^*$ over their shared boundary.
+\end{enumerate}
+
