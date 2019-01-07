@@ -10,24 +10,24 @@ Then the steps of construction are:
 	
 	\item Induce a subdivision of $N$ from $f$.  The result is a 3--dimensional cell complex $M$ that is equivalent to $N$.
 
-	\item Let $W=M\times\Ilit$ be a 4--dimensional cell complex with boundary components $M_0 = M\times\{0\}$ and $M_1 = M\times\{1\}$.
+	\item $M\times\Ilit$ is a 4--dimensional cell complex with boundary components $M_0 = M\times\{0\}$ and $M_1 = M\times\{1\}$.  Let $W$ be the triangulation obtained by inductively triangulating each cell of $M$.
 	
-	\item Attach 4--dimensional 2--handles to $W$ over its $M_1$ boundary as prescribed by the subdivision of $M$ from $f$.  Call the result $W'$ and call the boundary of $W'$ different from $M_0$ by $M_1'$.
+	\item Attach 4--dimensional 2--handles to $W$ over its $M_1$ boundary as prescribed by the subdivision of $M$ from $f$.  Call the result $W'$ and let $M_1'=\pd W' \setminus M_0$.
 	
-	\item Attach 4--dimensional 3--handles to $W'$ over $M_1'$ as prescribed by the subdivision induced by $f$ and the surgery induced by 2--handle attachment.  Call the result $W''$.
+	\item Form $W''$ by attaching 4--dimensional 3--handles to $W'$ over $M_1'$ as prescribed by the subdivision induced by $f$ and the surgery induced by 2--handle attachment.
 	
-	\item The boundary of $W''$ consists of $M_0$ and a collection of copies of $S^3$ that we now cone off.  The result is a 4--dimensional cell complex whose boundary is exactly $M_0$.
+	\item The boundary of $W''$ consists of $M_0$ and a collection of copies of $S^3$. Coning the 3--spheres results in a triangulated 4--manifold whose boundary is exactly $M_0$.
 \end{enumerate}
 
 Each of these steps is made algorithmic, and these algorithms are chained in series to form a single algorithm.
-This algorithm has input a closed, orientable 3--manifold triangulation $N$ and output a 4--manifold triangulation $W$ whose sole boundary component is a triangulated 3--manifold that is equivalent to $N$ in the sense of triangulations.
-In this case, we find that $\pd W$ is a subdivision of $N$, and this subdivision is the subdivision induced by the projection $f$ in Step 1.
+This algorithm has input a closed, orientable 3--manifold triangulation $N$ and output a 4--manifold triangulation $W'''$ whose sole boundary component is a triangulated 3--manifold that is equivalent to $N$ in the sense of triangulations.
+In this case, we find that $\pd W'''$ is a subdivision of $N$, and this subdivision is the subdivision induced by the projection $f$ in Step 1.
 
 It is necessary that the input 3--manifold triangulation is \emph{edge-distinct}, i.e.\ if $u,v$ are vertices of $N$ then $\{u,v\}$ is the boundary of at most one edge.
 If this condition is not satisfied by a given $N$, then it is satisfied by the barycentric subdivision of $N$.
 We assume that $N$ is edge-distinct for the remainder of the chapter.
 
-Throughout this chapter $N$ refers to the initial input closed, orientable 3--manifold triangulation, $f$ refers to the subdividing map defined in Section \ref{section:pl-projection}, $M$ is the subdivision of $N$ induced by $f$, $W$ is the 4--manifold $M\times\Ilit$, $W'$ is the result of attaching 2--handles to $W$, and $W''$ is the result of attaching 3--handles to $W'$.
+Throughout this chapter $N$ refers to the input closed, orientable 3--manifold triangulation, $f$ refers to the subdividing map defined in Section \ref{section:pl-projection}, $M$ is the subdivision of $N$ induced by $f$, $W$ is the 4--manifold triangulation obtained from $M\times\Ilit$, $W'$ is the result of attaching 2--handles to $W$, and $W''$ is the result of attaching 3--handles to $W'$.
 
 \input{chapters/4/steps/pl-projection}
 

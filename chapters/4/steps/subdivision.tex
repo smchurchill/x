@@ -6,7 +6,7 @@ We use a similar technique to that found in Chapter \ref{chapter:smooth}, iterat
 Tetrahedron subdivisions are compatible, i.e.\ tetrahedron subdivisions fit together exactly as the undivided tetrahedra do inside of $N$.
 
 Let $\sigma$ be a tetrahedron of $N$.
-If $e$ is an edge of $N^1\setminus\sigma^1$ such that $f(e)\cap f(\sigma)$ is nonempty, then $f(e)\cap f(\sigma)$ is a line segment in $f(\sigma)$ away from any vertices or crossings of $f(\sigma)$.
+If $e$ is an edge of $N^1\setminus\sigma^1$ such that $f(e)\cap f(\sigma)$ is nonempty, then $f(e)\cap f(\sigma)$ is a line segment in $f(\sigma)$ disjoint from any vertices or crossings of $f(\sigma)$.
 Figure \ref{fig:standard-position-intersection} demonstrates the possible configurations of these line segments, and shows that their preimages inside of $\sigma$ are triangles and quads.
 We refer to these preimages as \emph{exterior triangles} and \emph{exterior quads}.
 When a pair of these preimages intersect, the intersection is a line segment with endpoints interior to a pair of triangles of $\sigma^2$.
@@ -24,7 +24,7 @@ When a pair of these preimages intersect, the intersection is a line segment wit
 There are two special preimage triangles in $\sigma$ that we refer to as \emph{interior triangles}.
 These occur as the preimages of the edges of $\sigma$ that map through $f$ across $f(\sigma)$ as in Figure \ref{fig:standard-position}, and we refer to these edges as \emph{interior edges}.
 The three edges of the interior triangle induced by $e$ are $e$ itself along with a pair of edges that bisect the triangles of $\sigma$ not containing $e$ as an edge.
-An interior triangle contains two of the vertices of $\sigma$, the endpoints of $e$, and the third vertex is located in the edge of $\sigma$ opposite $e$.
+The three vertices of the interior triangle induced by $e$ are the two vertices of $\sigma$ that are the endpoints of $e$ along with a third vertex located in the edge of $\sigma$ opposite $e$.
 Figure \ref{fig:standard-position-interior-exterior} shows one interior triangle along with its possible intersections with exterior triangles and quads.
 The interior triangles of $\sigma$ always intersect in a line segment with endpoints inside of the interior edges of $\sigma$, shown in Figure \ref{fig:standard-position-interior-interior}
 
@@ -64,12 +64,13 @@ Iteration of this subdivision in Algorithm \ref{alg:subdividing-manifold} across
 	}
 \end{algorithm}
 
-We subdivided $M$ in to $N$ in order to identify analogues to the face, edge, and vertex blocks of Chapter \ref{chapter:smooth}.
-Face block analogues are the preimages of the components of $f(N)\setminus f(N_1)$, edge block analogues are the preimages of the line segments that comprise $f(e)$ for each $e\in N^1$, and vertex block analogues are the preimages of the vertices and edge crossings of $f$.
+We subdivided $M$ into $N$ in order to identify analogues to the face, edge, and vertex blocks of Chapter \ref{chapter:smooth}.
+Face block analogues are the preimages of the components of $f(N)\setminus f(N_1)$, edge block analogues are the preimages of the line segments that comprise $f(e)$ for each $e\in N^1$, and vertex block analogues are the preimages of the edge crossings and vertices of $f$.
 These preimages exhaust the cells of $M$, providing a decomposition into subcomplexes.
 
 The Cartesian product of a pair of cell complexes is again a cell complex, so we form the base 4--dimensional cell-complex to which we attach handles as $M\times\Ilit$.
-When all handles have been attached, we are left with a cell complex whose only boundary component is $M$, and the entire complex is subdivided into a triangulation.
+Every cell of $M\times\Ilit$ is homeomorphic to a disk, so we form a 4--manifold triangulation $W$ as a subdivision of $M\times\Ilit$.
+This triangulation is obtained by inductively subdividing each cell of $M\times\Ilit$ that is not a simplex.
 
 \newpage
 
