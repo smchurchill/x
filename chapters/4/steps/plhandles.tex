@@ -8,43 +8,40 @@ Explicit attachment sites are available for 2--handles, so our first step is con
 \subsection{Attach 2--handles}
 \label{section:pl-2-handle}
 
-The algorithm of this subsection takes as input a closed solid torus triangulation $T$ with a collection of triangulated parallel longitudes $\Gamma$ in its boundary (each $\gamma_i$ in $\Gamma$ is an explicit 0-framing for the 2--handle attachment) and produces as output a $D^4$ triangulation whose $S^3$ boundary triangulation has genus 1 Heegard splitting over $\pd T$, and $\gamma_i$ bounds a triangulated disk in $\pd D^4\setminus T$ for each $i$.
-Such a $D^4$ triangulation is taken as a 4--dimensional 2--handle and attached to $W$ over $T$.
+The algorithm of this subsection takes as input a pair $(T,\Gamma)$ where $T$ is a closed solid torus triangulation and $\Gamma$ is a collection of triangulated parallel longitudes in the boundary of $T$.
+The output is a 4--disk triangulation $H$ satisfying the following:
+\begin{enumerate}
+	\item $\pd H$ is a triangulated $S^3$ with a genus 1 Heegard splitting over $\pd T$, i.e.\ $\pd H\setminus \overset{\circ}{T}$ is a solid torus.
+	\item For each $\gamma_i$ in $\Gamma$, $\gamma_i$ bounds a triangulated disk in $\pd H$, i.e.\ each $\gamma_i$ is an explicit 0-framing for the 2--handle attachment.
+\end{enumerate}
+We take $H$ to be a 4--dimensional 2--handle and attach $H$ to $W$ over $T$.
 
 To produce pairs $(T,\Gamma)$ we first consider $M$, the subdivision of $N$ induced by the subdividing map $f:N\to\RR$.
 Let $B$ be a face block analogue of $M$.
-$B$ is a 3--dimensional subcomplex of $M$ whose interior projects over a connected component of $\RR\setminus f(N_1)$, as seen in Figure \ref{fig:regular-pl-blocks}.
+$B$ is a 3--dimensional subcomplex of $M$ whose interior $\interior{B}$ projects over a connected component of $\RR\setminus f(N_1)$.
+%, as seen in Figure \ref{fig:regular-pl-blocks}.
 Furthermore, $f(B)$ is an $n$--gon for some $n$ whose boundary is inside of $f(N_1)$.
-There are two possible structures that $B$ can possess.
 
-\begin{lem}
-	Let $B$ be a face block analogue in a 3--dimensional cell complex $M$ obtained as the subdivision of a closed, orientable 3--manifold triangulation $N$ induced by the subdividing map $f:N\to\RR$.
-	Then $B$ is homeomorphic to either a closed solid torus or a closed 3--disk.	
-\end{lem}
-
-\begin{proof}
-		
-\end{proof}
 
 %$B$ possesses the structure of a 3--disk if and only if for some edge $e$ of $B$
 %The preimages of the corners of $f(B)$ are parallel longitudes of $B$, and we form a triangulated 2--handle containing $B$ by demanding that these longitudes each bound disks in the 2--handle.
 
-\begin{figure}[h!]
-	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{Face block analogue: torus.} \label{fig:regular-pl-block-torus}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[t]{0.45\textwidth}
-		\caption{Face block analogue: disk.} \label{fig:regular-pl-block-disk}
-	\end{subfigure}
-	
-	\caption{
-		\textbf{A face block analogue $B$ of $M$ and its projection through $f$ in the plane.}
-		$f(B)$ is a convex $n$--gon in the plane for some $n$ that is homeomorphic to either a closed solid torus or a 3--disk.
-%		The preimages of the corners of $f(B)$ are parallel longitudes of $B$, and we form a triangulated 2--handle containing $B$ by demanding that these longitudes each bound disks in the 2--handle.
-	}
-	\label{fig:regular-pl-blocks}
-\end{figure}
+%\begin{figure}[h!]
+%	\begin{subfigure}[t]{0.45\textwidth}
+%		\caption{Face block analogue: torus.} \label{fig:regular-pl-block-torus}
+%	\end{subfigure}
+%	\hfill
+%	\begin{subfigure}[t]{0.45\textwidth}
+%		\caption{Face block analogue: disk.} \label{fig:regular-pl-block-disk}
+%	\end{subfigure}
+%	
+%	\caption{
+%		\textbf{A face block analogue $B$ of $M$ and its projection through $f$ in the plane.}
+%		$f(B)$ is a convex $n$--gon in the plane for some $n$ that is homeomorphic to either a closed solid torus or a 3--disk.
+%%		The preimages of the corners of $f(B)$ are parallel longitudes of $B$, and we form a triangulated 2--handle containing $B$ by demanding that these longitudes each bound disks in the 2--handle.
+%	}
+%	\label{fig:regular-pl-blocks}
+%\end{figure}
 
 
 \subsection{Attach 3--handles}
