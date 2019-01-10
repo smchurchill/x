@@ -5,8 +5,7 @@ The goal of subdividing $N$ is to create and identify handle attachment sites an
 We use a similar technique to that found in Chapter \ref{chapter:smooth}, iteratively subdividing the tetrahedra of $N$ by certain preimages of $f$.
 Tetrahedron subdivisions are compatible, i.e.\ tetrahedron subdivisions fit together exactly as the undivided tetrahedra do inside of $N$.
 
-Let $\sigma$ be a tetrahedron of $N$.
-If $e$ is an edge of $N^1\setminus\sigma^1$ such that $f(e)\cap f(\sigma)$ is nonempty, then $f(e)\cap f(\sigma)$ is a line segment in $f(\sigma)$ disjoint from any vertices or crossings of $f(\sigma)$.
+Let $\sigma$ be a tetrahedron of $N$ and let $s$ be a line segment in the plane such that $s\cap f(\sigma)$ is nonempty, the endpoints of $s$ are outside of $f(\sigma)$,  and $s\cap f(\sigma)$ is a line segment in $f(\sigma)$ disjoint from any vertices or crossings of $f(\sigma)$.
 Figure \ref{fig:standard-position-intersection} demonstrates the possible configurations of these line segments, and shows that their preimages inside of $\sigma$ are triangles and quads.
 We refer to these preimages as \emph{exterior triangles} and \emph{exterior quads}.
 When a pair of these preimages intersect, the intersection is a line segment with endpoints interior to a pair of triangles of $\sigma^2$.
@@ -21,8 +20,9 @@ When a pair of these preimages intersect, the intersection is a line segment wit
 	\label{fig:standard-position-intersection}
 \end{figure}
 
-There are two special preimage triangles in $\sigma$ that we refer to as \emph{interior triangles}.
-These occur as the preimages of the edges of $\sigma$ that map through $f$ across $f(\sigma)$ as in Figure \ref{fig:standard-position}, and we refer to these edges as \emph{interior edges}.
+For each $\sigma\in N^3$ and each edge $e$ of $N^1$ such that $e\notin\sigma^1$, $f(e)$ is a line segment in the plane that is either disjoint from $f(\sigma)$ or induces an exterior triangle or quad in $\sigma$.
+There are two edge of $\sigma$ whose preimages in $\sigma$ form \emph{interior triangles}.
+These are the preimages of the edges of $\sigma$ that map through $f$ across $f(\sigma)$ as in Figure \ref{fig:standard-position}, and we refer to these edges as \emph{interior edges}.
 The three edges of the interior triangle induced by $e$ are $e$ itself along with a pair of edges that bisect the triangles of $\sigma$ not containing $e$ as an edge.
 The three vertices of the interior triangle induced by $e$ are the two vertices of $\sigma$ that are the endpoints of $e$ along with a third vertex located in the edge of $\sigma$ opposite $e$.
 Figure \ref{fig:standard-position-interior-exterior} shows one interior triangle along with its possible intersections with exterior triangles and quads.
@@ -44,35 +44,65 @@ The interior triangles of $\sigma$ always intersect in a line segment with endpo
 	\label{fig:standard-position-interior}
 \end{figure}
 
-The triangles, quads, and intersections discussed define a subdivision of $\sigma$ into a cell complex.
+Recall that the goal of this subdivision is to identify analogues for the face, edge, and vertex blocks of Chapter \ref{chapter:smooth}.
+If we were to subdivide $N$ using the quads and triangles induced by the edges of $N$, such analogue blocks are ill-defined.
+We amend this by introducing a set of line segments that serve the same purpose as the sleeves of Section \ref{section:smooth-decompose}.
+
+For each edge $e$ of $N^1$, consider $e_\varepsilon^+ = e+\varepsilon_e e_\perp$ and $e_\varepsilon^- =e-\varepsilon_e e_\perp$, line segments in the plane that are parallel to $f(e)$ and located a small orthogonal distance away from $f(e)$.
+We demand that, for each $e\in N^1$, $\varepsilon_e$ is small enough that the rectangle $R_e$ in the plane defined by $e_\varepsilon^+$ and $e_\varepsilon^-$ does not fully contain $g_\varepsilon^\pm$ for any $g\in N^1$.
+This requirement also ensures that the only crossings of $f(N^1)$ contained in $R_e$ are crossings involving $e$.
+The segments $e_\varepsilon^\pm$ for each $e\in N^1$ are called \emph{sleeve segments}, and their preimages form exterior triangles and quads inside of the tetrahedra of $N$.
+See Figure \ref{fig:pl-sleeves} for an illustration of a pair of sleeve segments.
+
+\begin{figure}[h!]
+	\caption{
+		\textbf{A pair of sleeve segments in the plane.}
+		We show a pair of edges projections $f(e)$ and $f(g)$ in the plane, along with their associated sleeve segments.
+		Sleeve segments are necessary to ensure well-defined face, edge, and vertex block analogues in the subdivision of $N$.
+	}
+	\label{fig:pl-sleeves}
+\end{figure}
+
+Take $S$ to be the set of line segments in the plane that consists of $f(e)$ for each $e\in N^1$ along with the sleeve segments $e_\varepsilon^\pm$.
+For each tetrahedron $\sigma$ of $N$, the triangles, quads, and intersections of $f\inv S\cap\sigma$ define a subdivision of $\sigma$ into a cell complex.
 Iteration of this subdivision in Algorithm \ref{alg:subdividing-manifold} across all tetrahedra of $N$ yields a 3--dimensional cell complex $M$.
 
-\begin{algorithm}
+\begin{algorithm}[h!]
 	\caption{Subdividing $N$}
 	\label{alg:subdividing-manifold}
 	\KwData{A closed, orientable 3--manifold triangulation $N$ with subdividing map $f:N\to\RR$}
 	\KwResult{A closed, orientable 3--dimensional cell complex $M$}
 	\Begin{
+		$S = \{f(e)\;|\;e\in N^1\}\cup\{e_\varepsilon^\pm\;|\;e\in N^1\}$\;
 		\ForEach{tetrahedron $\sigma$ of $N^3$}{
-			\ForEach{edge $e$ of $N^1$}{
-				$\delta = $ the intersection of $\sigma$ with $f\inv\big(f(e)\cap f(\sigma)\big)$\;
-				\If{$\delta$ is a triangle or quad in $\sigma$}{
-					replace $\sigma$ with the 3--dimensional cell complex obtained as $\sigma$ subdivided by $\delta$
-				}
+			\ForEach{segment $s$ of $S$}{
+				$\delta = $ the intersection of $\sigma$ with $f\inv s$\;
+				replace $\sigma$ with the 3--dimensional cell complex obtained as $\sigma$ subdivided by $\delta$\;
 			}
 		}
 	}
 \end{algorithm}
 
-We subdivided $M$ into $N$ in order to identify analogues to the face, edge, and vertex blocks of Chapter \ref{chapter:smooth}.
-Face block analogues are the preimages of the components of $f(N)\setminus f(N_1)$, edge block analogues are the preimages of the line segments that comprise $f(e)$ for each $e\in N^1$, and vertex block analogues are the preimages of the edge crossings and vertices of $f$.
+We subdivided $N$ into $M$ in order to identify analogues to the face, edge, and vertex blocks of Chapter \ref{chapter:smooth}.
+The analogous blocks are defined exactly as they were in Chapter \ref{chapter:smooth} --- the sleeve segments subdivide the plane into regions homeomorphic to disks, those disks are classified by whether they contain a crossing of $f(N^1)$, intersect $f(N^1)$ but do not contain a crossing, or do not intersect $f(N^1)$ at all.
+The preimage of a region that contains a crossing is a \emph{vertex block analogue}, the preimage of a region that intersects $f(N^1)$ but does not contain a crossing is an \emph{edge block analogue}, and the preimage of a region that is disjoint from $f(N^1)$ is a \emph{face block analogue}.
+Figure \ref{fig:pl-regions} illustrates the regions in the plane that produce such blocks.
 These preimages exhaust the cells of $M$, providing a decomposition into subcomplexes.
+
+%Note: we 'need' to include S^1\in\RR to actually form the regions discussed, but that's pretty obvious so we won't address it unless requested.
+
+\begin{figure}[h!]
+	\caption{
+		\textbf{Regions in the plane that correspond to vertex, edge, and face block analogues.}
+		The sleeve segments provide the same functionality as the sleeves in Chapter \ref{chapter:smooth}, in that the preimages of the regions they form behave similarly to the vertex, edge, and face blocks defined in Chapter \ref{chapter:smooth}.
+	}
+	\label{fig:pl-regions}
+\end{figure}
 
 The Cartesian product of a pair of cell complexes is again a cell complex, so we form the base 4--dimensional cell-complex to which we attach handles as $M\times\Ilit$.
 Every cell of $M\times\Ilit$ is homeomorphic to a disk, so we form a 4--manifold triangulation $W$ as a subdivision of $M\times\Ilit$.
 This triangulation is obtained by inductively subdividing each cell of $M\times\Ilit$ that is not a simplex.
 
-\newpage
 
 %Each 3--cell of $M$ maps through $f$ to a connected component of $f(N)\setminus f(N^1)$.
 %Let $r$ be a connected component of $f(N)\setminus f(N^1)$.
