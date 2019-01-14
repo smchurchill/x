@@ -10,14 +10,23 @@ Then $W$ is a 4--manifold with boundary
 \[
 	\pd W = (M\times\{0\}) \cup (M\times\{1\}) = M_0 \cup M_1.
 \]
-A 4--manifold with only one boundary component, $M_0$, is obtained from $W$ by iteratively attaching 4--dimensional 2--, then 3--, then 4--handles to $W$ over the $M_1$ boundary component until that component has been ``filled in.''
+We construct a manifold with only one boundary component from $W$ by attaching 4--dimensional 2--, 3--, and 4--handles to $W$ over the part of its boundary away from $M_0$.
+We start by attaching 2--handles to $W$ over $M_1$ to produce a 4--manifold $W'$ with boundary $M_0 \sqcup M_1'$, where $M_1'=\pd W'\setminus M_0$ and is described via surgery on $M_1$.
+We then attach 3--handles to $W'$ over $M_1'$ to produce a 4--manifold $W''$ with boundary $M_0\sqcup M_1''$.
+As before, $M_1''=\pd W''\setminus M_1$ and $M_1''$ is described via surgery on $M_1'$.
+At this point in the construction, $M_1''$ is the disjoint union of a finite number of copies of $S^3$.
+We attach 4--handles to $W''$ over $M_1''$ to produce a 4--manifold whose boundary is exactly $M_0$.
 
 Instructions for handle attachment come from defining a projection $f:M_1\to \RR$ that induces a stratification of $M_1\subset\pd W$.
+
 %
 % indexed partially by dimension of the pure strata as a submanifold of $M_1$.
 % such that each closed stratum $M_1^3$ is a disjoint collection of open submanifolds of $M_1$.
 %
-We call a closed 3--dimensional stratum of $M_1$ a \emph{block}, and we impose conditions on $f$ to ensure that every block can be classified as one of the following:
+We call a closed 3--dimensional stratum of $M_1$ a \emph{block}, and we impose conditions on $f$ to ensure that every block can be classified up to \emph{stratified homeomorphism}.
+We say that $X,Y$ are \emph{stratified homeomorphic} if $X,Y$ are stratified spaces and there exists a homeomorphism $f:X\to Y$ such that $f$ and $f\inv$ are each stratified maps.
+The blocks of $M_1$ are described below:
+
 \begin{itemize}
 	\item \emph{face block}:
 		An attachment neighbourhood for a stratified 2--handle.

@@ -1,7 +1,7 @@
 \section{Stratifying $M$}
 
-Decomposing $\RR$ via the singular values of $f$ also induces a stratification of $M$
-by considering the fibers of $f$ above the of the decomposing regions.
+Stratifying $\RR$ via the singular values of $f$ also induces a stratification of $M$
+by considering the fibers of $f$ above the stratifying regions.
 The interiors of face regions have preimage through $f$ a disjoint collection of face blocks, the interiors of edge regions have preimage of edge blocks, and of vertex regions, vertex blocks.
 
 To understand the structure of face, edge, and vertex blocks we investigate the preimages of regular and singular values of $f$ in the plane.
@@ -22,11 +22,20 @@ When an arc contains exactly one singular value, exactly one fiber above that va
 A decomposing arc is diffeomorphic to the unit interval and $f$ is a smooth submersion between smooth manifolds, so a fiber above a decomposing arc is a surface with boundary the fibers above the arc endpoints.
 When the fiber is regular, the surface is diffeomorphic to an annulus $S^1\times\Ilit$.
 When the fiber is singular, the surface classification depends on the type of singularity.
-The following theorem and illustration (Theorem 3.15 from \cite{Saeki}) shows that the fiber containing the singularity either has the structure of a figure-of-eight (when the singularity is part of an indefinite fold) or is a single point (when the singularity is part of a definite fold), hence the singular fiber above the arc is diffeomorphic to either a 2--disk or a pair-of-pants.
+Theorem \ref{thm:saeki} and Figure \ref{fig:saeki-fibers} show that the fiber containing the singularity either has the structure of a figure-of-eight (when the singularity is part of an indefinite fold) or is a single point (when the singularity is part of a definite fold), hence the singular fiber above the arc is diffeomorphic to either a 2--disk or a pair-of-pants.
+
+Theorem \ref{thm:saeki} refers to a \emph{stable map}, and we'll denote the set of smooth stable maps $X\to Y$ by $Stab(X,Y)$.
+When $X$ is a smooth, closed, orientable 3--manifold and $Y$ is the plane, $Stab(X,Y)$ consists of all maps $X\to Y$ satisfying the first five stratification conditions.
+The last stratification condition is trivially satisfied because $X$ is closed, hence the set of stratifying maps $X\to Y$ is the subset of $Stab(X,Y)$ consisting of maps $f$ such that $f(S(f))$ is connected.
 
 \begin{theorem}[Adapted Theorem 3.15 in Saeki \cite{Saeki}]
+	\label{thm:saeki}
 	Let $f:M\to N$ be a proper $C^\infty$ stable map of an orientable 3--manifold $M$ into a surface $N$.
-	Then, every singular fiber of $f$ is equivalent to the disjoint union of one of the fibers as in Figure \ref{fig:saeki-fibers} and a finite number of copies of a fiber of the trivial unit circle bundle.
+	Then, every singular fiber of $f$ is equivalent to the disjoint union of:
+	\begin{enumerate}
+		\item one of the fibers in Figure \ref{fig:saeki-fibers}, and
+		\item the disjoint union of a finite number of copies of $S^1$.
+	\end{enumerate}
 	Furthermore, no two fibers in the list are equivalent to each other even after taking the union with regular circle components.		
 \end{theorem}
 
