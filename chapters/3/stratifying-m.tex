@@ -168,24 +168,26 @@ We now prove that the stratification conditions impose the desired structure on 
 	Figure \ref{fig:codim-2-interactive-fiber-1} demonstrates resolutions of the singular points of $B_x$ when $B_x$ has the first interactive singular fiber form presented in Figure \ref{fig:saeki-fibers}.
 	We first note that all of the displayed fibers have inherited an orientation from $M$.
 	This forces fiber resolution to be unambiguous, and allows us to identify fibers when forming the surface shown in Figure \ref{fig:codim-2-surface-1}.
-	
 	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=\textwidth]{figures/codim-2-interactive-fiber-1.png}
 		\caption{
 			\textbf{Resolutions of the singular points in the first interactive fiber.}
-			$B_x$ and its possible resolutions over nearby codimension 1 singular values and regular values.
+			The singular fiber inside of $B_x$ and its possible resolutions over nearby codimension 1 singular values and regular values.
 			The fibers inherit orientation from $M$, and this illustration is presented without loss of generality.
 		}
 		\label{fig:codim-2-interactive-fiber-1}
 	\end{figure}
-
 	We form the surface shown in Figure \ref{fig:codim-2-surface-1} by gluing together the surfaces that project over simple arcs transversing over the codimension 1 singular values.
 	Gluing is performed over the boundary circles of these surfaces, and is prescribed by the resolutions in Figure \ref{fig:codim-2-interactive-fiber-1}.
 	In the first case, we obtain four pair-of-pants surfaces and two cylinders, and these glue together to form a genus 3 surface.
 	
 	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=\textwidth]{figures/codim-2-surface-1.png}
 		\caption{
 			\textbf{Surface $\Sigma$ near the first interactive fiber that projects over $\pd\nu(x)$.}
-			The surface and $B_x$ are presented as embedded in $S^3$, where $H(B_x)$ is the genus-3 (3,1)--handlebody on the `outside' of $\Sigma$ in $S^3$.
+			The surface is and $B_x$ are presented as embedded in $S^3$, where $H(B_x)$ is the genus-3 (3,1)--handlebody on the `outside' of $\Sigma$ in $S^3$.
 		}
 		\label{fig:codim-2-surface-1}
 	\end{figure}
@@ -194,7 +196,7 @@ We now prove that the stratification conditions impose the desired structure on 
 	$H(B_x)$ projects through $f$ over $\bar\nu(x)$, a closed tubular neighbourhood of $x$, and $\Sigma$ projects over $\pd(\nu(x))$.
 	
 	Figure \ref{fig:codim-2-surface-1} presents $\Sigma$ and $B_x$ as objects embedded in $S^3$, where $\Sigma$ bounds genus-3 (3-1)--handlebodies on both sides.
-	We take the `outside' component of $S^3\setminus\Sigma$ (i.e. the component containing $B_x$) to be our model $H(B_x)$.
+	We take the `inside' component of $S^3\setminus\Sigma$ (i.e. the component containing $B_x$) to be our model $H(B_x)$.
 	
 	Outside of $\nu(x)$ we use the investigations from Parts 1 and 2 of this proof. The rest of $R$, $f\inv(R\setminus\nu(x))$, has the structure of a $\Sigma$-bundle over the interval, and the bundle extends $H(B_x)$ to the boundary of $R$, preserving the structure as a genus-3 (3,1)--handlebody.
 	We conclude that $B$ is homeomorphic to a genus-3 (3,1)--handlebody.
@@ -202,9 +204,11 @@ We now prove that the stratification conditions impose the desired structure on 
 	An identical argument is made when $B_x$ has the second interactive singular fiber form, using Figures \ref{fig:codim-2-interactive-fiber-2} and \ref{fig:codim-2-surface-2} in place of Figures \ref{fig:codim-2-interactive-fiber-1} and \ref{fig:codim-2-surface-1} respectively.
 	
 	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=\textwidth]{figures/codim-2-interactive-fiber-2.png}
 		\caption{
 			\textbf{Resolutions of the singular points in the second interactive fiber.}
-			$B_x$ and its possible resolutions over nearby codimension 1 singular values and regular values.
+			The singular fiber inside of $B_x$ and its possible resolutions over nearby codimension 1 singular values and regular values.
 			The fibers inherit orientation from $M$, and this illustration is presented without loss of generality.
 		}
 		\label{fig:codim-2-interactive-fiber-2}
@@ -213,7 +217,7 @@ We now prove that the stratification conditions impose the desired structure on 
 	\begin{figure}[h!]
 		\caption{
 			\textbf{Surface $\Sigma$ near the second interactive fiber that projects over $\pd\nu(x)$.}
-			The surface and $B_x$ are presented as embedded in $S^3$, where $H(B_x)$ is the genus-3 (3,1)--handlebody on the `outside' of $\Sigma$ in $S^3$.
+			The surface and $B_x$ are presented as embedded in $S^3$, where $H(B_x)$ is the genus-3 (3,1)--handlebody on the `inside' of $\Sigma$ in $S^3$.
 		}
 		\label{fig:codim-2-surface-2}
 	\end{figure}
@@ -243,8 +247,8 @@ We end this section with a lemma that guarantees the stratified 2--handle attach
 \end{lem}
 
 \begin{proof}
-	The fibers of the blocks are disjoint, so blocks of the same type may only intersect on their boundary.
-	A block's boundary is induced by the boundary of the region it projects over and regions of the same type intersect nowhere, hence their corresponding blocks intersect nowhere.	
+	The fibers above a given region are disjoint, so the blocks above that region are disjoint.
+	Regions of the same type are disjoint, hence blocks that are fibers above differing regions are also disjoint.
 \end{proof}
 
 
