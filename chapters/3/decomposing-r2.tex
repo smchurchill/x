@@ -61,18 +61,24 @@ The boundary of each face region is an alternating collection of arcs from edge 
 See Figure \ref{fig:face-sleeve} for a model fitting.
 
 With all of the regions defined, we can describe precisely how $f$ stratifies $\RR$.
+The stratification of $\RR$ is a stratification into subsets $R_{(i,j)}$ where $i,j$ are integers.
+Subset indexing is defined so that a subset $R_{(i,j)}$ is an $i$--dimensional submanifold of $\RR$, thus $R_{(i,j)}\nleq R_{(k,l)}$ if $i\nleq k$.
 The first collection of subsets used to filter $\RR$ are the corners of the octagonal vertex sleeves.
 We assign to these subsets the indices $(0,i)$ for $i=1\dots N_0$, where $N_0$ is the number of corners.
-Corners are disjoint, so $(0,i)\nleq (0,j)$ for any $i,j$.
+Corners are disjoint, hence $R_{(0,i)}$ is not contained in $R_{(0,j)}$ for any $i, j$, whence $(0,i)\nleq (0,j)$ for any $i,j$.
 
 The boundary arcs connect the $(0,i)$--level strata.
 Arcs are indexed by $(1,j)$ for $j=1\dots N_1$, where $N_1$ is the number of arcs.
-The boundary points of an arc are corners and are subsets of the filtration indexed by the $(0,i)$ indices, so $(0,i)\leq (1,j)$ if and only if $M_{(0,i)}$ is one of the boundary points of $M_{(1,j)}$.
+The boundary points of an arc are corners and are subsets of the filtration indexed by the $(0,i)$ indices, so $(0,i)\leq (1,j)$ if and only if $R_{(0,i)}$ is one of the boundary points of $R_{(1,j)}$.
 Arcs intersect only at their boundary points, so $(1,j)\nleq(1,k)$ for any $j,k$. 
 
 The regions themselves are indexed by $(2,k)$ for $k=1\dots N_2$, where $N_2$ is the number of regions.
 These indices work similarly to the arc indices.
-The boundary of a region consists of corners and arcs, so $(n,i)\leq(2,k)$ if and only if $M_{(n,i)}$ is contained in the boundary of $M_{(2,k)}$.
+The boundary of a region consists of corners and arcs, so $(n,i)\leq(2,k)$ if and only if $R_{(n,i)}$ is contained in the boundary of $R_{(2,k)}$.
+
+With $\RR$ stratified, we move onto a stratification of $M$.
+This stratification is induced by the preimages of the strata of $\RR$.
+
 %
 %Before moving on to the stratification of $M$ induced by our decomposition of $\RR$, we need to iron out the corner cases of when $X_f$ contains no codimension 2 singular values.
 %
