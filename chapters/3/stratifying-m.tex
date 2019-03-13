@@ -18,6 +18,7 @@ We take these circles as the first collection of subsets that filter $M$, and as
 These circles are disjoint, so $(1,i)\nleq (1,j)$ for any $i,j$.
 
 The arcs of the decomposition connect the vertices and either consist entirely of regular values or contain exactly one singular value.
+As pictured in Figure \ref{fig:face-sleeve}, an arc contains exactly one singular value precisely when it is the boundary a vertex region and an edge region.
 When an arc contains exactly one singular value, exactly one fiber above that value is a singular fiber, with the rest regular fibers.
 A decomposing arc is diffeomorphic to the unit interval and $f$ is a smooth submersion between smooth manifolds, so a fiber above a decomposing arc is a surface with boundary the fibers above the arc endpoints.
 When the fiber is regular, the surface is diffeomorphic to an annulus $S^1\times\Ilit$.
@@ -187,7 +188,7 @@ We now prove that the stratification conditions impose the desired structure on 
 		\includegraphics[width=\textwidth]{figures/codim-2-surface-1.png}
 		\caption{
 			\textbf{Surface $\Sigma$ near the first interactive fiber that projects over $\pd\nu(x)$.}
-			The surface is and $B_x$ are presented as embedded in $S^3$, where $H(B_x)$ is the genus-3 (3,1)--handlebody on the `inside' of $\Sigma$ in $S^3$.
+			The surface and $B_x$ are presented as embedded in $S^3$, where $H(B_x)$ is the genus-3 (3,1)--handlebody on the `inside' of $\Sigma$ in $S^3$.
 		}
 		\label{fig:codim-2-surface-1}
 	\end{figure}
@@ -215,7 +216,8 @@ We now prove that the stratification conditions impose the desired structure on 
 	\end{figure}
 
 	\begin{figure}[h!]
-%		HAND DRAW THIS FIGURE
+		\centering
+		\includegraphics[width=\textwidth]{figures/codim-2-surface-2.png}
 		\caption{
 			\textbf{Surface $\Sigma$ near the second interactive fiber that projects over $\pd\nu(x)$.}
 			The surface and $B_x$ are presented as embedded in $S^3$, where $H(B_x)$ is the genus-3 (3,1)--handlebody on the `outside' of $\Sigma$ in $S^3$.
@@ -223,19 +225,19 @@ We now prove that the stratification conditions impose the desired structure on 
 		\label{fig:codim-2-surface-2}
 	\end{figure}
 
-	Figure \ref{fig:codim-2-blocks} displays both possible interactive block structures, highlighting their boundaries.
+%	Figure \ref{fig:codim-2-blocks} displays both possible interactive block structures, highlighting their boundaries.
 %	The figure explains that the blocks are the handlebodies on the `outside' of the illustrated surfaces.
 %	This is specifically to aid visualization of the effects of 2-- and 3--handle attachment in the next two sections, as the result of these attachments will fill the genus-3 (3,1)--handlebody on the `inside' of the illustrated surface.
 
-	\begin{figure}[h!]
-%		HAND DRAW THIS FIGURE
-	\caption{
-		\textbf{Possible interactive block structures embedded in $S^3$.}
-		Interactive blocks with indicated boundary stratification induced by $f\inv \pd R$.
-		Blocks are embedded in $S^3$, outside of the illustrated stratified boundary surfaces.
-	}
-	\label{fig:codim-2-blocks}
-	\end{figure}
+%	\begin{figure}[h!]
+%%		HAND DRAW THIS FIGURE
+%	\caption{
+%		\textbf{Possible interactive block structures embedded in $S^3$.}
+%		Interactive blocks with indicated boundary stratification induced by $f\inv \pd R$.
+%		Blocks are embedded in $S^3$, outside of the illustrated stratified boundary surfaces.
+%	}
+%	\label{fig:codim-2-blocks}
+%	\end{figure}
 \end{proof}
 
 A smooth map $f$ satisfying the stratification conditions of Section \ref{section:smooth-projection} induces a decomposition on $\RR$ and a stratification of $M$.
