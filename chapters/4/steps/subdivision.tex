@@ -50,9 +50,9 @@ The interior triangles of $\sigma$ always intersect in a line segment with endpo
 	\label{fig:standard-position-interior-interior}
 \end{figure}
 
-Recall that the goal of this subdivision is to identify analogues for the face, edge, and vertex blocks of Chapter \ref{chapter:smooth}.
-If we were to subdivide $N$ using the quads and triangles induced by the edges of $N$, such analogue blocks are ill-defined.
-We amend this by introducing a set of line segments that serve the same purpose as the sleeves of Section \ref{section:smooth-decompose}.
+Recall that the goal of this subdivision is to identify combinatorial analogues for the face, edge, and vertex blocks of Chapter \ref{chapter:smooth}.
+If we were to subdivide $N$ using the quads and triangles induced by the edges of $N$, such blocks are ill-defined.
+We amend this by introducing a set of line segments analogous to the sleeves of Section \ref{section:smooth-decompose}.
 
 For each edge $e$ of $N^1$, consider $e_\varepsilon^+ = e+\varepsilon_e e_\perp$ and $e_\varepsilon^- =e-\varepsilon_e e_\perp$, line segments in the plane that are parallel to $f(e)$ and located a small orthogonal distance away from $f(e)$.
 We demand that, for each $e\in N^1$, $\varepsilon_e$ is small enough that the rectangle $R_e$ in the plane defined by $e_\varepsilon^+$ and $e_\varepsilon^-$ does not fully contain $g_\varepsilon^\pm$ for any $g\in N^1$.
@@ -73,6 +73,29 @@ Take $S$ to be the set of line segments in the plane that consists of $f(e)$ for
 For each tetrahedron $\sigma$ of $N$, the triangles, quads, and intersections of $f\inv S\cap\sigma$ define a subdivision of $\sigma$ into a cell complex.
 Iteration of this subdivision in Algorithm \ref{alg:subdividing-manifold} across all tetrahedra of $N$ yields a 3--dimensional cell complex $M$.
 
+We subdivided $N$ into $M$ in order to identify analogues to the face, edge, and vertex blocks of Chapter \ref{chapter:smooth}.
+The analogous blocks are defined exactly as they were in Chapter \ref{chapter:smooth} --- the sleeve segments subdivide the plane into regions homeomorphic to disks, those disks are classified by whether they contain a crossing of $f(N^1)$, intersect $f(N^1)$ but do not contain a crossing, or do not intersect $f(N^1)$ at all.
+The preimage of a region that contains a crossing is a \emph{combinatorial vertex block}, the preimage of a region that intersects $f(N^1)$ but does not contain a crossing is an \emph{combinatorial edge block}, and the preimage of a region that is disjoint from $f(N^1)$ is a \emph{combinatorial face block}.
+Symmetric names are used for the regions that these blocks project onto --- combinatorial face (resp. edge, vertex) blocks map through $f$ to \emph{combinatorial face (}resp. \emph{edge, vertex) regions}.
+Figure \ref{fig:pl-regions} illustrates the regions in the plane that produce such blocks.
+These preimages exhaust the cells of $M$, providing a decomposition into subcomplexes.
+This decomposition is not a partition --- some cells are assigned to more than one block.
+Such an assignment happens precisely when a cell is mapped through $f$ to the shared boundary of different combinatorial regions.
+
+%Note: we 'need' to include S^1\in\RR to actually form the regions discussed, but that's pretty obvious so we won't address it unless requested.
+
+\begin{figure}[h!]
+	\caption{
+		\textbf{Regions in the plane that correspond to combinatorial vertex, edge, and face block.}
+		The sleeve segments provide the same functionality as the sleeves in Chapter \ref{chapter:smooth}, in that the preimages of the regions they form behave similarly to the vertex, edge, and face blocks defined in Chapter \ref{chapter:smooth}.
+	}
+	\label{fig:pl-regions}
+\end{figure}
+
+The Cartesian product of a pair of cell complexes is again a cell complex, so we form the base 4--dimensional cell-complex to which we attach handles as $M\times\Ilit$.
+Every cell of $M\times\Ilit$ is homeomorphic to a disk, so we form a 4--manifold triangulation $W$ as a subdivision of $M\times\Ilit$.
+This triangulation is obtained by inductively subdividing each cell of $M\times\Ilit$ that is not a simplex.
+
 \begin{algorithm}[h!]
 	\caption{Subdividing $N$}
 	\label{alg:subdividing-manifold}
@@ -88,27 +111,6 @@ Iteration of this subdivision in Algorithm \ref{alg:subdividing-manifold} across
 		}
 	}
 \end{algorithm}
-
-We subdivided $N$ into $M$ in order to identify analogues to the face, edge, and vertex blocks of Chapter \ref{chapter:smooth}.
-The analogous blocks are defined exactly as they were in Chapter \ref{chapter:smooth} --- the sleeve segments subdivide the plane into regions homeomorphic to disks, those disks are classified by whether they contain a crossing of $f(N^1)$, intersect $f(N^1)$ but do not contain a crossing, or do not intersect $f(N^1)$ at all.
-The preimage of a region that contains a crossing is a \emph{vertex block analogue}, the preimage of a region that intersects $f(N^1)$ but does not contain a crossing is an \emph{edge block analogue}, and the preimage of a region that is disjoint from $f(N^1)$ is a \emph{face block analogue}.
-Figure \ref{fig:pl-regions} illustrates the regions in the plane that produce such blocks.
-These preimages exhaust the cells of $M$, providing a decomposition into subcomplexes.
-
-%Note: we 'need' to include S^1\in\RR to actually form the regions discussed, but that's pretty obvious so we won't address it unless requested.
-
-\begin{figure}[h!]
-	\caption{
-		\textbf{Regions in the plane that correspond to vertex, edge, and face block analogues.}
-		The sleeve segments provide the same functionality as the sleeves in Chapter \ref{chapter:smooth}, in that the preimages of the regions they form behave similarly to the vertex, edge, and face blocks defined in Chapter \ref{chapter:smooth}.
-	}
-	\label{fig:pl-regions}
-\end{figure}
-
-The Cartesian product of a pair of cell complexes is again a cell complex, so we form the base 4--dimensional cell-complex to which we attach handles as $M\times\Ilit$.
-Every cell of $M\times\Ilit$ is homeomorphic to a disk, so we form a 4--manifold triangulation $W$ as a subdivision of $M\times\Ilit$.
-This triangulation is obtained by inductively subdividing each cell of $M\times\Ilit$ that is not a simplex.
-
 
 %Each 3--cell of $M$ maps through $f$ to a connected component of $f(N)\setminus f(N^1)$.
 %Let $r$ be a connected component of $f(N)\setminus f(N^1)$.
