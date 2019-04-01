@@ -1,8 +1,8 @@
 \section{Attach Handles}
 \label{section:pl-handle}
 
-At this point in the chapter we have constructed a 4--manifold triangulation $W$ with two boundary components, each equivalent to the 3--dimensional cell complex $M$ obtained in Section \ref{section:pl-subdivide}.
-Furthermore, the cells of $M$ are partitioned into subcomplexes analogous to the face, edge, and vertex blocks of Chapter \ref{chapter:smooth}.
+At this point in the chapter we have constructed a 4--manifold triangulation $W$ with two boundary components, each equivalent via subdivision to the 3--dimensional cell complex $M$ obtained in Section \ref{section:pl-subdivide}.
+Furthermore, the simplices of $M$ is partitioned into subtriangulations analogous to the face, edge, and vertex blocks of Chapter \ref{chapter:smooth}.
 Explicit attachment sites are available for 2--handles, so our first step is construction of a 2--handle.
 
 \subsection{2--handles}
@@ -18,13 +18,13 @@ We take $H$ to be a 4--dimensional 2--handle and attach $H$ to $W$ over $T$.
 Constructing the 2--handle involves building a solid torus $T'$ that complements $T$, combining $T$ and $T'$ over their shared boundary to build a triangulated 3--sphere, then coning that 3--sphere into the 4--disk $H$.
 
 We find pairs $(T,\Gamma)$ inside of $M_1\subset\pd W$, the subdivision of $N$ induced by the subdividing map $f:N\to\RR$.
-Let $B$ be a face block analogue of $M_1$.
-$B$ is a 3--dimensional subcomplex of $M_1$ that forms a closed solid torus,
+Let $B$ be a combinatorial face block of $M_1$.
+$B$ is a 3--dimensional subtriangulation of $M_1$ that forms a closed solid torus,
 % Prove?
 and $B$ projects through $f$ over an $n$--gon for some $n$.
 Call the $n$ corners of $f(B)$ by $c_i$, $i=1\dots n$, and take $C=\{c_1\dots c_n\}$.
 Then the $f\inv c_i$ are disjoint parallel triangulated longitudes of $B$.
-We take $(B, f\inv C)$ as our pair $(T,\Gamma)$ for each face block analogue $B$ of $M$.
+We take $(B, f\inv C)$ as our pair $(T,\Gamma)$ for each combinatorial face block $B$ of $M$.
 
 For a closed solid torus $T$, we find a complementary torus $T'$, i.e.\ $\pd T=\pd T'$ as triangulations.
 We begin by investigating the boundary of $T$, setting $T_0'=\pd T$.
@@ -33,9 +33,26 @@ Call the result of these attachments $T_1'$.
 Adjacent longitudes $\gamma_i$ and $\gamma_j$ bound an annulus $A_{ij}$ in $T_1'$, and $D_i \cup A_{ij}\cup D_j$ is a triangulated 2--sphere that we cone into a 3--disk $D_{ij}$.
 For each $ij$, we attach the 3--disk $D_{ij}$ to $T_1'$ over $D_i\cup A_{ij}\cup D_j$ to form the closed solid torus $T'$.
 
-By construction, $\pd T'=\pd T$, so $T$ and $T'$ are complementary. Moreover, $\gamma_i\subset \pd T'$ explicitly bounds a triangulated disk in $T'$, thus the $\gamma_i$ are meridians of $T'$.
-We glue $T$ to $T'$ over their shared boundary to form a 3--sphere, then cone that 3--sphere into a 4--disk with an explicit 2--handle structure.
-We find a 2--handle for each face block analogue by iterating Algorithm \ref{alg:build-2-handle} over the face block analogues of $M_1\subset \pd W$, and attach these 2--handles to $W$, forming $W'$.
+By construction $\pd T'=\pd T$, hence the tori are complementary.
+%, so $T$ and $T'$ are complementary.
+The longitudinal curves of $T$, the $\gamma_i$, bound triangulated disks in $T'$ thus
+% the $\gamma_i$
+are meridians of $T'$.
+Hence, gluing $T$ and $T'$ over their shared boundary forms a 3--sphere.
+We then cone that 3--sphere to produce a 4--disk with an explicit 2--handle structure.
+This is the basic structure of Algorithm \ref{alg:build-2-handle}, which we iterate over the combinatorial face blocks of $M_1\subset \pd W$.
+Finally, we attach these 2--handles to $W$, forming $W'$.
+
+Let $\mathfrak{B}$ be the collection of combinatorial face blocks of $M_1\subset \pd W$.
+Iterating Algorithm \ref{alg:build-2-handle} over $\mathfrak{B}$ yields a collection of 4--dimensional 2--handles $\{H_B^2\}_{B\in\mathfrak{B}}$.
+The combinatorial face blocks in $\mathfrak{B}$ are disjoint by construction, so we attach our 2--handles in any order.
+We form the 4--manifold triangulation $W'$ from $W$ as
+\[
+	W' = W\cup\{H_B^2\}_{B\in\mathfrak{B}}/\sim,
+\]
+where $\sim$ is defined by $b\sim \iota(b)$, $\iota$ the identity map $H_B^2\supset B\overset{\iota}{\to} B\subset M_1$.
+
+
 
 \begin{algorithm}[h!]
 	\caption{Constructing a 2--handle}
@@ -49,33 +66,24 @@ We find a 2--handle for each face block analogue by iterating Algorithm \ref{alg
 			$D_i=C(\gamma_i)$, the cone of $\gamma_i$\;
 		}
 		$T_1'=T_0'\cup\{D_i\}/\sim$, where $\sim$ is induced by 
-%		defined by $g\sim \iota (g)$, $\iota$ 
-%		the identity
-%		 map
-			$\pd D_i=\gamma_i\overset{\iota}{\to}\gamma_i\subset T_0'$\;
+		%		defined by $g\sim \iota (g)$, $\iota$ 
+		%		the identity
+		%		 map
+		$\pd D_i=\gamma_i\overset{\iota}{\to}\gamma_i\subset T_0'$\;
 		\ForEach{adjacent pair of longitudes $\gamma_i,\gamma_j$ from $\Gamma$}{
 			$A_{ij}=$ the annulus in $T_1'$ bounded by $\gamma_i$ and $\gamma_j$\;
 			$S_{ij}=$ the triangulated 2--sphere in $T_1'$ bounded by $D_i\cup A_{ij}\cup D_j$\;
 			$D_{ij}=C(S_{ij})$, the cone of $S_{ij}$\;
 		}
 		$T'=T_1'\cup\{D_{ij}/\sim\}$, where $\sim$ is induced by
-%		 defined by $s\sim\iota(s)$, $\iota$ the identity map
-			$\pd D_{ij}=S_{ij}\overset{\iota}{\to}S_{ij}\subset T_1'$\;
+		%		 defined by $s\sim\iota(s)$, $\iota$ the identity map
+		$\pd D_{ij}=S_{ij}\overset{\iota}{\to}S_{ij}\subset T_1'$\;
 		$S_T^3=T\cup T'/\sim$, where $\sim$ is induced by
-%		 defined by $t\sim\iota(t)$, $\iota$ the identity map 
-		 	$\pd T\overset{\iota}{\to}\pd T'$\;
+		%		 defined by $t\sim\iota(t)$, $\iota$ the identity map 
+		$\pd T\overset{\iota}{\to}\pd T'$\;
 		$H_T^2=C(S_T^3)$, the cone of $S_T^3$\;
 	}
 \end{algorithm}
-
-Let $\mathfrak{B}$ be the collection of face block analogues of $M_1\subset \pd W$.
-Iterating Algorithm \ref{alg:build-2-handle} over $\mathfrak{B}$ yields a collection of 4--dimensional 2--handles $\{H_B^2\}_{B\in\mathfrak{B}}$.
-The face block analogues in $\mathfrak{B}$ are disjoint by construction, so we attach our 2--handles in any order.
-We form the 4--manifold triangulation $W'$ from $W$ as
-\[
-	W' = W\cup\{H_B^2\}_{B\in\mathfrak{B}}/\sim,
-\]
-where $\sim$ is defined by $b\sim \iota(b)$, $\iota$ the identity map $H_B^2\supset B\overset{\iota}{\to} B\subset M_1$.
 
 %$B$ possesses the structure of a 3--disk if and only if for some edge $e$ of $B$
 %The preimages of the corners of $f(B)$ are parallel longitudes of $B$, and we form a triangulated 2--handle containing $B$ by demanding that these longitudes each bound disks in the 2--handle.
@@ -100,11 +108,38 @@ where $\sim$ is defined by $b\sim \iota(b)$, $\iota$ the identity map $H_B^2\sup
 
 \subsection{3--handles}
 
-We now have a triangulated 4--manifold with boundary components $M_0$ and the result of surgery on $M_1$ induced by 2--handle attachment.
-This surgery had the following effect on $M_1$:
-\begin{enumerate}
-	\item Each solid torus in the partition of $M_1$ induced by the projection from Section ~\ref{section:pl-projection} is associated with a triangulated $D^4$ in Section ~\ref{section:pl-2-handle}.
-	\item For each (torus, 2--handle) pair $(T, H^2)$, the boundary of $H^2$ contains $T$ and $T^* = H^2\setminus \interior{T}$ is another solid torus whose boundary triangulation is identical to that of $T$.
-	\item Thus the effect of surgery on $M_1$ is of replacing each $T$ with $T^*$ over their shared boundary.
-\end{enumerate}
+The manifold $W'$ is formed by attaching triangulated 2-handles to $W$ over the combinatorial face block of $M_1$.
+The boundary of $W'$ consists of $M_0 \cup M_1'$, where $M_1'=\pd W'\setminus M_0$ and is related to $M_1$ by replacing each combinatorial face block of $M_1$ with its complement.
+Similar to what we saw in Chapter \ref{chapter:smooth}, $M_1'$ can be decomposed into subtriangulations, each of which is a primed combinatorial edge or vertex block.
+
+Primed combinatorial edge blocks are the result of filling annular boundary components of combinatorial edge blocks in with cylinders.
+Let $E$ be a combinatorial edge block.
+Then $E$ is the product of an orientable surface with an interval, i.e. $E=\Sigma\times\Ilit$, where $\Sigma$ is $S^2$ minus some number of disjoint open balls.
+The cylinders that are filled in due to 2--handle attachment are precisely the annuli $\pd\Sigma\times\Ilit$, hence the resulting primed combinatorial edge block is a triangulated $S^2\times\Ilit$.
+
+Assigning cylinders from combinatorial face block complements to primed combinatorial edge blocks exhausts the new cells of $M_1'$ introduced by 2--handle attachment.
+We thus set the primed combinatorial vertex blocks of $M_1'$ to be exactly the original combinatorial vertex blocks of $M_1$.
+
+We now construct 3--handles to attach over our primed combinatorial edge blocks.
+Let $E'$ be such a block.
+Then $\pd E'$ is a disjoint pair of triangulated 2--spheres.
+We form a 4--disk containing $E'$ in its boundary by a double coning method on $E'$: we first cone the spherical boundary components of $E'$ to form a pair of triangulated 3--disks, glue these 3--disks to $E'$ to form a 3--sphere, then cone the 3--sphere to obtain a 4--disk.
+This idea is identical to that found in Section \ref{subsec:smooth-3handles} and is further formalized in Algorithm \ref{alg:build-3-handle}.
+
+\begin{algorithm}[h!]
+	\caption{Constructing a 3--handle}
+	\label{alg:build-3-handle}
+	\KwData{$E'$, a triangulated $S^2\times\Ilit$}
+	\KwResult{A 4--disk $H_{E'}^3$ such that $\pd H_{E'}^3$ is a triangulated 3--sphere containing $E'$ as a subtriangulation}
+	\Begin{
+		First, we construct a pair of 3--disks to attach over $\pd E'$\;
+		\ForEach{boundary sphere $S^2_i\in \pd E'$}{
+			$C(S^2_i)=$ the cone of $S^2_i$\;
+		}
+		$S^3_{E'}=E'\cup {C(S^2_i)}_i$
+		The result is a 3--sphere, $S^3_{E'}$\;
+		Then $H_{E'}^3=C(S^3_{E'})$\;
+	}
+\end{algorithm}
+
 
