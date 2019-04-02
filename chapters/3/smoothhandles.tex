@@ -48,12 +48,12 @@ The full extent of this surgery can be detected by examining the edge and vertex
 	\begin{itemize}
 		\item \emph{primed edge block:}
 		Let $E'$ be a primed edge block.
-		Then $E'$ is identical to an edge block $E$ from Theorem \ref{thm:block-structure} with cylinders (copies of $D^2\times\Ilit$) glued over all annular boundary strata of $E$ (i.e. each closed strata $A$ of $E$ such that $A=E\cap B$ for some face block $B\in\mathfrak{B}$).
+		Then $E'$ is identical to an edge block $E$ from Theorem \ref{thm:block-structure} with (3,2)--handles (i.e. cylinders: $D^2\times\Ilit$) attached over all annular boundary strata of $E$ (i.e. each closed strata $A$ of $E$ such that $A=E\cap B$ for some face block $B\in\mathfrak{B}$).
 		Thus $E'$ is a stratified 3--manifold homeomorphic to $S^2\times\Ilit$
 		
 		\item \emph{primed vertex block:}
 		Let $V$ be a primed vertex block.
-		Then $V$ is identical to a vertex block from Theorem \ref{thm:block-structure} with cylinders glued over each annular boundary stratum $A$ of $V$ such that $A=V\cap B$ for some face block $B\in\mathfrak{B}$.
+		Then $V$ is identical to a vertex block from Theorem \ref{thm:block-structure} with (3,2)--handles attached over each annular boundary stratum $A$ of $V$ such that $A=V\cap B$ for some face block $B\in\mathfrak{B}$.
 		Thus $V$ is a stratified 3--manifold whose boundary components are each homeomorphic to $S^2$.
 	\end{itemize}
 \end{theorem}
@@ -74,20 +74,20 @@ The full extent of this surgery can be detected by examining the edge and vertex
 			\textbf{Edge blocks.}
 			The possible edge blocks of $M_1$.
 			Annular boundary strata that are incident with face blocks of $M_1$ are indicated in purple.
-			For each block, gluing cylinders over the indicated annuli results in a stratified 3--manifold homeomorphic to $S^2\times\Ilit$.
+			For each block, attaching (3,2)--handles over the indicated annuli results in a stratified 3--manifold homeomorphic to $S^2\times\Ilit$.
 		}
 		\label{fig:edge-block-incidence}
 	\end{figure}
 	
 	Figure \ref{fig:edge-face-shared-boundary} shows the annulus shared by a model edge block $E$ and $B$ in $M_1$ and its corresponding annulus shared by $B$ and $B'$ in $S_B^3$.
-	The figure demonstrates that the effect on $\pd W$ near $E$ of attaching $C(S_B^3)$ over $B$ is equivalent to gluing a well-defined cylinder from the stratification of $B'$  to $E$ over the annular boundary stratum $E\cap B$.
-	Attachment of all 2--handles applies this cylinder gluing to all annular strata of $E$, and applying this cylinder gluing to all annular strata of $E$ results in a 3--manifold homeomorphic to $S^2\times\Ilit$.
+	The figure demonstrates that the effect on $\pd W$ near $E$ of attaching the (4,2)--handle $C(S_B^3)$ over $B$ is equivalent to attaching a (3,2)--handle from the stratification of $B'$ to $E$ over the annular boundary stratum $E\cap B$.
+	Attachment of all (4,2)--handles to $W$ applies this (3,2)--handle attachment to all annular strata of $E$, and attaching these (3,2)--handles to all annular strata of $E$ results in a 3--manifold homeomorphic to $S^2\times\Ilit$.
 
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=\textwidth]{figures/edge-face-shared-boundary.png}
 		\caption{
-			\textbf{The effect of stratified 2--handle attachment on a model edge block.}
+			\textbf{The effect of stratified (4,2)--handle attachment on a model edge block.}
 			A model edge block $E$, a face block complement $B'$, and the result of attaching $C(S_B^3)$ to $W$ over $B$ on $E$.
 			The boundary stratum shared by $E$ and $B$ in $M_1$ is indicated in green, as is the corresponding boundary stratum of $B'$ in $S_B^3$.
 		}
@@ -109,8 +109,8 @@ The full extent of this surgery can be detected by examining the edge and vertex
 	\end{figure}	
 	
 	Figure \ref{fig:vertex-face-shared-boundary} displays a model vertex block $V$ embedded on the `outside' of its stratified genus-3 boundary surface in $S^3$, and shows the annulus shared by $V$ and $B$ in $M_1$ and its corresponding annulus shared by $B$ and $B'$ in $S_B^3$.
-	The figure demonstrates that the effect on $\pd W$ near $V$ of attaching $C(S_B^3)$ over $B$ is equivalent to gluing a well-defined cylinder from the stratification of $B'$  to $V$ over the annular boundary stratum $V\cap B$.
-	Attachment of all 2--handles applies this cylinder gluing to all annular strata of $V$ shared by face blocks, and applying this cylinder gluing to such annular strata of $V$ results in a 3--manifold whose boundary components are each homeomorphic to $S^2$.
+	The figure demonstrates that the effect on $\pd W$ near $V$ of attaching the (4,2)--handle $C(S_B^3)$ over $B$ is equivalent to attaching a (3,2)--handle from the stratification of $B'$  to $V$ over the annular boundary stratum $V\cap B$.
+	Attachment of all (4,2)--handles applies this (3,2)--handle attachment to all annular strata of $V$ shared by face blocks, and attaching these (3,2)--handles to all such annular strata of $V$ results in a 3--manifold whose boundary components are each homeomorphic to $S^2$.
 	Moreover, these boundary components are exactly the boundary components of the primed edge blocks.
 	
 	\begin{figure}[h!]
@@ -127,8 +127,8 @@ The full extent of this surgery can be detected by examining the edge and vertex
 	The $(3,k)$ strata of $B'$ are each cylinders whose annular boundary strata corresponds directly to a longitudinal boundary annulus of $B$.
 	Such an annulus projects through $f$ to a boundary edge of a face region.
 	Face regions do not intersect even on their boundary, so all of the annular boundary strata of $B$, hence $B'$, are shared only by edge and vertex blocks.
-	Thus each cylinder of $B'$ has been assigned to a primed edge or vertex block.
-	Because 2--handle attachment altered $M_1$ to $M_1'$ only by replacing each face block $B$ with its complementary $B'$, the primed blocks must exhaust $M_1'$.
+	Thus each cylinder of $B'$ has been assigned as a (3,2)--handle attachment to a primed edge or vertex block.
+	Because (4,2)--handle attachment altered $M_1$ to $M_1'$ only by replacing each face block $B$ with its complementary $B'$, the primed blocks must exhaust $M_1'$.
 \end{proof}
 
 Decomposing $M_1'$ into primed edge and vertex blocks provides us with stratified 3--handle attachment neighbourhoods.

@@ -63,21 +63,21 @@ where $\sim$ is defined by $b\sim \iota(b)$, $\iota$ the identity map $H_B^2\sup
 		First, we construct a complementary solid torus $T'$ with $\pd T=\pd T'$\;
 		$T_0'=\pd T$\;
 		\ForEach{$\gamma_i\in \Gamma$}{
-			$D_i=C(\gamma_i)$, the cone of $\gamma_i$\;
+			$D^2_i=C(\gamma_i)$, the cone of $\gamma_i$\;
 		}
-		$T_1'=T_0'\cup\{D_i\}/\sim$, where $\sim$ is induced by 
+		$T_1'=T_0'\cup\{D^2_i\}/\sim$, where $\sim$ is induced by 
 		%		defined by $g\sim \iota (g)$, $\iota$ 
 		%		the identity
 		%		 map
-		$\pd D_i=\gamma_i\overset{\iota}{\to}\gamma_i\subset T_0'$\;
+		$\pd D^2_i=\gamma_i\overset{\iota}{\to}\gamma_i\subset T_0'$\;
 		\ForEach{adjacent pair of longitudes $\gamma_i,\gamma_j$ from $\Gamma$}{
 			$A_{ij}=$ the annulus in $T_1'$ bounded by $\gamma_i$ and $\gamma_j$\;
-			$S_{ij}=$ the triangulated 2--sphere in $T_1'$ bounded by $D_i\cup A_{ij}\cup D_j$\;
-			$D_{ij}=C(S_{ij})$, the cone of $S_{ij}$\;
+			$S^2_{ij}=$ the triangulated 2--sphere in $T_1'$ bounded by $D^2_i\cup A_{ij}\cup D^2_j$\;
+			$D^3_{ij}=C(S^2_{ij})$, the cone of $S^2_{ij}$\;
 		}
-		$T'=T_1'\cup\{D_{ij}/\sim\}$, where $\sim$ is induced by
+		$T'=T_1'\cup\{D^3_{ij}/\sim\}$, where $\sim$ is induced by
 		%		 defined by $s\sim\iota(s)$, $\iota$ the identity map
-		$\pd D_{ij}=S_{ij}\overset{\iota}{\to}S_{ij}\subset T_1'$\;
+		$\pd D^3_{ij}=S^2_{ij}\overset{\iota}{\to}S^2_{ij}\subset T_1'$\;
 		$S_T^3=T\cup T'/\sim$, where $\sim$ is induced by
 		%		 defined by $t\sim\iota(t)$, $\iota$ the identity map 
 		$\pd T\overset{\iota}{\to}\pd T'$\;
@@ -108,11 +108,12 @@ where $\sim$ is defined by $b\sim \iota(b)$, $\iota$ the identity map $H_B^2\sup
 
 \subsection{3--handles}
 
-The manifold $W'$ is formed by attaching triangulated 2-handles to $W$ over the combinatorial face block of $M_1$.
+The manifold $W'$ is formed by attaching triangulated 2--handles to $W$ over the combinatorial face blocks of $M_1$.
 The boundary of $W'$ consists of $M_0 \cup M_1'$, where $M_1'=\pd W'\setminus M_0$ and is related to $M_1$ by replacing each combinatorial face block of $M_1$ with its complement.
 Similar to what we saw in Chapter \ref{chapter:smooth}, $M_1'$ can be decomposed into subtriangulations, each of which is a primed combinatorial edge or vertex block.
 
 Primed combinatorial edge blocks are the result of filling annular boundary components of combinatorial edge blocks in with cylinders.
+These cylinders are the triangulated 3-disks $D^3_{ij}$ formed on Line 11 of Algorithm \ref{alg:build-2-handle}.
 Let $E$ be a combinatorial edge block.
 Then $E$ is the product of an orientable surface with an interval, i.e. $E=\Sigma\times\Ilit$, where $\Sigma$ is $S^2$ minus some number of disjoint open balls.
 The cylinders that are filled in due to 2--handle attachment are precisely the annuli $\pd\Sigma\times\Ilit$, hence the resulting primed combinatorial edge block is a triangulated $S^2\times\Ilit$.
@@ -124,7 +125,17 @@ We now construct 3--handles to attach over our primed combinatorial edge blocks.
 Let $E'$ be such a block.
 Then $\pd E'$ is a disjoint pair of triangulated 2--spheres.
 We form a 4--disk containing $E'$ in its boundary by a double coning method on $E'$: we first cone the spherical boundary components of $E'$ to form a pair of triangulated 3--disks, glue these 3--disks to $E'$ to form a 3--sphere, then cone the 3--sphere to obtain a 4--disk.
-This idea is identical to that found in Section \ref{subsec:smooth-3handles} and is further formalized in Algorithm \ref{alg:build-3-handle}.
+This idea is identical to that found in Section \ref{subsec:smooth-3handles} and is formalized in Algorithm \ref{alg:build-3-handle}.
+Finally, 3--handles built using Algorithm \ref{alg:build-3-handle} to $W'$ over primed combinatorial edge blocks.
+
+Let $\mathfrak{E}'$ be the collection of primed combinatorial edge blocks of $M_1'\subset \pd W'$.
+Iterating Algorithm \ref{alg:build-3-handle} over $\mathfrak{E}$ yields a collection of 4--dimensional 3--handles $\{H_{E'}^3\}_{E'\in\mathfrak{E}'}$.
+The primed combinatorial edge blocks in $\mathfrak{E}'$ intersect only in discs that are also shared by primed combinatorial vertex blocks and these disks are invariant under the 3--handle attachment so we attach our 3--handles in any order.
+We form the 4--manifold triangulation $W''$ from $W'$ as
+\[
+W'' = W'\cup\{H_{E'}^3\}_{E\in\mathfrak{E}'}/\sim,
+\]
+where $\sim$ is defined by $e\sim \iota(e)$, $\iota$ the identity map $H_{E'}^3\supset E'\overset{\iota}{\to} E'\subset M_1'$.
 
 \begin{algorithm}[h!]
 	\caption{Constructing a 3--handle}
@@ -132,14 +143,20 @@ This idea is identical to that found in Section \ref{subsec:smooth-3handles} and
 	\KwData{$E'$, a triangulated $S^2\times\Ilit$}
 	\KwResult{A 4--disk $H_{E'}^3$ such that $\pd H_{E'}^3$ is a triangulated 3--sphere containing $E'$ as a subtriangulation}
 	\Begin{
-		First, we construct a pair of 3--disks to attach over $\pd E'$\;
+		First, we attach 3--disks to $E'$ over its two 2-sphere boundary components\;
 		\ForEach{boundary sphere $S^2_i\in \pd E'$}{
 			$C(S^2_i)=$ the cone of $S^2_i$\;
+			Attach $C(S^2_i)$ to $\pd E'$ over $S^2_i\in \pd E'$\;
 		}
-		$S^3_{E'}=E'\cup {C(S^2_i)}_i$
-		The result is a 3--sphere, $S^3_{E'}$\;
+		The result of the above attachments is the 3--sphere $S^3_{E'}$\;
 		Then $H_{E'}^3=C(S^3_{E'})$\;
 	}
 \end{algorithm}
+
+\subsection{4--handles}
+
+The manifold $W''$ is formed by attaching triangulated 3--handles to $W'$ over the primed combinatorial edge blocks of $M_1'$.
+The boundary of $W''$ consists of $M_0 \cup M_1''$, where $M_1''=\pd W''\setminus M_0$ and is related to $M_1'$ by replacing each primed combinatorial edge block of $M_1'$ with the pair of triangulated 3--disks $C(S^2_i)$ for $i=1,2$ formed on Line 4 of Algorithm \ref{alg:build-3-handle}.
+Similar to what we saw in Chapter \ref{chapter:smooth}, $M_1''$ is a disjoint collection of subtriangulations, our double primed combinatorial vertex blocks, and every double primed combinatorial vertex block is a 3--sphere by construction.
 
 
