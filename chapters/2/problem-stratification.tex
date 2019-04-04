@@ -1,0 +1,34 @@
+\section{Stratification}
+\label{section:problem-stratification}
+
+We define stratification using the definition from \cite{wein94}.
+
+\begin{defn}[Stratification]
+	$X$ is a \emph{filtered space} on a finite partially ordered indexing set $S$ if 
+	\begin{enumerate}
+		\item there is a closed subset $X_s$ for each $s\in S$,
+		\item $s\leq s'$ implies that $X_s\subset X_{s'}$, and
+		\item the inclusions $X_s \into X_{s'}$ satisfy the homotopy lifting property.
+	\end{enumerate}
+	The $X_s$ are the \emph{closed strata} of $X$, and the differences
+	$$X^s = X_s\setminus \bigcup_{r < s} X_r$$
+	are \emph{pure strata}.
+	
+	
+	A \emph{filtered map} between spaces filtered over the same indexing set is a continuous function $f:X\to Y$ such that $f(X_s)\subset Y_s$, and such a map is \emph{stratified} if $f(X^s) \subset Y^s$.
+	This leads to definitions of stratified homotopy, therefore stratified homotopy equivalence.
+\end{defn}
+
+Immediate examples of stratified manifolds are manifolds with boundary and manifolds with corners.
+Many handles (e.g.\ $\Ilit\times\Ilit$) are manifolds with corners, and the result of a smooth handle attachment is a manifold with corners at $\varphi(\pd D^\lambda \times \pd D^\mu)$.
+Hence both are stratified manifolds.
+
+A \emph{stratified handle attachment} is a handle attachment where the handle, the manifold to which we attach the handle, and the attaching map are each stratified.
+The main distinctions between stratified handle attachment and handle attachment are:
+\begin{enumerate}
+	\item the handle is necessarily stratified, though the stratification is not necessarily induced by the corners that occur in the standard formation of a handle as the Cartesian product of a pair of disks,
+	
+	\item the manifold to which we attach the handle is necessarily stratified, and
+	
+	\item the attaching map ensures that there is a coherent identification between the strata of the handle and the strata of the manifold (i.e.\ the stratification of the resulting attachment space is well-defined).
+\end{enumerate}
