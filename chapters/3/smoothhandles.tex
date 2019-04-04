@@ -52,9 +52,9 @@ The full extent of this surgery can be detected by examining the edge and vertex
 		Thus $E'$ is a stratified 3--manifold homeomorphic to $S^2\times\Ilit$
 		
 		\item \emph{primed vertex block:}
-		Let $V$ be a primed vertex block.
-		Then $V$ is identical to a vertex block from Theorem \ref{thm:block-structure} with (3,2)--handles attached over each annular boundary stratum $A$ of $V$ such that $A=V\cap B$ for some face block $B\in\mathfrak{B}$.
-		Thus $V$ is a stratified 3--manifold whose boundary components are each homeomorphic to $S^2$.
+		Let $V'$ be a primed vertex block.
+		Then $V'$ is identical to a vertex block $V$ from Theorem \ref{thm:block-structure} with (3,2)--handles attached over each annular boundary stratum $A$ of $V$ such that $A=V\cap B$ for some face block $B\in\mathfrak{B}$.
+		Furthermore, we show that $V'$ is a stratified (3,2)--handlebody.
 	\end{itemize}
 \end{theorem}
 
@@ -79,7 +79,7 @@ The full extent of this surgery can be detected by examining the edge and vertex
 		\label{fig:edge-block-incidence}
 	\end{figure}
 	
-	Figure \ref{fig:edge-face-shared-boundary} shows the annulus shared by a model edge block $E$ and $B$ in $M_1$ and its corresponding annulus shared by $B$ and $B'$ in $S_B^3$.
+	Figure \ref{fig:edge-face-shared-boundary} shows the annulus shared by an example edge block $E$ and $B$ in $M_1$ and its corresponding annulus shared by $B$ and $B'$ in $S_B^3$.
 	The figure demonstrates that the effect on $\pd W$ near $E$ of attaching the (4,2)--handle $C(S_B^3)$ over $B$ is equivalent to attaching a (3,2)--handle from the stratification of $B'$ to $E$ over the annular boundary stratum $E\cap B$.
 	Attachment of all (4,2)--handles to $W$ applies this (3,2)--handle attachment to all annular strata of $E$, and attaching these (3,2)--handles to all annular strata of $E$ results in a 3--manifold homeomorphic to $S^2\times\Ilit$.
 
@@ -87,47 +87,88 @@ The full extent of this surgery can be detected by examining the edge and vertex
 		\centering
 		\includegraphics[width=\textwidth]{figures/edge-face-shared-boundary.png}
 		\caption{
-			\textbf{The effect of stratified (4,2)--handle attachment on a model edge block.}
-			A model edge block $E$, a face block complement $B'$, and the result of attaching $C(S_B^3)$ to $W$ over $B$ on $E$.
+			\textbf{The effect of stratified (4,2)--handle attachment on an example edge block.}
+			An edge block $E$, a face block complement $B'$, and the result of attaching $C(S_B^3)$ to $W$ over $B$ on $E$.
 			The boundary stratum shared by $E$ and $B$ in $M_1$ is indicated in green, as is the corresponding boundary stratum of $B'$ in $S_B^3$.
 		}
 		\label{fig:edge-face-shared-boundary}
 	\end{figure}
 	
-	\textbf{Part 2:}	
-	Vertex blocks occur in five possible forms: regular vertex blocks as $S^1$-bundles over the vertex region, indefinite and definite vertex blocks stratified-homeomorphic to those that appear in Figure \ref{fig:codim-1-blocks}, and interactive vertex blocks stratified-homeomorphic to the handlebodies in Figures \ref{fig:codim-2-surface-1} and \ref{fig:codim-2-surface-2}.
-	Figure \ref{fig:vertex-block-incidence} displays the possible vertex block forms embedded in $S^3$ and indicates the boundary strata of a vertex block that are shared by face blocks.
+	\textbf{Part 2:}
+	Let $V$ be a vertex block.
+	The possible forms of $V$ are depicted in Figures REF.
+	Annular regions in $\pd V$ are highlighted where $\pd V$ intersects the boundary of a face block. 
+	In each case, $V$ is a (3,1)--handlebody of some genus $g$.
+	$V$ and $V'$ are related via (3,2)--handle attachments to $V$ induced by the (4,2)--handle attachments, and the attaching regions for these (3,2)--handle attachments are exactly the highlighted annuli in Figures REF.
+	Attachment regions are disjoint, so the resulting manifold is independent of the order in which we attach handles.
 	
 	\begin{figure}[h!]
+		\centering
+%		\includegraphics[width=\textwidth]{figures/vertex-block-incidence.png}
 		\caption{
 			\textbf{Vertex blocks.}
 			The possible vertex blocks of $M_1$.
-			Annular boundary strata that are incident with face blocks of $M_1$ have been indicated.
-			Gluing cylinders over the indicated annuli results in a stratified 3--manifold whose boundary is a collection of stratified 2--spheres.
+			Annular boundary strata that are incident with face blocks of $M_1$ are indicated in color and correspond to the shared vertex-face region boundary edge.
+			For each block, attaching (3,2)--handles over the indicated annuli results in a (3,2)--handlebody.
 		}
 		\label{fig:vertex-block-incidence}
-	\end{figure}	
-	
-	Figure \ref{fig:vertex-face-shared-boundary} displays a model vertex block $V$ embedded on the `outside' of its stratified genus-3 boundary surface in $S^3$, and shows the annulus shared by $V$ and $B$ in $M_1$ and its corresponding annulus shared by $B$ and $B'$ in $S_B^3$.
-	The figure demonstrates that the effect on $\pd W$ near $V$ of attaching the (4,2)--handle $C(S_B^3)$ over $B$ is equivalent to attaching a (3,2)--handle from the stratification of $B'$  to $V$ over the annular boundary stratum $V\cap B$.
-	Attachment of all (4,2)--handles applies this (3,2)--handle attachment to all annular strata of $V$ shared by face blocks, and attaching these (3,2)--handles to all such annular strata of $V$ results in a 3--manifold whose boundary components are each homeomorphic to $S^2$.
-	Moreover, these boundary components are exactly the boundary components of the primed edge blocks.
-	
-	\begin{figure}[h!]
-		\caption{
-			\textbf{The effect of stratified 2--handle attachment on a model vertex block.}
-			A model edge block $V$, a face block $B$, its complement $B'$, and the effect of attaching $C(S_B^3)$ to $W$ over $B$ on $V$.
-			The boundary stratum shared by $V$ and $B$ in $M_1$ is indicated, as is the corresponding boundary stratum of $B'$ in $S_B^3$.
-		}
-		\label{fig:vertex-face-shared-boundary}
 	\end{figure}
+	
+	Proving that $V'$ is a (3,2)--handlebody with $g=0$ is trivial, because $V$ is then a 3--ball.
+	This means $V'$ is a 3--ball with a collection of (3,2)--handles attached to it, i.e.\ a (3,2)--handlebody.
+	The case of $g>0$ is nontrivial.
+	
+	Suppose $V$ is a (3,1)--handlebody of genus $g>0$.
+	To prove that $V'$ is a (3,2)--handlebody, we show that each (3,2)--handle attachment either cancels a (3,1)--handle of $V$ or adds a new $S^2$ boundary components away from the (3,1)--handles of $V$.
+	When $g>0$, $V$ is a regular neighbourhood of either a circle or one of the nontrivial singular fibers in Figure \ref{fig:saeki-fibers}.
+	Each case provides a (3,1)--handlebody structure for $V$.
+	Because we are interested in handle cancellation, the salient point is the identification of (3,1)--handle belt spheres.
+	When $V$ is a solid torus, i.e.\ a regular vertex block, we set any meridinal circle of $V$ as a belt sphere for the (3,1)--handle.
+	Otherwise, give the fiber the graph structure implied by Figure \ref{fig:saeki-fibers}.
+	Then $V$ has a (3,1)--handlebody structure with one or two (3,0)--handles, depending on the number of singular points in the fiber (i.e.\ vertices in the graph structure), and a (3,1)--handle for each edge.
+	
+	With a (3,1)--handlebody structure in place, let $\alpha_i$ be the belt spheres of each (3,1)--handle.
+	Let $\beta_i$ be the attaching spheres of the (3,2)--handles that we attach to $V$ in the construction of $V'$.
+	For each $i,j$, $|\alpha_i\cap\beta_j|=$ 0 or 1 by construction.
+	Moreover, for every $i$, $\alpha_i\cap\{\beta_j\}_j>0$ and $\beta_i\cap\{\alpha_j\}_j>0$.
+	In words, every (3,1)--handle belt sphere transversely intersects at least one of the (3,2)--handle attaching spheres, every (3,2)--handle attaching sphere intersects at least one of the (3,1)--handle belt spheres, and all intersection numbers are at most 1.
+	Thus every (3,2)--handle attached to $V$ either cancels out an existing (3,1)--handle or adds a new 2--sphere boundary component.
+	Thus $V'$ is a (3,2)--handlebody, and $V''$ is a 3--sphere.
+
+%	Figure \ref{fig:vertex-block-incidence} displays the possible vertex block forms embedded in $S^3$ and indicates the boundary strata of a vertex block that are shared by face blocks.
+%	
+%	\begin{figure}[h!]
+%		\caption{
+%			\textbf{Vertex blocks.}
+%			The possible vertex blocks of $M_1$.
+%			Annular boundary strata that are incident with face blocks of $M_1$ have been indicated.
+%			Gluing cylinders over the indicated annuli results in a stratified (3,2)--handlebody.
+%		}
+%		\label{fig:vertex-block-incidence}
+%	\end{figure}	
+	
+%	Figure \ref{fig:vertex-face-shared-boundary} displays a model vertex block $V$ embedded on the `outside' of its stratified genus-3 boundary surface in $S^3$, and shows the annulus shared by $V$ and $B$ in $M_1$ and its corresponding annulus shared by $B$ and $B'$ in $S_B^3$.
+%	The figure demonstrates that the effect on $\pd W$ near $V$ of attaching the (4,2)--handle $C(S_B^3)$ over $B$ is equivalent to attaching a (3,2)--handle from the stratification of $B'$  to $V$ over the annular boundary stratum $V\cap B$.
+%	Attachment of all (4,2)--handles applies this (3,2)--handle attachment to all annular strata of $V$ shared by face blocks, and attaching these (3,2)--handles to all such annular strata of $V$ results in a 3--manifold whose boundary components are each homeomorphic to $S^2$.
+%	Moreover, these boundary components are exactly the boundary components of the primed edge blocks.
+	
+
+	
+%	\begin{figure}[h!]
+%		\caption{
+%			\textbf{The effect of stratified 2--handle attachment on a model vertex block.}
+%			A model edge block $V$, a face block $B$, its complement $B'$, and the effect of attaching $C(S_B^3)$ to $W$ over $B$ on $V$.
+%			The boundary stratum shared by $V$ and $B$ in $M_1$ is indicated, as is the corresponding boundary stratum of $B'$ in $S_B^3$.
+%		}
+%		\label{fig:vertex-face-shared-boundary}
+%	\end{figure}
 
 	\textbf{Part 3:}
 	To show that primed edge and vertex blocks exhaust $M_1'$, we show that the entirety of $B'$ has been apportioned among the primed blocks for each $B'$.
 	The $(3,k)$ strata of $B'$ are each cylinders whose annular boundary strata corresponds directly to a longitudinal boundary annulus of $B$.
 	Such an annulus projects through $f$ to a boundary edge of a face region.
 	Face regions do not intersect even on their boundary, so all of the annular boundary strata of $B$, hence $B'$, are shared only by edge and vertex blocks.
-	Thus each cylinder of $B'$ has been assigned as a (3,2)--handle attachment to a primed edge or vertex block.
+	Thus each cylinder of $B'$ has been assigned as a (3,2)--handle and attached to a primed edge or vertex block.
 	Because (4,2)--handle attachment altered $M_1$ to $M_1'$ only by replacing each face block $B$ with its complementary $B'$, the primed blocks must exhaust $M_1'$.
 \end{proof}
 
@@ -163,26 +204,9 @@ The full extent of this surgery can be detected by examining the primed vertex b
 \begin{proof}
 	We need only prove that each connected component of $M_1''$ is homeomorphic to $S^3$.
 	Let $V'$ be a primed vertex block.
-	We know that $V'$ is a 3--manifold and $\pd V'$ consists of a disjoint collection of 2--spheres.
-	If we can prove that $V'$ is a (3,2)--handlebody, then the attachment of (3,3)--handles to $V'$ over each 2--sphere boundary component results in a 3--sphere, proving the theorem.
-	 
-	Let $V$ be a vertex block.
-	We know that $V$ is a (3,1)--handlebody of genus $g$.
-	$V$ and $V'$ are related via (3,2)--handle attachments to $V$ induced by the (4,2)--handle attachments performed in Theorem \ref{thm:primed-block-structure}.
-	The (3,2)--handle attachments are made over disjoint neighbourhoods, so the resulting manifold is independent of the order in which we attach handles.
+	We know that $V'$ is a (3,2)--handlebody and $\pd V'$ is a disjoint collection of 2--spheres.
+	Thus the attachment of (3,3)--handles to $V'$ over each 2--sphere boundary component results in a 3--sphere, proving the theorem.
 	
-	If $g=0$, then $V$ is a 3--ball, hence $V'$ is a 3--ball with a collection of (3,2)--handles attached to it, i.e.\ a (3,2)--handlebody.
-	If $g>0$, then $V$ is a regular neighbourhood of either a circle or one of the nontrivial singular fibers in Figure \ref{fig:saeki-fibers}.
-	Giving the fiber the natural graph structure implied by the figure, there is a clear handlebody structure.
-	The base manifold is either a single (3,0)--handle, in the case of a single critical point, or a pair of disconnected (3,0)--handles in the case of two.
-	Each edge then corresponds to a (3,1)--handle.
-	Let $\alpha_i$ be the meridians found as the belt spheres of each (3,1)--handle.
-	Let $\beta_i$ be the attaching spheres of the (3,2)--handles we attach to $V$ in the construction of $V'$.
-	For each $i,j$, $|\alpha_i\cap\beta_j|=$ 0 or 1 by construction.
-	Moreover, for every $i$, $\alpha_i\cap\{\beta_j\}_j>0$ and $\beta_i\cap\{\alpha_j\}_j>0$.
-	In words, every (3,1)--handle belt sphere transversely intersects at least one of the (3,2)--handle attaching spheres, every (3,2)--handle attaching sphere intersects at least one of the (3,1)--handle belt spheres, and all intersection numbers are at most 1.
-	Thus every (3,2)--handle attached to $V$ either cancels out an existing (3,1)--handle or adds a new 2--sphere boundary component.
-	Thus $V'$ is a (3,2)--handlebody, and $V''$ is a 3--sphere.
 	 
 
 %	\begin{figure}[h!]
