@@ -1,0 +1,29 @@
+\section{Handles}
+\label{section:problem-handles}
+
+The concept of a stratified handle attachment needs some explanation.
+First, we define attachment of topological spaces, and use that language to define handle attachment.
+
+
+\begin{defn}[Attachment]
+	Let $X$ and $Y$ be topological spaces, $A\subset X$ a subspace, and $f:A\to Y$ a continuous map.
+	We define a relation $\sim$ by putting $f(x)\sim x$ for every $x$ in $A$.
+	Denote the quotient space $X\sqcup Y/\sim$ by $X\cup_f Y$.
+	We call the map $f$ the \emph{attaching map}.  
+	We say that $X$ is \emph{attached} or \emph{glued} to $Y$ over $A$.
+	A space obtained through attachment is called an \emph{adjunction space} or \emph{attachment space}.
+	
+	Alternatively, we let $A$ be a topological space and let $i_X:A\to X$, $i_Y:A\to Y$ be inclusions.
+	Here, the adjunction is formed by taking $i_X(a)\sim i_Y(a)$ for every $a\in A$ and we denote the adjunction space by $X\cup_A Y$.
+\end{defn}
+
+\begin{defn}[Handle]
+	\label{def:handle}
+	Take $n=\lambda+\mu$ and $M$ a smooth $n$--manifold with nonempty boundary $\pd M$.
+	Let $D^\lambda$ be the closed $\lambda$--disk and put $H^\lambda = D^\lambda\times D^\mu$.
+	Let $\varphi:\pd D^\lambda\times D^\mu\to\pd M$ be an embedding and an attaching map between $M$ and $H^\lambda$.
+	The attached space $H^\lambda$ is an \emph{$n$--dimensional $\lambda$--handle}, abbreviated \emph{$(n,\lambda)$--handle}, and $M\cup_\varphi H^\lambda$ is the result of an \emph{$n$--dimensional $\lambda$--handle attachment}, abbreviated \emph{$(n,\lambda)$--handle attachment}.
+\end{defn}
+
+Handle attachment is defined for smooth manifolds, but the resulting attachment space is not a smooth manifold.
+Rather, the result is a stratified manifold.

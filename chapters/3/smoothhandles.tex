@@ -161,57 +161,72 @@ The full extent of this surgery can be detected by examining the primed vertex b
 \end{cor}
 
 \begin{proof}
-	For each vertex block $V$, the cylinders introduced by 2--handle attachment and the 3--disks introduced by 3--handle attachment combine into a handlebody $H$ of the same genus as $V$.
-	$V$ and $H$ combine to form each component of $M_1''$, and we show a Heegaard diagram of complementary meridinal circles for each case in Figures \ref{fig:heegaard-genus-0}-\ref{fig:heegaard-genus-3-2}.
-	Thus $M_1''$ consists of a collection of stratified 3--spheres \cite{SchlWald}.
+	We need only prove that each connected component of $M_1''$ is homeomorphic to $S^3$.
+	Let $V'$ be a primed vertex block.
+	We know that $V'$ is a 3--manifold and $\pd V'$ consists of a disjoint collection of 2--spheres.
+	If we can prove that $V'$ is a (3,2)--handlebody, then the attachment of (3,3)--handles to $V'$ over each 2--sphere boundary component results in a 3--sphere, proving the theorem.
+	 
+	Let $V$ be a vertex block.
+	We know that $V$ is a (3,1)--handlebody of genus $g$.
+	$V$ and $V'$ are related via (3,2)--handle attachments to $V$ induced by the (4,2)--handle attachments performed in Theorem \ref{thm:primed-block-structure}.
+	The (3,2)--handle attachments are made over disjoint neighbourhoods, so the resulting manifold is independent of the order in which we attach handles.
 	
-	\begin{figure}[h!]
-		\caption{
-			\textbf{Heegaard system for genus-0 vertex blocks.}
-			$V$ is a genus-0 handlebody when $V$ is a definite singular fiber of $f$.
-			There is only one possible Heegard diagram for genus-0 handlebodies, and the result is trivially $S^3$.
-		}
-		\label{fig:heegaard-genus-0}
-	\end{figure}
+	If $g=0$, then $V$ is a 3--ball, hence $V'$ is a 3--ball with a collection of (3,2)--handles attached to it, i.e.\ a (3,2)--handlebody.
+	If $g>0$, then $V$ is a regular neighbourhood of either a circle or one of the nontrivial singular fibers in Figure \ref{fig:saeki-fibers}.
+	Giving the fiber the natural graph structure implied by the figure, let $\alpha_i$ be the meridians found at the midpoint of each edge.
+	Let $\beta_i$ be the attaching spheres of the (3,2)--handles we attach to $V$ in the construction of $V'$.
+	For each $i,j$, $|\alpha_i\cap\beta_j|=$ 0 or 1 by construction.
+	Moreover, for every $i$, $\alpha_i\cap\{\beta_j\}_j>0$ and $\beta_i\cap\{\alpha_j\}_j>0$.
+	In words, every meridian transversely intersects at least one of the (3,2)--handle attaching spheres, every (3,2)--handle attaching sphere intersects at least one of the meridians, and all intersection numbers are at most 1.
+	 
 
-	\begin{figure}[h!]
-		\caption{
-			\textbf{Heegaard system for genus-1 vertex blocks.}
-			$V$ is a genus-1 handlebody when $V$ is a regular fiber of $f$.
-			The Heegaard diagram consists of a meridian of each of $V$ and $H$.
-		}
-		\label{fig:heegaard-genus-1}
-	\end{figure}
-
-	\begin{figure}[h!]
-		\caption{
-			\textbf{Heegaard system for genus-2 vertex blocks.}
-			$V$ is a genus-2 handlebody when $V$ is an indefinite singular fiber of $f$.
-			The Heegaard diagram for $H$ consists of the pants cuffs, and for $V$ the side seam.
-			% we use the cuffs and the outseams from one pair of pants to form the heegaard diagram
-		}
-		\label{fig:heegaard-genus-2}
-	\end{figure}
-
-	
-	\begin{figure}[h!]
-		\caption{
-			\textbf{Heegaard system for genus-3 vertex blocks, case 1.}
-			$V$ is a genus-3 handlebody when $V$ contains an interactive singular fiber.
-			There are two types of interactive singular fibers, we show here the first from Figure \ref{fig:saeki-fibers}
-		}
-		\label{fig:heegaard-genus-3-1}
-	\end{figure}
-	
-	
-	\begin{figure}[h!]
-		\caption{
-			\textbf{Heegaard system for genus-3 vertex blocks, case 2.}
-			$V$ is a genus-3 handlebody when $V$ contains an interactive singular fiber.
-			There are two types of interactive singular fibers, we show here the second from Figure \ref{fig:saeki-fibers}
-		}
-		\label{fig:heegaard-genus-3-2}
-	\end{figure}	
+%	\begin{figure}[h!]
+%		\caption{
+%			\textbf{Heegaard system for genus-0 vertex blocks.}
+%			$V$ is a genus-0 handlebody when $V$ is a definite singular fiber of $f$.
+%			There is only one possible Heegard diagram for genus-0 handlebodies, and the result is trivially $S^3$.
+%		}
+%		\label{fig:heegaard-genus-0}
+%	\end{figure}
+%
+%	\begin{figure}[h!]
+%		\caption{
+%			\textbf{Heegaard system for genus-1 vertex blocks.}
+%			$V$ is a genus-1 handlebody when $V$ is a regular fiber of $f$.
+%			The Heegaard diagram consists of a meridian of each of $V$ and $H$.
+%		}
+%		\label{fig:heegaard-genus-1}
+%	\end{figure}
+%
+%	\begin{figure}[h!]
+%		\caption{
+%			\textbf{Heegaard system for genus-2 vertex blocks.}
+%			$V$ is a genus-2 handlebody when $V$ is an indefinite singular fiber of $f$.
+%			The Heegaard diagram for $H$ consists of the pants cuffs, and for $V$ the side seam.
+%			% we use the cuffs and the outseams from one pair of pants to form the heegaard diagram
+%		}
+%		\label{fig:heegaard-genus-2}
+%	\end{figure}
+%
+%	
+%	\begin{figure}[h!]
+%		\caption{
+%			\textbf{Heegaard system for genus-3 vertex blocks, case 1.}
+%			$V$ is a genus-3 handlebody when $V$ contains an interactive singular fiber.
+%			There are two types of interactive singular fibers, we show here the first from Figure \ref{fig:saeki-fibers}
+%		}
+%		\label{fig:heegaard-genus-3-1}
+%	\end{figure}
+%	
+%	
+%	\begin{figure}[h!]
+%		\caption{
+%			\textbf{Heegaard system for genus-3 vertex blocks, case 2.}
+%			$V$ is a genus-3 handlebody when $V$ contains an interactive singular fiber.
+%			There are two types of interactive singular fibers, we show here the second from Figure \ref{fig:saeki-fibers}
+%		}
+%		\label{fig:heegaard-genus-3-2}
+%	\end{figure}	
 \end{proof}
 
 After attaching 3--handles over primed edge blocks, $W''$ is a 4--manifold with boundary consisting of $M_0$ and a collection of stratified 3--spheres.
