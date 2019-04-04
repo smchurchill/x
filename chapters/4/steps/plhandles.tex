@@ -3,7 +3,7 @@
 
 At this point in the chapter we have constructed a 4--manifold triangulation $W$ with two boundary components, each equivalent via subdivision to the 3--dimensional cell complex $M$ obtained in Section \ref{section:pl-subdivide}.
 Furthermore, the simplices of $M$ is partitioned into subtriangulations analogous to the face, edge, and vertex blocks of Chapter \ref{chapter:smooth}.
-Explicit attachment sites are available for 2--handles, so our first step is construction of a 2--handle.
+Explicit attachment sites are available for (4,2)--handles, so our first step is construction of a (4,2)--handle.
 
 \subsection{2--handles}
 \label{section:pl-2-handle}
@@ -12,10 +12,10 @@ The algorithm of this subsection takes as input a pair $(T,\Gamma)$ where $T$ is
 The output is a 4--disk triangulation $H$ satisfying the following:
 \begin{enumerate}
 	\item $\pd H$ is a triangulated $S^3$ with a genus 1 Heegard splitting over $\pd T$, i.e.\ $\pd H\setminus \interior{T}$ is a solid torus.
-	\item For each $\gamma_i$ in $\Gamma$, $\gamma_i$ bounds a triangulated disk in $\pd H$, i.e.\ each $\gamma_i$ is an explicit 0-framing for the 2--handle attachment.
+	\item For each $\gamma_i$ in $\Gamma$, $\gamma_i$ bounds a triangulated disk in $\pd H$, i.e.\ each $\gamma_i$ is an explicit 0-framing for the (4,2)--handle attachment.
 \end{enumerate}
-We take $H$ to be a 4--dimensional 2--handle and attach $H$ to $W$ over $T$.
-Constructing the 2--handle involves building a solid torus $T'$ that complements $T$, combining $T$ and $T'$ over their shared boundary to build a triangulated 3--sphere, then coning that 3--sphere into the 4--disk $H$.
+We take $H$ to be a (4,2)--handle and attach $H$ to $W$ over $T$.
+Constructing the handle involves building a solid torus $T'$ that complements $T$, combining $T$ and $T'$ over their shared boundary to build a triangulated 3--sphere, then coning that 3--sphere into the 4--disk $H$.
 
 We find pairs $(T,\Gamma)$ inside of $M_1\subset\pd W$, the subdivision of $N$ induced by the subdividing map $f:N\to\RR$.
 Let $B$ be a combinatorial face block of $M_1$.
@@ -39,13 +39,13 @@ The longitudinal curves of $T$, the $\gamma_i$, bound triangulated disks in $T'$
 % the $\gamma_i$
 are meridians of $T'$.
 Hence, gluing $T$ and $T'$ over their shared boundary forms a 3--sphere.
-We then cone that 3--sphere to produce a 4--disk with an explicit 2--handle structure.
+We then cone that 3--sphere to produce a 4--disk with an explicit (4,2)--handle structure.
 This is the basic structure of Algorithm \ref{alg:build-2-handle}, which we iterate over the combinatorial face blocks of $M_1\subset \pd W$.
-Finally, we attach these 2--handles to $W$, forming $W'$.
+Finally, we attach these handles to $W$, forming $W'$.
 
 Let $\mathfrak{B}$ be the collection of combinatorial face blocks of $M_1\subset \pd W$.
-Iterating Algorithm \ref{alg:build-2-handle} over $\mathfrak{B}$ yields a collection of 4--dimensional 2--handles $\{H_B^2\}_{B\in\mathfrak{B}}$.
-The combinatorial face blocks in $\mathfrak{B}$ are disjoint by construction, so we attach our 2--handles in any order.
+Iterating Algorithm \ref{alg:build-2-handle} over $\mathfrak{B}$ yields a collection of (4,2)--handles $\{H_B^2\}_{B\in\mathfrak{B}}$.
+The combinatorial face blocks in $\mathfrak{B}$ are disjoint by construction, so we attach our handles in any order.
 We form the 4--manifold triangulation $W'$ from $W$ as
 \[
 	W' = W\cup\{H_B^2\}_{B\in\mathfrak{B}}/\sim,
@@ -55,7 +55,7 @@ where $\sim$ is defined by $b\sim \iota(b)$, $\iota$ the identity map $H_B^2\sup
 
 
 \begin{algorithm}[h!]
-	\caption{Constructing a 2--handle}
+	\caption{Constructing a (4,2)--handle}
 	\label{alg:build-2-handle}
 	\KwData{A pair $(T,\Gamma)$ where $T$ is a closed solid torus triangulation and $\Gamma$ is a collection of disjoint parallel triangulated longitudes in $\pd T$}
 	\KwResult{A 4--disk $H_T^2$ such that $\pd H_T^2$ is a triangulated 3--sphere with genus 1 Heegard splitting over $\pd T$ and such that $\gamma_i\in\Gamma$ bounds a triangulated disk in $\pd H_T^2\setminus \interior{T}$ for each $i$}
@@ -105,35 +105,49 @@ where $\sim$ is defined by $b\sim \iota(b)$, $\iota$ the identity map $H_B^2\sup
 %	\label{fig:regular-pl-blocks}
 %\end{figure}
 
+The manifold $W'$ is formed by attaching triangulated (4,2)--handles to $W$ over the combinatorial face blocks of $M_1$.
+The boundary of $W'$ consists of $M_0 \cup M_1'$, where $M_1'=\pd W'\setminus M_0$ and $M_1'$ is related to $M_1$ via triangulated (3,2)--handle attachments to $M_1$ induced by the triangulated (4,2)--handle attachments to $W$.
+We decompose $M_1'$ into primed combinatorial edge or vertex block subtriangulations in a manner similar to that found in Chapter \ref{chapter:smooth}.
+
+Primed combinatorial edge blocks are the result of attaching triangulated (3,2)--handles over annular boundary components of combinatorial edge blocks.
+These (3,2)--handles are the triangulated 3-disks $D^3_{ij}$ formed on Line 11 of Algorithm \ref{alg:build-2-handle}, and their attaching regions are the annuli of combinatorial edge blocks that project through $f$ over edge-face region boundaries.
+
+Let $E$ be a combinatorial edge block.
+Then $E$ is the product of an orientable surface with an interval, i.e. $E=\Sigma\times\Ilit$, where $\Sigma$ is $S^2$ minus some number of disjoint open balls.
+The annuli $\pd \Sigma\times\Ilit$ map through $f$ to edge-face region boundaries, hence these are the attaching sites of (3,2)--handles.
+Primed combinatorial edge blocks are constructed by performing all such (3,2)--handle attachments, thus each primed combinatorial edge block is a triangulated $S^2\times\Ilit$.
+
+Differing slightly from Chapter \ref{chapter:smooth}, this exhausts the new cells of $M_1'$ introduced by 2--handle attachment.
+This is due to the different shape of combinatorial vertex regions as compared to the vertex regions of Chapter \ref{chapter:smooth}.
+In Chapter \ref{chapter:smooth} vertex regions were octagonal and shared edge boundaries with face regions.
+Here, combinatorial vertex regions are quadrilateral and share point boundaries with combinatorial face regions.
+This point boundary is also shared by a pair of combinatorial edge regions.
+
+Let $x$ be a vertex-face-edge-edge boundary.
+Then $f\inv(x)=\{\gamma^i\}$ is a collection of triangulated circles, and each $\gamma^i$ is a longitude of a toroidal combinatorial face block in $M_1$ that projects over the face region whose boundary contains $x$.
+Thus, every $\gamma^i$ has been filled by a 2--disc constructed on Line 5 of Algorithm \ref{alg:build-2-handle}.
+Each of these new disks has been assigned to two primed combinatorial edge blocks, but we will also assign them to the primed vertex block that contains $\gamma^i$.
+
+This means that each primed combinatorial vertex block is now equivalent to a triangulated (3,2)--handlebody.
+Let $V$ be a combinatorial vertex block and $V'$ be $V$ primed.
+Considering each new disc in $V'$ to be a flattened (3,2)--handle, we conclude that $V'$ is a (3,2)--handlebody using the argument found in Theorem \ref{thm:primed-block-structure}.
+The attaching spheres of (3,2)--handles transversely intersect the belt spheres of the (3,1)--handles at most once, each belt sphere intersects at least one attaching sphere and vice versa, and the boundary of the resulting 3--manifold has boundary a disjoint collection of 2--spheres, thus $V'$ is a (3,2)--handlebody.
 
 \subsection{3--handles}
 
-The manifold $W'$ is formed by attaching triangulated 2--handles to $W$ over the combinatorial face blocks of $M_1$.
-The boundary of $W'$ consists of $M_0 \cup M_1'$, where $M_1'=\pd W'\setminus M_0$ and is related to $M_1$ by replacing each combinatorial face block of $M_1$ with its complement.
-Similar to what we saw in Chapter \ref{chapter:smooth}, $M_1'$ can be decomposed into subtriangulations, each of which is a primed combinatorial edge or vertex block.
-
-Primed combinatorial edge blocks are the result of filling annular boundary components of combinatorial edge blocks in with cylinders.
-These cylinders are the triangulated 3-disks $D^3_{ij}$ formed on Line 11 of Algorithm \ref{alg:build-2-handle}.
-Let $E$ be a combinatorial edge block.
-Then $E$ is the product of an orientable surface with an interval, i.e. $E=\Sigma\times\Ilit$, where $\Sigma$ is $S^2$ minus some number of disjoint open balls.
-The cylinders that are filled in due to 2--handle attachment are precisely the annuli $\pd\Sigma\times\Ilit$, hence the resulting primed combinatorial edge block is a triangulated $S^2\times\Ilit$.
-
-Assigning cylinders from combinatorial face block complements to primed combinatorial edge blocks exhausts the new cells of $M_1'$ introduced by 2--handle attachment.
-We thus set the primed combinatorial vertex blocks of $M_1'$ to be exactly the original combinatorial vertex blocks of $M_1$.
-
-We now construct 3--handles to attach over our primed combinatorial edge blocks.
+We now construct (4,3)--handles to attach over our primed combinatorial edge blocks.
 Let $E'$ be such a block.
 Then $\pd E'$ is a disjoint pair of triangulated 2--spheres.
 We form a 4--disk containing $E'$ in its boundary by a double coning method on $E'$: we first cone the spherical boundary components of $E'$ to form a pair of triangulated 3--disks, glue these 3--disks to $E'$ to form a 3--sphere, then cone the 3--sphere to obtain a 4--disk.
 This idea is identical to that found in Section \ref{subsec:smooth-3handles} and is formalized in Algorithm \ref{alg:build-3-handle}.
-Finally, 3--handles built using Algorithm \ref{alg:build-3-handle} to $W'$ over primed combinatorial edge blocks.
+Finally, we attach (4,3)--handles built using Algorithm \ref{alg:build-3-handle} to $W'$ over primed combinatorial edge blocks.
 
 Let $\mathfrak{E}'$ be the collection of primed combinatorial edge blocks of $M_1'\subset \pd W'$.
-Iterating Algorithm \ref{alg:build-3-handle} over $\mathfrak{E}$ yields a collection of 4--dimensional 3--handles $\{H_{E'}^3\}_{E'\in\mathfrak{E}'}$.
-The primed combinatorial edge blocks in $\mathfrak{E}'$ intersect only in discs that are also shared by primed combinatorial vertex blocks and these disks are invariant under the 3--handle attachment so we attach our 3--handles in any order.
+Iterating Algorithm \ref{alg:build-3-handle} over $\mathfrak{E}'$ yields a collection of (4,3)--handles $\{H_{E'}^3\}_{E'\in\mathfrak{E}'}$.
+The primed combinatorial edge blocks in $\mathfrak{E}'$ intersect only in discs that are also shared by primed combinatorial vertex blocks and these disks are invariant under the (4,3)--handle attachment so we attach our handles in any order.
 We form the 4--manifold triangulation $W''$ from $W'$ as
 \[
-W'' = W'\cup\{H_{E'}^3\}_{E\in\mathfrak{E}'}/\sim,
+W'' = W'\cup\{H_{E'}^3\}_{E'\in\mathfrak{E}'}/\sim,
 \]
 where $\sim$ is defined by $e\sim \iota(e)$, $\iota$ the identity map $H_{E'}^3\supset E'\overset{\iota}{\to} E'\subset M_1'$.
 
@@ -153,10 +167,27 @@ where $\sim$ is defined by $e\sim \iota(e)$, $\iota$ the identity map $H_{E'}^3\
 	}
 \end{algorithm}
 
+The manifold $W''$ is formed by attaching triangulated (4,3)--handles to $W'$ over the primed combinatorial edge blocks of $M_1'$.
+The boundary of $W''$ consists of $M_0 \cup M_1''$, where $M_1''=\pd W''\setminus M_0$ and $M_1''$ is related to $M_1'$ via triangulated (3,3)--handle attachments to $M_1'$ induced by the triangulated (4,3)--handle attachments to $W'$.
+These (3,3)--handle attachments turn primed combinatorial vertex blocks into double primed combinatorial vertex blocks.
+A primed combinatorial vertex block is a (3,2)--handlebody, so a  double primed combinatorial vertex block is a (3,2)--handlebody with each $S^2$ boundary component filled in with a (3,3)--handle, thus each double primed combinatorial vertex block is a triangulated $S^3$.
+
 \subsection{4--handles}
 
-The manifold $W''$ is formed by attaching triangulated 3--handles to $W'$ over the primed combinatorial edge blocks of $M_1'$.
-The boundary of $W''$ consists of $M_0 \cup M_1''$, where $M_1''=\pd W''\setminus M_0$ and is related to $M_1'$ by replacing each primed combinatorial edge block of $M_1'$ with the pair of triangulated 3--disks $C(S^2_i)$ for $i=1,2$ formed on Line 4 of Algorithm \ref{alg:build-3-handle}.
-Similar to what we saw in Chapter \ref{chapter:smooth}, $M_1''$ is a disjoint collection of subtriangulations, our double primed combinatorial vertex blocks, and every double primed combinatorial vertex block is a 3--sphere by construction.
+We now construct (4,4)--handles to attach over our double primed combinatorial vertex blocks.
+Let $V''$ be such a block.
+Then $V''$ is a triangulated $S^3$, so a (4,4)--handle structure that can be attached over $V''$ is constructed by coning $V''$.
+These handles are attached to $W''$ to form a triangulated 4--manifold whose only boundary component is $M_0$.
 
+Let $\mathfrak{V}''$ be the collection of double primed combinatorial vertex blocks of $M_1''\subset \pd W''$.
+Coning each element of $\mathfrak{V}''$ yields a collection of (4,4)--handles $\{H_{V''}^4\}_{V''\in\mathfrak{V}''}$.
+The double primed combinatorial vertex blocks in $\mathfrak{V}''$ are disjoint, so we attach our handles in any order.
+We form the 4--manifold triangulation $W'''$ from $W''$ as
+\[
+W''' = W''\cup\{H_{V''}^4\}_{V''\in\mathfrak{V}''}/\sim,
+\]
+where $\sim$ is defined by $v\sim \iota(v)$, $\iota$ the identity map $H_{V''}^4\supset V''\overset{\iota}{\to} V''\subset M_1''$.
+
+The triangulated 4--manifold $W'''$ has only one boundary component: $M_0$.
+By construction, $M_0$ is equivalent to the original input 3--manifold triangulation $N$ by subdivision of $N$, hence $W'''$ is a triangulated 4--manifold with boundary $N$, as desired.
 

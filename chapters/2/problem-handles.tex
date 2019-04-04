@@ -25,5 +25,21 @@ First, we define attachment of topological spaces, and use that language to defi
 	The attached space $H^\lambda$ is an \emph{$n$--dimensional $\lambda$--handle}, abbreviated \emph{$(n,\lambda)$--handle}, and $M\cup_\varphi H^\lambda$ is the result of an \emph{$n$--dimensional $\lambda$--handle attachment}, abbreviated \emph{$(n,\lambda)$--handle attachment}.
 \end{defn}
 
+Attaching a handle to a manifold can sometimes result in canceling a previously placed handle.
+We perform this handle cancellation intentionally in future chapters.
+First, we'll define two pieces of anatomy for a handle.
+
+\begin{defn}
+	Let $n=\lambda+\mu$, let $H^\lambda=D^\lambda\times D^\mu$ be a $(n,\lambda)$--handle, and let $\varphi:\pd D^\lambda\times D^\mu\to\pd M$ be an attaching map from $H^\lambda$ to the $n$--manifold $M$.
+	The sphere $\pd D^\lambda\times \{0\}$ in $H^\lambda$ is the \emph{attaching sphere} of $H^\lambda$, and the sphere $\{0\}\times \pd D^\mu$ is the \emph{belt sphere} of $H^\lambda$.	
+\end{defn}
+
+\begin{prop}
+	Let $M'=(M\cup\varphi H^\lambda)\cup_\psi H^{\lambda+1}$.
+	If the attaching sphere of $H^{\lambda + 1}$ intersects the belt sphere of $H^\lambda$ transversely and exactly once, then $M'$ is homeomorphic to $M$.	
+\end{prop}
+
 Handle attachment is defined for smooth manifolds, but the resulting attachment space is not a smooth manifold.
 Rather, the result is a stratified manifold.
+Some other formulations of handle cancellation have a stronger result (specifically, that $M'$ is diffeomorphic to $M$), but this is due to an implied smoothing of the corners resulting from handle attachment.
+We keep our corners intact throughout handle attachment, so we introduce the concept of stratified manifolds.
