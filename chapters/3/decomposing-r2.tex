@@ -1,11 +1,11 @@
 \section{Stratifying $\RR$}
 \label{section:smooth-decompose}
 
-Let $f:M\to\RR$ be a smooth map possessing the stratification conditions of Section \ref{section:smooth-projection} and let $X_f = f(S(f))$, the set of singular values of $f$.
+Let $f:M\to\RR$ be a stratifying map and let $X_f = f(S(f))$, the set of singular values of $f$.
 $X_f$ is a connected collection of arcs in the plane that intersect only transversely.
 
 We fit closed neighbourhoods (\emph{sleeves}) around the singular values of $f$ and classify these sleeves by the maximum codimension (with respect to $\RR$) of singular values they contain.
-Because $X_f$ consists of codimension 1 and codimension 2 singular values (i.e.\ arcs and arc-crossings respectively), we stratify $\RR$ into face regions that contain no singular values, edge regions that contain only codimension 1 singular values, and vertex regions, each of which contain exactly 1 codimension 2 singular value.
+Because $X_f$ consists of codimension 1 and codimension 2 singular values (arcs and arc-crossings respectively), we stratify $\RR$ into face regions that contain no singular values, edge regions that contain only codimension 1 singular values, and vertex regions, each of which contain exactly 1 codimension 2 singular value.
 Figures \ref{fig:vertex-sleeve}-\ref{fig:face-sleeve} are used to illustrate the stratification resulting from sleeve-fitting.
 
 \begin{figure}[h!]
@@ -25,7 +25,7 @@ We begin by fitting octagonal sleeves around codimension 2 singular values as in
 Let $x$ be a codimension 2 singular value.
 $x$ is the result of an arc crossing, and a small neighbourhood around an arc crossing is divided into four regions of regular values.
 The octagon around $x$ is fit so its edges alternate between being fully contained in a region of regular values and orthogonally intersecting one of the arcs of singular values that creates $x$.
-See Figure \ref{fig:vertex-sleeve} for a model fitting.
+See Figure \ref{fig:vertex-sleeve} for an example fitting.
 
 The interiors of the octagons along with the octagonal boundaries form the vertex regions of the stratification of $\RR$.
 The octagons are chosen to be small enough that no two vertex regions overlap and such that the octagonal edges that intersect arcs of codimension 1 singular values are all the same length.
@@ -42,7 +42,7 @@ The octagons are chosen to be small enough that no two vertex regions overlap an
 
 Let $\gamma$ be an arc of codimension 1 singular values with endpoints a pair of codimension 2 singular values.
 $\gamma$ orthogonally intersects one edge from each of the octagonal vertex regions fit around its endpoints, and we use these edges to form the edge region associated to $\gamma$ by connecting the endpoints of these edges to one another using a pair of arcs parallel to $\gamma$.
-See Figure \ref{fig:edge-sleeve} for a model fitting.
+See Figure \ref{fig:edge-sleeve} for an example fitting.
 
 The closures of the interiors of the shapes formed by the arcs and octagon edges form the edge regions of the stratification of $\RR$.
 The octagonal edge endpoints are also vertices of the octagons, and the formation of edge regions uses every octagonal vertex as the endpoint of exactly one arc.
@@ -60,7 +60,7 @@ The octagonal edge endpoints are also vertices of the octagons, and the formatio
 Removing from $f(M)$ all vertex and edge regions, we are left with a collection of simply connected regions in the plane, each of which consists entirely of regular values.
 We take the closures of these to be the face regions of the stratification of $\RR$.
 The boundary of each face region is an alternating collection of arcs from edge regions and octagonal edges from vertex regions.
-See Figure \ref{fig:face-sleeve} for a model fitting.
+See Figure \ref{fig:face-sleeve} for an example fitting.
 
 With all of the regions defined, we can describe precisely how $f$ stratifies $\RR$.
 The stratification of $\RR$ is a stratification into subsets $R_{(i,j)}$ where $i,j$ are integers.
