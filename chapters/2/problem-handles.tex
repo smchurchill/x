@@ -3,7 +3,7 @@
 
 The concept of a stratified handle attachment needs some explanation.
 First, we define attachment of topological spaces, and use that language to define handle attachment.
-
+We use Gompf \& Stipsicz \cite{GompStip} as our main reference for handles attachment.
 
 \begin{defn}[Attachment]
 	Let $X$ and $Y$ be topological spaces, $A\subset X$ a subspace, and $f:A\to Y$ a continuous map.
@@ -23,23 +23,26 @@ First, we define attachment of topological spaces, and use that language to defi
 	Let $D^\lambda$ be the closed $\lambda$--disk and put $H^\lambda = D^\lambda\times D^\mu$.
 	Let $\varphi:\pd D^\lambda\times D^\mu\to\pd M$ be an embedding and an attaching map between $M$ and $H^\lambda$.
 	The attached space $H^\lambda$ is an \emph{$n$--dimensional $\lambda$--handle}, abbreviated \emph{$(n,\lambda)$--handle}, and $M\cup_\varphi H^\lambda$ is the result of an \emph{$n$--dimensional $\lambda$--handle attachment}, abbreviated \emph{$(n,\lambda)$--handle attachment}.
-\end{defn}
 
-Attaching a handle to a manifold can sometimes result in canceling a previously placed handle.
-We perform this handle cancellation intentionally in future chapters.
-First, we'll define two pieces of anatomy for a handle.
-
-\begin{defn}
 	Let $n=\lambda+\mu$, let $H^\lambda=D^\lambda\times D^\mu$ be a $(n,\lambda)$--handle, and let $\varphi:\pd D^\lambda\times D^\mu\to\pd M$ be an attaching map from $H^\lambda$ to the $n$--manifold $M$.
 	The sphere $\pd D^\lambda\times \{0\}$ in $H^\lambda$ is the \emph{attaching sphere} of $H^\lambda$, and the sphere $\{0\}\times \pd D^\mu$ is the \emph{belt sphere} of $H^\lambda$.	
 \end{defn}
 
-\begin{prop}
-	Let $M'=(M\cup\varphi H^\lambda)\cup_\psi H^{\lambda+1}$.
-	If the attaching sphere of $H^{\lambda + 1}$ intersects the belt sphere of $H^\lambda$ transversely and exactly once, then $M'$ is homeomorphic to $M$.	
+Handles $H_1$ and $H_2$ attached to a manifold $M$ are extraneous when $(M\cup H_1)\cup H_2\thickapprox M$.
+When this happens, we say that the handles \emph{cancel}.
+In the proof of Theorem \ref{thm:primed-block-structure} we attach 2--handles with the intention of canceling 1--handles.
+
+
+\begin{prop}[Proposition 4.2.9 in \cite{GompStip}]
+	A $(k-1)$--handle $H^{k-1}$ and a $k$--handle $H^k$ $(1\leq k\leq n)$ can be canceled, provided the attaching sphere of $H^k$ intersects the belt sphere of $H^{k-1}$ transversely in a single point.
 \end{prop}
 
 Handle attachment is defined for smooth manifolds, but the resulting attachment space is not a smooth manifold.
-Rather, the result is a stratified manifold.
-Some other formulations of handle cancellation have a stronger result (specifically, that $M'$ is diffeomorphic to $M$), but this is due to an implied smoothing of the corners resulting from handle attachment.
-We keep our corners intact throughout handle attachment, so we introduce the concept of stratified manifolds.
+Rather, the result is a manifold with corners.
+Some other formulations of handle attachment (e.g.\ \cite{GompStip}) implicitly smooth the corners resulting from handle attachment, so in their formulation of handle cancellation the equivalence relation is strong (i.e. $\thickapprox$ is diffeomorphism).
+We do not smooth our corners, so we take $\thickapprox$ to be homeomorphism.
+A manifold with corners is an example of a \emph{stratified manifold}, introduced in the next section.
+
+
+
+
