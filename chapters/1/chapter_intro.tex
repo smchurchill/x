@@ -1,11 +1,41 @@
 \startfirstchapter{Introduction}
 \label{chapter:introduction}
 
-%Proof that every 3--manifold bounds a 4--manifold has
-%
-%We have
-%
-%This project began as an attempt to construct an algorithm turn the process outlined in Chapter 4 of Thurston and Costantino \cite{CostThur08}
+The study of manifold boundaries is asymmetric.
+Given an $n$--manifold, it is trivial to find its unique $(n-1)$--manifold boundary.
+Given an $(n-1)$--manifold boundary, there are infinitely many $n$--manifolds that possess it but no obvious way to acquire one.
+We focus on the low--dimensional case of $n=4$, where it is known that all closed, orientable 3--manifolds bound 4--manifolds \cite{wbr61, Rokhlin65, Rourke85, Thom}.
+The main goal of this document is to provide an algorithm that constructs 4--manifolds with a given boundary.
 
-The main goal of this document is to provide an algorithm whose input is a closed, orientable 3--manifold triangulation $M$ and whose output is a 4--manifold triangulation whose boundary is $M$.
-This algorithm mirrors the constructive proof that a smooth, closed, orientable 3--manifold bounds some 4--manifold presented in Chapter ~\ref{chapter:smooth}.
+This century has seen the rise of computational means of constructing and studying low--dimensional manifolds using software such as Regina \cite{regina} and SnapPy \cite{culler2017snappy}.
+The algorithm provided in this document is intended for eventual inclusion in Regina, where it will serve as a new tool for constructing 4--manifold censuses and studying 3--manifold invariants.
+
+Our assemblage of a constructive proof that 3--manifolds bound 4--manifolds was inspired by the discussion in Section 2.2 of Costantino \& Thurston's ``3--manifolds efficiently bound 4--manifolds'' \cite{CostThur08}.
+An appropriately well-behaved smooth map from a 3--manifold $M$ to $\RR$ induces a stratification of $M$ into a union of handlebodies.
+This stratification serves as a set of surgery instructions for turning $M$ into $S^3$ and produces a 4--manifold whose boundary is precisely $M$ when applied as handle attachment instructions over one boundary component of the 4--manifold $M\times\Ilit$.
+
+Our algorithm is the adaptation of this smooth proof to the setting of triangulated manifolds.
+We define a map from the input 3--manifold triangulation to $\RR$, subdivide the manifold into handlebodies, then attach handles to one boundary component the manifolds' 4--thickening until we obtain the desired outcome.
+
+\section{Expected Background}
+
+This document is aimed at a reader with some understanding of the tools of low--dimensional manifold theory.
+We do not present the basics of manifold theory, calculus on manifolds, or triangulations of manifolds.
+
+For an introduction to manifolds and calculus on manifolds please see Lee's ``Introduction to Smooth Manifolds'' \cite{Lee00}.
+For more on 3--manifolds and the basics of triangulations, please see Stein, Thurston, \& Mather's ``Three-dimensional geometry and topology'' \cite{stein1997three}.
+
+\section{Agenda}
+
+What follows is a brief summary of the contents of each chapter in this document.
+Each chapter has a purpose, and that purpose is also stated.
+
+{\renewcommand\labelitemi{}
+	\begin{itemize}
+		\item \textbf{Chapter 1} lays out what the central thesis problem is and why it is interesting.  It also sets expectations for the rest of the document in terms of what to expect and what not to expect.
+		\item \textbf{Chapter 2} presents some specialized tools of low--dimensional topology that are utilized throughout the document.  It serves as a reference or refresher depending on the reader's familiarity with the subject.
+		\item \textbf{Chapter 3} presents the constructive proof in the smooth case.  It fills a void in the current literature and anchors the abstraction of Chapter \ref{chapter:triangulation} to something accessible and visual.
+		\item \textbf{Chapter 4} provides the main result of this document: the algorithm itself.  It is a precursor to an implementation of the algorithm in a low--dimensional topology software package.
+		\item \textbf{Chapter 5} restates our results and delves into implications on future work.  It, along with Chapter \ref{chapter:introduction} and the Abstract, provide an overview of the entirety of the document.
+	\end{itemize}
+}
