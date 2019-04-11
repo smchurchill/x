@@ -1,13 +1,16 @@
-\chapter[Background]{How do you obtain a 4--manifold with a specific boundary?}
+\chapter{Tools of low--dimensional topology}
 \label{chapter:problem}
 
 Given a smooth, closed 3--manifold $M$, there are infinitely many 4--manifolds with boundary $M$.
-We do not ensure that the constructed 4--manifold has any properties other than a specified boundary, so our construction ensures easy verification that the constructed 4--manifold's boundary is exactly $M$.
+For example, consider $M=S^3$.
+Removing a 4--ball from any 4--manifold $W$ produces a 4--manifold with $S^3$ boundary.
+We therefore do not ensure that the constructed 4--manifold has any properties other than a specified boundary, so our construction ensures easy verification that the constructed 4--manifold's boundary is exactly $M$.
 This is done by setting $W=M\times \Ilit$, so $W$ has boundary 
 \[
 	\pd W = (M\times\{0\}) \cup (M\times\{1\}) = M_0 \cup M_1.
 \]
 We then attach stratified handles to the boundary of $W$ away from $M_0$ until only $M_0$ remains.
+
 
 \input{chapters/2/problem-handles}
 
