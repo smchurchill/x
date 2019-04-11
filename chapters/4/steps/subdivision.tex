@@ -54,13 +54,16 @@ Recall that the goal of this subdivision is to identify combinatorial analogues 
 If we were to subdivide $N$ using the quads and triangles induced by the edges of $N$, such blocks are ill-defined.
 We amend this by introducing a set of line segments analogous to the sleeves of Section \ref{section:smooth-decompose}.
 
-For each edge $e$ of $N^1$, consider $e_\varepsilon^+ = e+\varepsilon_e e_\perp$ and $e_\varepsilon^- =e-\varepsilon_e e_\perp$, line segments in the plane that are parallel to $f(e)$ and located a small orthogonal distance away from $f(e)$.
+For each edge $e$ of $N^1$, consider $e_\varepsilon^+ = s(e+\varepsilon_e e_\perp)$ and $e_\varepsilon^- =s(e-\varepsilon_e e_\perp)$, secants in the circle that are parallel to $f(e)$ and located a small orthogonal distance away from $f(e)$.
+Here we are using $s(\cdot)$ as a function that extends and trims line segments in the plane into secants in the circle.
 We demand that, for each $e\in N^1$, $\varepsilon_e$ is small enough that the rectangle $R_e$ in the plane defined by $e_\varepsilon^+$ and $e_\varepsilon^-$ does not fully contain $g_\varepsilon^\pm$ for any $g\in N^1$.
 This requirement also ensures that the only crossings of $f(N^1)$ contained in $R_e$ are crossings involving $e$.
 The segments $e_\varepsilon^\pm$ for each $e\in N^1$ are called \emph{sleeve segments}, and their preimages form exterior triangles and quads inside of the tetrahedra of $N$.
 See Figure \ref{fig:pl-sleeves} for an illustration of a pair of sleeve segments.
 
 \begin{figure}[h!]
+	\centering
+	\includegraphics[width=\textwidth]{figures/pl-sleeves.png}
 	\caption{
 		\textbf{A pair of sleeve segments in the plane.}
 		We show a pair of edges projections $f(e)$ and $f(g)$ in the plane, along with their associated sleeve segments.
@@ -85,6 +88,8 @@ Such an assignment happens precisely when a cell is mapped through $f$ to the sh
 %Note: we 'need' to include S^1\in\RR to actually form the regions discussed, but that's pretty obvious so we won't address it unless requested.
 
 \begin{figure}[h!]
+	\centering
+	\includegraphics[width=\textwidth]{figures/pl-regions.png}
 	\caption{
 		\textbf{Regions in the plane that correspond to combinatorial vertex, edge, and face block.}
 		The sleeve segments provide the same functionality as the sleeves in Chapter \ref{chapter:smooth}, in that the preimages of the regions they form behave similarly to the vertex, edge, and face blocks defined in Chapter \ref{chapter:smooth}.
