@@ -1,2 +1,34 @@
-\startchapter{Conclusion}
+\startchapter{Discussion}
 \label{chapter:conclusion}
+
+The main chapters of this thesis serve different roles in the greater mathematical ecosystem.
+It is evident from the discussion in Section 2.2 of \cite{CostThur08} that the ideas behind the constructive proof in Chapter \ref{chapter:smooth} is not itself novel, but the details had yet to be published.
+Chapter \ref{chapter:smooth} fills a hole in the current literature, whereas the contents of Chapter \ref{chapter:triangulation} are entirely new, serving as a solid foundation for future research in computational topology.
+
+The immediate next step from creation of the algorithm is an implementation for a topology software project such as Regina.
+Such an implementation furthers progress toward algorithmic computation of the Rokhlin invariant for 3--manifolds and serves as another tool in generating 4--manifold censuses.
+In its current form, the construction algorithm guarantees no topological features of the constructed 4--manifold save that its boundary is the given input 3--manifold.
+Lucrative avenues of exploration would therefore include an investigation into invariants (e.g.\ the fundamental group) or constructs (e.g.\ spin structures) on the constructed manifold.
+
+This work was initially an attempt to adapt the Turaev Reconstruction Theorem as an algorithm on 3--manifolds triangulations.
+The theorem was introduced by Turaev \cite{Turaev91} and is also covered by Costantino \cite{Cost05}.
+The algorithm would build on the process outlined in Chapter 4 of Costantino and Thurston \cite{CostThur08}, where a quadratic bound is achieved for the number of simplices needed to triangulate a 4--manifold constructed using the reconstruction theorem.
+
+Such an adaptation necessarily passes through the shadow realm.
+The shadows explored in \cite{Turaev91} are 2--complexes with strict structural restrictions imposed upon them.
+In the reconstruction theorem, a shadow serves as a set of instructions for a handle decomposition of the desired 4--manifold.
+Each 0--cell prescribes a (4,0)--handle, each 1--cell a (4,1)--handle, and each 2--cell a (4,2)--handle.
+The resulting 4--manifold $W$ has boundary exactly the original 3--manifold $M$.
+Two major obstructions eventually caused this adaptation attempt to be scrapped:
+\begin{enumerate}
+	\item Precisely defining (4,2)--handle attachment sites in this process is hard.
+	\item The fact that $\pd W = M$ at the end of this process is not obvious and requires a deep examination of shadows (briefly, $\pd W = M$ because $M$ and $W$ have the same shadow).
+\end{enumerate}
+
+Instead, the results of this work were obtained by turning the reconstruction theorem on its head: we begin by making the precise definition of (4,2)--handle attachment sites as simple as possible.
+Once (4,2)--handles have been attached, attachment of (4,3)-- and (4,4)--handles is straightforward.
+This method is dual to the Turaev Reconstruction Theorem in its approach and handle indexing ($(n,\lambda)$-- and $(n,n-\lambda)$--handles are identical, just attached over complementary portions of the handle's boundary), but the goals are different.
+Turaev's work is focused on studying the topology of the shadows themselves, where our ultimate goal is algorithmic construction of 4--manifolds with prescribed boundary.
+
+Beyond its raw results, this research is a demonstration of adapting an existence proof into a constructive proof.
+More adaptations of existence proofs should not be surprising as the bounds of scientific computability are pushed.

@@ -4,7 +4,7 @@
 The study of manifold boundaries is asymmetric.
 Given an $n$--manifold, it is trivial to find its unique $(n-1)$--manifold boundary.
 Given an $(n-1)$--manifold boundary, there are infinitely many $n$--manifolds that possess it but no obvious way to acquire one.
-We focus on the low--dimensional case of $n=4$, where it is known that all closed, orientable 3--manifolds bound 4--manifolds \cite{wbr61, Rokhlin65, Rourke85, Thom}.
+We focus on the low--dimensional case of $n=4$, where it is known that all closed, orientable 3--manifolds bound 4--manifolds (See \cite{wbr61, Rourke85, Thom} for a variety of approaches on this subject).
 The main goal of this document is to provide an algorithm that constructs 4--manifolds with a given boundary.
 
 This century has seen the rise of computational means of constructing and studying low--dimensional manifolds using software such as Regina \cite{regina} and SnapPy \cite{culler2017snappy}.
@@ -12,7 +12,8 @@ The algorithm provided in this document is intended for eventual inclusion in Re
 
 Our assemblage of a constructive proof that 3--manifolds bound 4--manifolds was inspired by the discussion in Section 2.2 of Costantino \& Thurston's ``3--manifolds efficiently bound 4--manifolds'' \cite{CostThur08}.
 An appropriately well-behaved smooth map from a 3--manifold $M$ to $\RR$ induces a stratification of $M$ into a union of handlebodies.
-This stratification serves as a set of surgery instructions for turning $M$ into $S^3$ and produces a 4--manifold whose boundary is precisely $M$ when applied as handle attachment instructions over one boundary component of the 4--manifold $M\times\Ilit$.
+This stratification serves as a set of surgery instructions for turning $M$ into $S^3$.
+It can also be interpreted as a set of 4--dimensional handle attachment sites, and attaching these handles to one boundary component of $M\times\Ilit$ produces a 4--manifold whose boundary is precisely $M$.
 
 Our algorithm is the adaptation of this smooth proof to the setting of triangulated manifolds.
 We define a map from the input 3--manifold triangulation to $\RR$, subdivide the manifold into handlebodies, then attach handles to one boundary component the manifolds' 4--thickening until we obtain the desired outcome.
@@ -22,8 +23,8 @@ We define a map from the input 3--manifold triangulation to $\RR$, subdivide the
 This document is aimed at a reader with some understanding of the tools of low--dimensional manifold theory.
 We do not present the basics of manifold theory, calculus on manifolds, or triangulations of manifolds.
 
-For an introduction to manifolds and calculus on manifolds please see Lee's ``Introduction to Smooth Manifolds'' \cite{Lee00}.
-For more on 3--manifolds and the basics of triangulations, please see Stein, Thurston, \& Mather's ``Three-dimensional geometry and topology'' \cite{stein1997three}.
+For the fundamentals of manifolds and calculus on manifolds see Lee's ``Introduction to Smooth Manifolds'' \cite{Lee00}.
+For more on 3--manifolds and an introduction to triangulations, see Stein, Thurston, \& Mather's ``Three-dimensional geometry and topology'' \cite{stein1997three}.
 
 \section{Agenda}
 
