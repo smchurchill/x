@@ -98,25 +98,28 @@ The full extent of this surgery can be detected by examining the edge and vertex
 	
 	\textbf{Part 2:}
 	Let $V$ be a vertex block.
-	The possible forms of $V$ are depicted in Figures REF.
-	Annular regions in $\pd V$ are highlighted where $\pd V$ intersects the boundary of a face block. 
-	In each case, $V$ is a (3,1)--handlebody of some genus $g$.
-	$V$ and $V'$ are related via (3,2)--handle attachments to $V$ induced by the (4,2)--handle attachments, and the attaching regions for these (3,2)--handle attachments are exactly the highlighted annuli in Figures REF.
-	Attachment regions are disjoint, so the resulting manifold is independent of the order in which we attach handles.
+	All vertex blocks are stratified (3,1)--handlebodies of some genus, and
+	%	The possible forms of $V$ are depicted in Figures REF.
+%	Annular regions in $\pd V$ are highlighted where $\pd V$ intersects the boundary of a face block. 
+%	In each case, $V$ is a (3,1)--handlebody of some genus $g$.
+	$V$ and $V'$ are related via (3,2)--handle attachments to $V$ induced by (4,2)--handle attachments.
+%	, and the attaching regions for these (3,2)--handle attachments are exactly the highlighted annuli in Figures REF.
+	The attaching regions are disjoint, so the resulting manifold is independent of the order in which we attach handles.
 	
-	\begin{figure}[h!]
-		\centering
-%		\includegraphics[width=\textwidth]{figures/vertex-block-incidence.png}
-		\caption{
-			\textbf{Vertex blocks.}
-			The possible vertex blocks of $M_1$.
-			Annular boundary strata that are incident with face blocks of $M_1$ are indicated in color and correspond to the shared vertex-face region boundary edge.
-			For each block, attaching (3,2)--handles over the indicated annuli results in a (3,2)--handlebody.
-		}
-		\label{fig:vertex-block-incidence}
-	\end{figure}
+%	\begin{figure}[h!]
+%		\centering
+%%		\includegraphics[width=\textwidth]{figures/vertex-block-incidence.png}
+%		\caption{
+%			\textbf{Vertex blocks.}
+%			The possible vertex blocks of $M_1$.
+%			Annular boundary strata that are incident with face blocks of $M_1$ are indicated in color and correspond to the shared vertex-face region boundary edge.
+%			For each block, attaching (3,2)--handles over the indicated annuli results in a (3,2)--handlebody.
+%		}
+%		\label{fig:vertex-block-incidence}
+%	\end{figure}
 	
-	Proving that $V'$ is a (3,2)--handlebody with $g=0$ is trivial, because $V$ is then a 3--ball.
+	Let $g$ be the genus of $V$.
+	Proving that $V'$ is a (3,2)--handlebody when $g=0$ is trivial, because $V$ is then a 3--ball.
 	This means $V'$ is a 3--ball with a collection of (3,2)--handles attached to it, i.e.\ a (3,2)--handlebody.
 	The case of $g>0$ is nontrivial.
 	
@@ -137,6 +140,21 @@ The full extent of this surgery can be detected by examining the edge and vertex
 	In words, every (3,1)--handle belt sphere transversely intersects at least one of the (3,2)--handle attaching spheres, every (3,2)--handle attaching sphere intersects at least one of the (3,1)--handle belt spheres, and all intersection numbers are at most 1.
 	Thus every (3,2)--handle attached to $V$ either cancels out an existing (3,1)--handle or adds a new 2--sphere boundary component.
 	Because $\pd V'$ is a disjoint collection of 2--spheres we conclude that every (3,1)--handle of $V$ has been canceled by a (3,2)--handle, thus $V'$ is a (3,2)--handlebody.
+	We present an example of how these handle attachment sites are arranged in Figure \ref{fig:vertex-block-incidence}.
+	
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=\textwidth]{figures/vertex-block-incidence.png}
+			\caption{
+				\textbf{Vertex block with (3,2)--handle attachment sites indicated.}
+				We display an example vertex block of $M_1$.
+				Recall that this is the second type of interactive vertex block and, as in Figure \ref{fig:codim-2-surface-2}, the surface is presented as embedded in $S^3$ and the block is the stratified (3,1)--handlebody on the 'outside' of the surface in $S^3$.
+				Annular boundary strata that are incident with face blocks of $M_1$ are indicated in color and correspond to the shared vertex-face region boundary edge.
+				The 1--handle belt spheres are also indicated as black horizontal arcs across the surface.
+				Attaching (3,2)--handles over the indicated annuli as prescribed results in a (3,2)--handlebody.
+			}
+			\label{fig:vertex-block-incidence}
+		\end{figure}
 
 %	Figure \ref{fig:vertex-block-incidence} displays the possible vertex block forms embedded in $S^3$ and indicates the boundary strata of a vertex block that are shared by face blocks.
 %	

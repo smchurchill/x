@@ -2,7 +2,7 @@
 \chapter{Algorithm for triangulated manifolds}
 \label{chapter:triangulation}
 
-The steps to construct a triangulated 4--manifold with prescribed closed, orientable 3--manifold boundary broadly follow the steps to construct a 4--manifold with prescribed smooth, orientable 3--manifold boundary.
+Construction of a triangulated 4--manifold with prescribed closed, orientable 3--manifold boundary broadly follows the steps we used in the construction of a 4--manifold with prescribed smooth, orientable 3--manifold boundary.
 Let $N$ be a closed, orientable 3--manifold triangulation.
 Then the steps of construction are:
 \begin{enumerate}
@@ -16,7 +16,7 @@ Then the steps of construction are:
 	
 	\item Form $W''$ by attaching 4--dimensional 3--handles to $W'$ over $M_1'$ as prescribed by the subdivision induced by $f$ and the surgery induced by 2--handle attachment.
 	
-	\item The boundary of $W''$ consists of $M_0$ and a collection of copies of $S^3$. Coning the 3--spheres results in a triangulated 4--manifold whose boundary is exactly $M_0$.
+	\item The boundary of $W''$ consists of $M_0$ and a collection of copies of $S^3$. Attaching a 4--handle to each $S^3$ boundary component results in a triangulated 4--manifold whose boundary is exactly $M_0$.
 \end{enumerate}
 
 Each of these steps is made algorithmic, and these algorithms are chained in series to form a single algorithm.
