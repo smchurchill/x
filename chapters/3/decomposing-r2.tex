@@ -23,8 +23,7 @@ Figures \ref{fig:vertex-sleeve}-\ref{fig:face-sleeve} are used to illustrate the
 
 We begin by fitting octagonal sleeves around codimension 2 singular values as in Figure \ref{fig:vertex-sleeve}.
 %Octagons are used here solely to simplify descriptions further down the line of proof.
-Let $x$ be a codimension 2 singular value.
-$x$ is the result of an arc crossing, and a small neighbourhood around an arc crossing is divided into four regions of regular values.
+If $x$ is a codimension 2 singular value then $x$ is the result of an arc crossing, and a small neighbourhood around an arc crossing is divided into four regions of regular values.
 The octagon around $x$ is fit so its edges alternate between being fully contained in a region of regular values and orthogonally intersecting one of the arcs of singular values that creates $x$.
 See Figure \ref{fig:vertex-sleeve} for an example fitting.
 
@@ -60,7 +59,15 @@ The octagonal edge endpoints are also vertices of the octagons, and the formatio
 	\label{fig:face-sleeve}
 \end{figure}
 
-Removing from $f(M)$ all vertex and edge regions, we are left with a collection of simply connected regions in the plane, each of which consists entirely of regular values.
+Removing from $f(M)$ all vertex and edge regions, we are left with a collection of connected regions in the plane, each of which consists entirely of regular values.
+%If a smooth map $f:M\to\RR$ only satisfies the first five stratification conditions then these regions need not be simply connected.
+The sixth stratification condition (that the set of singular values of $f$ in the plane is connected) guarantees that each of these region is simply connected.
+This is because the boundary components of these regions are formed by the singular values of $f$ in the plane, and different boundary components are necessarily disjoint.
+Note that a map satisfying the first five stratification conditions can be smoothly homotoped to satisfy the sixth condition, and this is argued by induction on the number of connected components of the set of singular values of $f$ in the plane.
+%If $X_1$ and $X_2$ are connected components of singular values of $f$ in the plane, then let $\vec x$ be a vector such that $X_2\cup (X_1+\vec x)$ (the union of $X_2$ with $X_1$ translated by $\vec x$) is connected, and $X_2$, $(X_1 + \vec x)$ intersect transversely.
+%Because $X_1 = f(\cup_i \gamma_i)$ where $\cup_i \gamma_i\subset S_1(f)$, we form a smooth homotopy of $f$ that is the identity outside of a tubular neighbourhood of $\cup_i \gamma_i$ and translation by $\vec x$ on $\cup_i \gamma_i$.
+
+
 We take the closures of these to be the face regions of the stratification of $\RR$.
 The boundary of each face region is an alternating collection of arcs from edge regions and octagonal edges from vertex regions.
 See Figure \ref{fig:face-sleeve} for an example fitting.
@@ -70,7 +77,7 @@ The stratification of $\RR$ is a stratification into subsets $R_{(i,j)}$ where $
 Subset indexing is defined so that a subset $R_{(i,j)}$ is an $i$--dimensional submanifold of $\RR$, thus $R_{(i,j)}\nleq R_{(k,l)}$ if $i\nleq k$.
 The first collection of subsets used to filter $\RR$ are the corners of the octagonal vertex sleeves.
 We assign to these subsets the indices $(0,i)$ for $i=1\dots N_0$, where $N_0$ is the number of corners.
-Corners are disjoint, hence $R_{(0,i)}$ is not contained in $R_{(0,j)}$ for any $i, j$, whence $(0,i)\nleq (0,j)$ for any $i,j$.
+Corners are disjoint, so for any $i,j$ with $i\neq j$, $R_{(0,i)}$ is not contained in $R_{(0,j)}$, hence $(0,i)\nleq (0,j)$.
 
 The boundary arcs connect the $(0,i)$--level strata.
 Arcs are indexed by $(1,j)$ for $j=1\dots N_1$, where $N_1$ is the number of arcs.

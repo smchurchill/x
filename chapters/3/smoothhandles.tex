@@ -12,8 +12,11 @@ Our first step is to precisely define the structure of the stratified 2--handles
 
 Let $B$ be a face block of $M_1$.
 By Theorem \ref{thm:block-structure}, $B$ is a closed solid torus that is stratified-homeomorphic to $S^1\times G_n$, where $G_n$ is an $n$--gon for some $n$.
-Consider an unknotted embedding of $B$ in $S^3$, as illustrated in Figure \ref{fig:face-block-complement}.
-The complement of the interior of $B$ is another closed solid torus $B'$, and we stratify $B'$ as follows.
+Consider an unknotted embedding of $B$ in $S^3$.
+The complement of the interior of $B$ is another closed solid torus $B'$.
+The tori $B$ and $B'$ are depicted as cylinders with top and bottom identified in Figure \ref{fig:face-block-complement}.
+
+We stratify $B'$ as follows.
 First include the shared stratified boundary of $B$.
 Next, introduce meridinal disks of $B'$ that are bounded by the $(1,i)$--indexed strata in $B$, i.e.\ the boundary curves in $B$ corresponding to $S^1\times c_m$ where $c_m$ is a corner of $G_n$, $m=1\dots n$.
 Finally, add the homeomorphic 3--disks of $B'$ whose boundaries consist of one longitudinal annulus of $B$ along with the two meridinal disks in $B'$ that are bounded by the annulus's circular boundary components.
@@ -27,6 +30,7 @@ Figure \ref{fig:face-block-complement} illustrates a face block $B$ and its comp
 		\textbf{A face block and its complement form $S^3$.}
 		A face block $B$ is a stratified closed solid torus that is stratified-homeomorphic to $S^1\times G_n$ for some $n$--gon $G_n$.
 		The complement of its unknotted interior in $S^3$ is another stratified closed solid torus $B'$.
+		$B$ and $B'$ are depicted as cylinders with top and bottom identified.
 	}
 	\label{fig:face-block-complement}
 \end{figure}
@@ -48,13 +52,11 @@ The full extent of this surgery can be detected by examining the edge and vertex
 	{\renewcommand\labelitemi{}
 		\begin{itemize}
 			\item \textbf{Primed edge block:}
-			Let $E'$ be a primed edge block.
-			Then $E'$ is identical to an edge block $E$ from Theorem \ref{thm:block-structure} with (3,2)--handles (i.e. cylinders: $D^2\times\Ilit$) attached over all annular boundary strata of $E$ (i.e. each closed strata $A$ of $E$ such that $A=E\cap B$ for some face block $B\in\mathfrak{B}$).
+			A primed edge block $E'$ is identical to an edge block $E$ from Theorem \ref{thm:block-structure} with (3,2)--handles (i.e. cylinders: $D^2\times\Ilit$) attached over all annular boundary strata of $E$ (i.e. each closed strata $A$ of $E$ such that $A=E\cap B$ for some face block $B\in\mathfrak{B}$).
 			Thus $E'$ is a stratified 3--manifold homeomorphic to $S^2\times\Ilit$
 			
 			\item \textbf{Primed vertex block:}
-			Let $V'$ be a primed vertex block.
-			Then $V'$ is identical to a vertex block $V$ from Theorem \ref{thm:block-structure} with (3,2)--handles attached over each annular boundary stratum $A$ of $V$ such that $A=V\cap B$ for some face block $B\in\mathfrak{B}$.
+			A primed vertex block $V'$ is identical to a vertex block $V$ from Theorem \ref{thm:block-structure} with (3,2)--handles attached over each annular boundary stratum $A$ of $V$ such that $A=V\cap B$ for some face block $B\in\mathfrak{B}$.
 			Furthermore, we show that $V'$ is a stratified (3,2)--handlebody.
 		\end{itemize}
 	}
@@ -81,8 +83,10 @@ The full extent of this surgery can be detected by examining the edge and vertex
 		\label{fig:edge-block-incidence}
 	\end{figure}
 	
-	Figure \ref{fig:edge-face-shared-boundary} shows the annulus shared by an example edge block $E$ and $B$ in $M_1$ and its corresponding annulus shared by $B$ and $B'$ in $S_B^3$.
-	The figure demonstrates that the effect on $\pd W$ near $E$ of attaching the (4,2)--handle $C(S_B^3)$ over $B$ is equivalent to attaching a (3,2)--handle from the stratification of $B'$ to $E$ over the annular boundary stratum $E\cap B$.
+	Figure \ref{fig:edge-face-shared-boundary} illustrates how 2--handle attachment affects edge blocks.
+%	Figure \ref{fig:edge-face-shared-boundary} shows the annulus shared by an example edge block $E$ and $B$ in $M_1$ and its corresponding annulus shared by $B$ and $B'$ in $S_B^3$.
+%	The figure demonstrates that t
+	The effect on $\pd W$ near $E$ of attaching the (4,2)--handle $C(S_B^3)$ over $B$ is equivalent to attaching a (3,2)--handle from the stratification of $B'$ to $E$ over the annular boundary stratum $E\cap B$.
 	Attachment of all (4,2)--handles to $W$ applies this (3,2)--handle attachment to all annular strata of $E$, and attaching these (3,2)--handles to all annular strata of $E$ results in a 3--manifold homeomorphic to $S^2\times\Ilit$.
 
 	\begin{figure}[h!]
@@ -139,7 +143,7 @@ The full extent of this surgery can be detected by examining the edge and vertex
 	Moreover, for every $i$, $\alpha_i\cap\{\beta_j\}_j>0$ and $\beta_i\cap\{\alpha_j\}_j>0$.
 	In words, every (3,1)--handle belt sphere transversely intersects at least one of the (3,2)--handle attaching spheres, every (3,2)--handle attaching sphere intersects at least one of the (3,1)--handle belt spheres, and all intersection numbers are at most 1.
 	Thus every (3,2)--handle attached to $V$ either cancels out an existing (3,1)--handle or adds a new 2--sphere boundary component.
-	Because $\pd V'$ is a disjoint collection of 2--spheres we conclude that every (3,1)--handle of $V$ has been canceled by a (3,2)--handle, thus $V'$ is a (3,2)--handlebody.
+	Because $\pd V'$ is a disjoint collection of 2--spheres we conclude that every (3,1)--handle of $V$ has been cancelled by a (3,2)--handle, thus $V'$ is a (3,2)--handlebody.
 	We present an example of how these handle attachment sites are arranged in Figure \ref{fig:vertex-block-incidence}.
 	
 		\begin{figure}[h!]
@@ -193,12 +197,12 @@ The full extent of this surgery can be detected by examining the edge and vertex
 	Because (4,2)--handle attachment altered $M_1$ to $M_1'$ only by replacing each face block $B$ with its complementary $B'$, the primed blocks must exhaust $M_1'$.
 \end{proof}
 
+\subsection{3--handles}
+\label{subsec:smooth-3handles}
+
 Decomposing $M_1'$ into primed edge and vertex blocks provides us with stratified 3--handle attachment neighbourhoods.
 A 4--dimensional 3--handle is attached over an $S^2\times\Ilit$ embedded in the boundary of a 4--manifold, so attachment neighbourhoods for our stratified 3--handles are the primed edge blocks of $M_1'$.
 We begin 3--handle attachment by precisely defining the structure of a stratified 3--handle so that it may be attached over a primed edge block.
-
-\subsection{3--handles}
-\label{subsec:smooth-3handles}
 
 Let $E'$ be a primed edge block of $M_1'$.
 By Theorem \ref{thm:primed-block-structure}, $E'$ is homeomorphic to $S^2\times\Ilit$.
@@ -284,13 +288,13 @@ We attach stratified 4--handles over these 3--spheres, so we begin by precisely 
 
 \subsection{4--handles}
 Let $V''$ be a double primed vertex block of $M_1''$.
-By Theorem \ref{thm:primed-primed-block-structure}, $V''$ is homeomorphic to $S^3$.
+By Corollary \ref{thm:primed-primed-block-structure}, $V''$ is homeomorphic to $S^3$.
 We form a 4--disk whose boundary is $V''$ by taking the cone of $V''$.
 We denote this 4--disk by $C(V'')$ and call the resulting 4--handle structure the \emph{stratified 4--handle induced by $V''$}.
 Attaching $C(V'')$ to $W''$ over $V''$ alters the boundary of $V''$ by replacing it with $\emptyset$.
 
 \begin{cor}
-	Let $W''$ be the 4--manifold resulting from the construction described in Theorem \ref{thm:primed-primed-block-structure} and let $\mathfrak{V}''$ be the set of double primed vertex blocks of $M_1''\subset\pd W''$.
+	Let $W''$ be the 4--manifold resulting from the construction described in Corollary \ref{thm:primed-primed-block-structure} and let $\mathfrak{V}''$ be the set of double primed vertex blocks of $M_1''\subset\pd W''$.
 	Consider the 4--manifold $W'''$ constructed from $W''$ as
 	\[
 	W''' = W''\cup\{C(V'')\}_{V''\in \mathfrak{V}''} / \sim,
