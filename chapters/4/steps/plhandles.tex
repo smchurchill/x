@@ -8,10 +8,10 @@ Explicit attachment sites are available for (4,2)--handles, so our first step is
 \subsection{2--handles}
 \label{section:pl-2-handle}
 
-The algorithm of this subsection takes as input a pair $(T,\Gamma)$ where $T$ is a closed solid torus triangulation and $\Gamma$ is a collection of triangulated disjoint parallel longitudes in the boundary of $T$.
+The algorithm of this subsection takes as input a pair $(T,\Gamma)$ where $T$ is a closed solid torus triangulation and $\Gamma$ is a collection disjoint parallel longitudes in the boundary of $T$, given as subtriangulations of $\pd T$.
 The output is a 4--disk triangulation $H$ satisfying the following:
 \begin{enumerate}
-	\item $\pd H$ is a triangulated $S^3$ with a genus 1 Heegard splitting over $\pd T$, i.e.\ $\pd H\setminus \interior{T}$ is a solid torus.
+	\item $\pd H$ is a triangulated $S^3$ with a genus 1 Heegard splitting over $\pd T$, i.e.\ $T$ is a subtriangulation of $\pd H$ such that $\pd H\setminus \interior{T}$ is a solid torus.
 	\item For each $\gamma_i$ in $\Gamma$, $\gamma_i$ bounds a triangulated disk in $\pd H$, i.e.\ each $\gamma_i$ is an explicit 0-framing for the (4,2)--handle attachment.
 \end{enumerate}
 We take $H$ to be a (4,2)--handle and attach $H$ to $W$ over $T$.
@@ -72,7 +72,7 @@ where $\sim$ is defined by $b\sim \iota(b)$, $\iota$ the identity map $H_B^2\sup
 		$\pd D^2_i=\gamma_i\overset{\iota}{\to}\gamma_i\subset T_0'$\;
 		\ForEach{adjacent pair of longitudes $\gamma_i,\gamma_j$ from $\Gamma$}{
 			$A_{ij}=$ the annulus in $T_1'$ bounded by $\gamma_i$ and $\gamma_j$\;
-			$S^2_{ij}=$ the triangulated 2--sphere in $T_1'$ bounded by $D^2_i\cup A_{ij}\cup D^2_j$\;
+			$S^2_{ij}=$ the triangulated 2--sphere in $T_1'$ that is precisely $D^2_i\cup A_{ij}\cup D^2_j$\;
 			$D^3_{ij}=C(S^2_{ij})$, the cone of $S^2_{ij}$\;
 		}
 		$T'=T_1'\cup\{D^3_{ij}/\sim\}$, where $\sim$ is induced by
