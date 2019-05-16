@@ -2,7 +2,7 @@
 \label{section:pl-handle}
 
 At this point in the chapter we have constructed a 4--manifold triangulation $W$ with two boundary components, each equivalent via subdivision to the 3--dimensional cell complex $M$ obtained in Section \ref{section:pl-subdivide}.
-Furthermore, the simplices of $M$ is partitioned into subtriangulations analogous to the face, edge, and vertex blocks of Chapter \ref{chapter:smooth}.
+Furthermore, the simplices of $M$ are partitioned into subtriangulations analogous to the face, edge, and vertex blocks of Chapter \ref{chapter:smooth}.
 Explicit attachment sites are available for (4,2)--handles, so our first step is construction of a (4,2)--handle.
 
 \subsection{2--handles}
@@ -17,7 +17,7 @@ The output is a 4--disk triangulation $H$ satisfying the following:
 We take $H$ to be a (4,2)--handle and attach $H$ to $W$ over $T$.
 Constructing the handle involves building a solid torus $T'$ that complements $T$, combining $T$ and $T'$ over their shared boundary to build a triangulated 3--sphere, then coning that 3--sphere into the 4--disk $H$.
 
-We find pairs $(T,\Gamma)$ inside of $M_1\subset\pd W$, the subdivision of $N$ induced by the subdividing map $f:N\to\RR$.
+We find pairs $(T,\Gamma)$ inside $M_1\subset\pd W$, the subdivision of $N$ induced by the subdividing map $f:N\to\RR$.
 Let $B$ be a combinatorial face block of $M_1$.
 $B$ is a 3--dimensional subtriangulation of $M_1$ that forms a closed solid torus,
 % Prove?
@@ -28,7 +28,7 @@ We take $(B, f\inv C)$ as our pair $(T,\Gamma)$ for each combinatorial face bloc
 
 For a closed solid torus $T$, we find a complementary torus $T'$, i.e.\ $\pd T=\pd T'$ as triangulations.
 We begin by investigating the boundary of $T$, setting $T_0'=\pd T$.
-Inside of $T_0'$ is the set of disjoint parallel longitudes $\Gamma$ that are required to bound disks inside of $T'$, so for each $\gamma_i$ we attach a disk $D_i$ with $\pd D_i=\gamma_i$ to $T'_0$ over $\gamma_i$.
+Inside $T_0'$ is the set of disjoint parallel longitudes $\Gamma$ that are required to bound disks inside $T'$, so for each $\gamma_i$ we attach a disk $D_i$ with $\pd D_i=\gamma_i$ to $T'_0$ over $\gamma_i$.
 Call the result of these attachments $T_1'$.
 Adjacent longitudes $\gamma_i$ and $\gamma_j$ bound an annulus $A_{ij}$ in $T_1'$, and $D_i \cup A_{ij}\cup D_j$ is a triangulated 2--sphere that we cone into a 3--disk $D_{ij}$.
 For each $ij$, we attach the 3--disk $D_{ij}$ to $T_1'$ over $D_i\cup A_{ij}\cup D_j$ to form the closed solid torus $T'$.
@@ -58,7 +58,7 @@ where $\sim$ is defined by $b\sim \iota(b)$, $\iota$ the identity map $H_B^2\sup
 	\caption{Constructing a (4,2)--handle}
 	\label{alg:build-2-handle}
 	\KwData{A pair $(T,\Gamma)$ where $T$ is a closed solid torus triangulation and $\Gamma$ is a collection of disjoint parallel triangulated longitudes in $\pd T$}
-	\KwResult{A 4--disk $H_T^2$ such that $\pd H_T^2$ is a triangulated 3--sphere with genus 1 Heegard splitting over $\pd T$ and such that $\gamma_i\in\Gamma$ bounds a triangulated disk in $\pd H_T^2\setminus \interior{T}$ for each $i$}
+	\KwResult{A 4--disk triangulation $H_T^2$ such that $\pd H_T^2$ is a triangulated 3--sphere with genus 1 Heegard splitting over $\pd T$ and such that $\gamma_i\in\Gamma$ bounds a triangulated disk in $\pd H_T^2\setminus \interior{T}$ for each $i$}
 	\Begin{
 		First, we construct a complementary solid torus $T'$ with $\pd T=\pd T'$\;
 		$T_0'=\pd T$\;
@@ -155,7 +155,7 @@ where $\sim$ is defined by $e\sim \iota(e)$, $\iota$ the identity map $H_{E'}^3\
 	\caption{Constructing a 3--handle}
 	\label{alg:build-3-handle}
 	\KwData{$E'$, a triangulated $S^2\times\Ilit$}
-	\KwResult{A 4--disk $H_{E'}^3$ such that $\pd H_{E'}^3$ is a triangulated 3--sphere containing $E'$ as a subtriangulation}
+	\KwResult{A 4--disk triangulation $H_{E'}^3$ such that $\pd H_{E'}^3$ is a triangulated 3--sphere containing $E'$ as a subtriangulation}
 	\Begin{
 		First, we attach 3--disks to $E'$ over its two 2-sphere boundary components\;
 		\ForEach{boundary sphere $S^2_i\in \pd E'$}{

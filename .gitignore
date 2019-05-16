@@ -24,4 +24,4 @@
 *.lof
 figures/pspictures/*
 geogebra/*
-revisions.txt
+revisions*

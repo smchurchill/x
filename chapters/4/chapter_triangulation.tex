@@ -2,15 +2,13 @@
 \chapter{Algorithm for triangulated manifolds}
 \label{chapter:triangulation}
 
-Construction of a triangulated 4--manifold with prescribed closed, orientable 3--manifold boundary broadly follows the steps we used in the construction of a 4--manifold with prescribed smooth, orientable 3--manifold boundary.
+Algorithmic construction of a triangulated 4--manifold with a prescribed closed, orientable 3--manifold boundary broadly follows the steps we used in the construction of a 4--manifold a with prescribed smooth, orientable 3--manifold boundary.
 Let $N$ be a closed, orientable 3--manifold triangulation.
 Then the steps of construction are:
 \begin{enumerate}
 	\item Define a projection $f:N\to\RR$.
 	
-	\item Induce a subdivision of $N$ from $f$.  The result is a 3--dimensional cell complex $M$ that is equivalent to $N$.
-
-	\item $M\times\Ilit$ is a 4--dimensional cell complex with boundary components $M_0 = M\times\{0\}$ and $M_1 = M\times\{1\}$.  Let $W$ be the triangulation obtained by inductively triangulating each cell of $M$.
+	\item Induce a subdivision of $N$ from $f$.  The result is a 3--dimensional cell complex $M$ that is equivalent to $N$.  $M\times\Ilit$ is a 4--dimensional cell complex with boundary components $M_0 = M\times\{0\}$ and $M_1 = M\times\{1\}$.  Let $W$ be the triangulation obtained by inductively triangulating each cell of $M$.
 	
 	\item Attach 4--dimensional 2--handles to $W$ over its $M_1$ boundary as prescribed by the subdivision of $M$ from $f$.  Call the result $W'$ and let $M_1'=\pd W' \setminus M_0$.
 	
@@ -19,8 +17,8 @@ Then the steps of construction are:
 	\item The boundary of $W''$ consists of $M_0$ and a collection of copies of $S^3$. Attaching a 4--handle to each $S^3$ boundary component results in a triangulated 4--manifold whose boundary is exactly $M_0$.
 \end{enumerate}
 
-Each of these steps is made algorithmic, and these algorithms are chained in series to form a single algorithm.
-This algorithm has input a closed, orientable 3--manifold triangulation $N$ and output a 4--manifold triangulation $W'''$ whose sole boundary component is a triangulated 3--manifold that is equivalent to $N$ in the sense of triangulations.
+%Each of these steps is made algorithmic, and these algorithms are chained in series to form a single algorithm.
+This construction has input a closed, orientable 3--manifold triangulation $N$ and output a 4--manifold triangulation $W'''$ whose sole boundary component is a triangulated 3--manifold that is equivalent to $N$.
 In this case, we find that $\pd W'''$ is a subdivision of $N$, and this subdivision is the subdivision induced by the projection $f$ in Step 1.
 
 It is necessary that the input 3--manifold triangulation is \emph{edge-distinct}, i.e.\ if $u,v$ are vertices of $N$ then $\{u,v\}$ is the boundary of at most one edge.

@@ -18,8 +18,7 @@ Our subdivision of $N$ is obtained by imposing four conditions on $f:N\to\RR$:
 \end{enumerate}
 
 We call these the \emph{subdivision conditions} on $f$, and we call a map satisfying the subdivision conditions a \emph{subdividing map}.
-Conditions 1 and 2 ensure that every simplex of $N$ is mapped to the plane in standard position, where a simplex $\sigma$ of $N$ is mapped to the plane in \emph{standard position} if every point in $f(\sigma^0)$ is essential in forming the convex hull of $f(\sigma^0)$.
-See Figure \ref{fig:standard-position} for an illustration.
+Conditions 1 and 2 ensure that every simplex of $N$ is mapped to the plane in standard position, where a simplex $\sigma$ of $N$ is mapped to the plane in \emph{standard position} if every point in $f(\sigma^0)$ is essential in forming the convex hull of $f(\sigma^0)$ as shown in Figure \ref{fig:standard-position}.
 This, along with conditions 3 and 4, allows us to use concepts and language from normal surface theory to describe the subdivision of $N$ in the next section.
 
 All conditions are satisfied by fixing an odd integer $k$ greater than or equal to the number of vertices in $N$, injecting the vertices of $N$ to the $k\nth$ complex roots of unity in the plane, then extending linearly over the skeletons of $N$.
@@ -42,13 +41,13 @@ The subdividing map projects each tetrahedron to the plane in \emph{standard pos
 		}
 		\ForEach{$n$ in $\{1,2,3\}$}{
 			\ForEach{simplex $\sigma$ in $N^n$}{
-				by definition, $\sigma$ is the set of convex combinations of $\sigma^0$:\;
+				By definition, $\sigma$ is the set of convex combinations of $\sigma^0$:\;
 %				\Indp$\sigma^0=\{v_0,\dots, v_n\}$\;
-				\Indp$\sigma=\{x\;|\;x=\sum_{j=0}^n t_j v_j,\, \sum t_j = 1, t_j\geq 0, v_j\in\sigma^0 \}$\;
+				\Indp$\sigma=\{x\;|\;x=\sum_{i=0}^n a_i v_i,\, \sum a_i = 1, a_i\geq 0, v_i\in\sigma^0 \}$\;
 				\Indm
 				
-				define $f$ on $x\in\sigma$ by requring linearity over simplices:\;
-				\Indp$f(x)=f(\sum_{j=0}^n t_j v_j)=\sum_{j=0}^n t_j f(v_j)$\;
+				Define $f$ on $x\in\sigma$ by requiring linearity over simplices:\;
+				\Indp$f(x)=f(\sum_{i=0}^n a_i v_i)=\sum_{i=0}^n a_i f(v_i)$\;
 				\Indm
 			}
 		}
