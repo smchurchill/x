@@ -12,15 +12,15 @@ To understand the structure of face, edge, and vertex blocks we investigate the 
 	We define a \emph{singular fiber} to be a fiber that contains a critical point of $f$, and a \emph{regular fiber} to be a fiber consisting entirely of regular points.	
 \end{defn}
 
-The subsets used to stratify $M$ are the fibers of $f$ that lie above the corners of the octagonal vertex regions, the edges of the vertex and edge regions, and the regions themselves.
-Because the corners of the vertex regions are regular values, their fibers are regular, hence a finite collection of disjointly embedded circles in $M$.
+The subsets used to stratify $M$ are the fibers of $f$ that lie above the individual strata of our $\RR$ stratification.
+Because the $(0,\cdot)$--strata are regular values, their fibers are regular, hence a finite collection of disjointly embedded circles in $M$.
 We take these circles as the first collection of subsets that filter $M$, and assign to them the indices $(1,i)$ for $i = 1\dots N_1$, where $N_1$ is the number of circles.
 These circles are disjoint, so $(1,i)\nleq (1,j)$ for any $i,j$.
 
-The arcs of the $\RR$ stratification connect the vertices of the $\RR$ stratification and either consist entirely of regular values or contain exactly one singular value.
-As pictured in Figure \ref{fig:face-sleeve}, an arc contains exactly one singular value precisely when it is the boundary a vertex region and an edge region.
-When an arc contains exactly one singular value, exactly one fiber above that value is a singular fiber, with the rest regular fibers.
-A decomposing arc is diffeomorphic to the unit interval and $f$ is a smooth submersion between smooth manifolds, so a fiber above a decomposing arc is a surface whose boundary circles are the fibers above the arc's endpoints.
+The $(1,\cdot)$--strata of the $\RR$ stratification connect the $(0,\cdot)$--strata of the $\RR$ stratification and either consist entirely of regular values or contain exactly one singular value.
+As pictured in Figure \ref{fig:face-sleeve}, a $(1,\cdot)$--strata contains exactly one singular value precisely when it is the shared boundary of a vertex region and an edge region.
+When a $(1,\cdot)$--strata contains exactly one singular value, exactly one fiber above that value is a singular fiber, with the rest regular fibers.
+A $(1,\cdot)$--strata is diffeomorphic to the unit interval and $f$ is a smooth submersion between smooth manifolds, so a fiber above a $(1,\cdot)$--strata is a surface whose boundary circles are the fibers above the strata's endpoints.
 When the fiber is regular, the surface is diffeomorphic to an annulus $S^1\times\Ilit$.
 When the fiber is singular, the surface classification depends on the type of singularity.
 Theorem \ref{thm:saeki} and Figure \ref{fig:saeki-fibers} show that the fiber containing the singularity either has the structure of a figure-of-eight (when the singularity is part of an indefinite fold) or is a single point (when the singularity is part of a definite fold), hence the singular fiber above the arc is diffeomorphic to either a 2--disk or a pair-of-pants.
@@ -53,7 +53,7 @@ The last stratification condition is trivially satisfied because $X$ is closed, 
 	\label{fig:saeki-fibers}	
 \end{figure}
 
-The surface fibers above the decomposing arcs are the second collection of subsets that filter $M$, and they are assigned the indices $(2,j)$ for $j=1\dots N_2$, where $N_2$ is the number of surfaces.
+The surface fibers above the $(1,\cdot)$--strata are the second collection of subsets that filter $M$, and they are assigned the indices $(2,j)$ for $j=1\dots N_2$, where $N_2$ is the number of surfaces.
 The boundary circles of the surfaces are each subsets of the filtration, indexed by the $(1,i)$ indices, so $(1,i)\leq (2,j)$ if and only if $M_{(1,i)}$ is one of the boundary components of $M_{(2,j)}$.
 These surfaces intersect one another only when they share a boundary circle, so $(2,j)\nleq (2,k)$ for any $j,k$.
 
