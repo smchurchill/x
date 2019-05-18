@@ -4,13 +4,14 @@
 Given a smooth, closed 3--manifold $M$, there are infinitely many 4--manifolds with boundary $M$.
 For example, consider $M=S^3$.
 Removing a 4--ball from any 4--manifold $W$ produces a 4--manifold with $S^3$ boundary.
-We therefore do not ensure that the constructed 4--manifold has any properties other than a specified boundary, so our construction prioritizes easy verification that the constructed 4--manifold's boundary is exactly $M$.
-This is done by setting $W=M\times \Ilit$, so $W$ has boundary 
+Our construction begins with the 4--manifold $W=M\times \Ilit$ which has boundary
 \[
-	\pd W = (M\times\{0\}) \cup (M\times\{1\}) = M_0 \cup M_1.
+\pd W = (M\times\{0\}) \cup (M\times\{1\}) = M_0 \sqcup M_1.
 \]
-We then attach stratified handles to the boundary of $W$ away from $M_0$ until only $M_0$ remains.
-
+We attach stratified handles to the boundary of $W$ away from $M_0$ until only $M_0$ remains.
+Handle attachment sites are obtained through a stratifying procedure in Sections \ref{section:smooth-projection} and \ref{section:smooth-decompose}, but only 2--handle attachment sites are immediate.
+The sites for 3--handles appear after considering the effect of 2--handle attachment, and the sites for 4--handles appear after considering the effect of 2-- and 3--handle attachment.
+The remainder of this chapter sets the foundation for our analysis of the effect of handle attachments.
 
 \input{chapters/2/problem-handles}
 
