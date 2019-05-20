@@ -73,9 +73,21 @@ The segments $e_\varepsilon^\pm$ for each $e\in N^1$ are called \emph{sleeve seg
 	\label{fig:pl-sleeves}
 \end{figure}
 
-Take $S$ to be the set of line segments in the plane that consists of $f(e)$ for each $e\in N^1$ along with the sleeve segments $e_\varepsilon^\pm$.
-For each tetrahedron $\sigma$ of $N$, the triangles, quads, and intersections of $f\inv S\cap\sigma$ define a subdivision of $\sigma$ into a cell complex.
-Iteration of this subdivision in Algorithm \ref{alg:subdividing-manifold} across all tetrahedra of $N$ yields a 3--dimensional cell complex $M$.
+Take $G$ to be the set of line segments in the plane that consists of $f(e)$ for each $e\in N^1$ along with the sleeve segments $e_\varepsilon^\pm$.
+For each tetrahedron $\sigma$ of $N$, the triangles, quads, and intersections of $f\inv G\cap\sigma$ define a subdivision of $\sigma$ into a cell complex.
+We implement this subdivision in Algorithm \ref{alg:subdividing-manifold} by constructing a new cell complex that is equivalent to $N$.
+The subdivision iterates over all of the triangles and quads inside of $\sigma$, and the subdivision induced by a polygon is fully realized before moving onto the next.
+
+For an example of subdivision, refer to Figure \ref{fig:standard-position-interior-exterior}, where a tetrahedron is being subdivided by an exterior triangle, an interior triangle, and an exterior quad.
+We construct the subdivision of $\sigma$ as a 3--complex $\tau$, starting by setting $\tau = \sigma$.
+Subdividing $\tau$ by the exterior triangle first (the brown triangle in Figure \ref{fig:standard-position-interior-exterior}), consider the loop that starts of line 8 of Algorithm \ref{alg:subdividing-manifold}.
+It is looping over all 1--cells of $\tau$ that intersect the exterior triangle $\delta$, and these are the three 1--cells of $\tau$ incident with the pink vertex.
+We subdivide these 1--cells by their intersection with $\delta$, which amounts to including the corners of the $\delta$ exterior triangle into the complex, splitting the relevant 1--cells into a pair of 1--cells on either side of the corner.
+We move to the loop on line 12, where we subdivide the three boundary pentagons (formerly triangles) of $\tau$ that contain the pink vertex by the three triangular edges of $\delta$.
+Each pentagon is subdivided into a triangle and a quadrilateral.
+Finally, we subdivide
+
+%sIteration of this subdivision in Algorithm \ref{alg:subdividing-manifold} across all tetrahedra of $N$ yields a 3--dimensional cell complex $M$.
 
 We subdivided $N$ into $M$ in order to identify analogues to the face, edge, and vertex blocks of Chapter \ref{chapter:smooth}.
 The analogous blocks are defined exactly as they were in Chapter \ref{chapter:smooth} --- the sleeve segments subdivide the plane into regions homeomorphic to disks, those disks are classified by whether they contain a crossing of $f(N^1)$, intersect $f(N^1)$ but do not contain a crossing, or do not intersect $f(N^1)$ at all.
@@ -106,15 +118,30 @@ This triangulation is obtained by inductively subdividing each cell of $M\times\
 	\caption{Subdividing $N$}
 	\label{alg:subdividing-manifold}
 	\KwData{A closed, orientable 3--manifold triangulation $N$ with subdividing map $f:N\to\RR$}
-	\KwResult{A closed, orientable 3--dimensional cell complex $M$}
+	\KwResult{A closed, orientable 3--dimensional cell complex $M$ that is a subdivision of $N$}
 	\Begin{
-		$S = \{f(e)\;|\;e\in N^1\}\cup\{e_\varepsilon^\pm\;|\;e\in N^1\}$\;
+		$G = \{f(e)\;|\;e\in N^1\}\cup\{e_\varepsilon^\pm\;|\;e\in N^1\}$\;
 		\ForEach{tetrahedron $\sigma$ of $N^3$}{
-			\ForEach{segment $s$ of $S$}{
-				$\delta = $ the intersection of $\sigma$ with $f\inv s$\;
-				replace $\sigma$ with the 3--dimensional cell complex obtained as $\sigma$ subdivided by $\delta$\;
+			We construct a 3--dimensional cell complex $\tau$ that is the subdivision of $\sigma$ prescribed by $f$\;
+			$\tau = \sigma$\;
+			\ForEach{segment $g$ in $G$ such that $g\cap f(\sigma)\neq\emptyset$ and $g\nsubseteq \pd f(\sigma)$}{
+				$\delta = $ the intersection of $\sigma$ with $f\inv g$\;
+%				$\delta$ is either an interior triangle, an exterior triangle, or an exterior quad\;
+				\ForEach{intersection $d_0 \in\delta\cap\tau^1$}{
+					$d_0 = \delta\cap t_1$ for some 1--cell $t_1$ of $\tau$\;
+					Subdivide $t_1$ by $d_0$ into a pair of 1--cells $td_1$ and $dt_1$\;
+				}
+				\ForEach{intersection $d_1\in\delta\cap\tau^2$}{
+					$d_1 = \delta\cap t_2$ for some 2--cell $t_2$ of $\tau$\;
+					Subdivive $t_2$ by $d_1$ into a pair of 2--cells $td_2$ and $dt_2$\;
+				}
+				\ForEach{intersection $d_2\in\delta\cap\tau^3$}{
+					$d_2 = \delta\cap t_3$ for some 3--cell $t_3$ of $\tau$\;
+					Subdivive $t_3$ by $d_2$ into a pair of 3--cells $td_3$ and $dt_3$\;
+				}
 			}
 		}
+		$M = $ the set of 3--complexes $\tau$ constructed above, glued together as prescribed by the gluing maps of $N$ and the identification of the $\tau$ as subdivsions of the tetrahedra of $N$\;
 	}
 \end{algorithm}
 
