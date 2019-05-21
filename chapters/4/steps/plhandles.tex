@@ -152,7 +152,7 @@ W'' = W'\cup\{H_{E'}^3\}_{E'\in\mathfrak{E}'}/\sim,
 where $\sim$ is defined by $e\sim \iota(e)$, $\iota$ the identity map $H_{E'}^3\supset E'\overset{\iota}{\to} E'\subset M_1'$.
 
 \begin{algorithm}[h!]
-	\caption{Constructing a 3--handle}
+	\caption{Constructing a (4,3)--handle}
 	\label{alg:build-3-handle}
 	\KwData{$E'$, a triangulated $S^2\times\Ilit$}
 	\KwResult{A 4--disk triangulation $H_{E'}^3$ such that $\pd H_{E'}^3$ is a triangulated 3--sphere containing $E'$ as a subtriangulation}
@@ -177,6 +177,7 @@ A primed combinatorial vertex block is a (3,2)--handlebody, so a  double primed 
 We now construct (4,4)--handles to attach over our double primed combinatorial vertex blocks.
 Let $V''$ be such a block.
 Then $V''$ is a triangulated $S^3$, so a (4,4)--handle structure that can be attached over $V''$ is constructed by coning $V''$.
+This is made explicit in Algorithm \ref{alg:build-4-handle}, which serves double duty as a general algorithm for coning spheres into discs.
 These handles are attached to $W''$ to form a triangulated 4--manifold whose only boundary component is $M_0$.
 
 Let $\mathfrak{V}''$ be the collection of double primed combinatorial vertex blocks of $M_1''\subset \pd W''$.
@@ -188,6 +189,61 @@ W''' = W''\cup\{H_{V''}^4\}_{V''\in\mathfrak{V}''}/\sim,
 \]
 where $\sim$ is defined by $v\sim \iota(v)$, $\iota$ the identity map $H_{V''}^4\supset V''\overset{\iota}{\to} V''\subset M_1''$.
 
+\begin{algorithm}[h!]
+	\caption{Constructing a (4,4)--handle; equivalently, coning a sphere}
+	\label{alg:build-4-handle}
+	\KwData{$V''$, a triangulated $S^3$}
+	\KwResult{A 4--disk triangulation $H_{V''}^4$ such that $\pd H_{V''}^4=V''$}
+	\Begin{
+		$H_{V''}^4= V''$\;
+		Add a 0--cell $x$ to $H_{V''}^4$\;
+%		\ForEach{0--cell $y$ of $V''$}{
+%			Attach a 1--cell $\{x,y\}$ to $H$\;
+%%			Track $\{x,y\}$ as a `new' 1--cell\;
+%		}
+		\For{$i=0\dots 3$}{
+			\ForEach{$i$--cell $y$ of $V''\subset H$}{
+				$Z(y)=\{z\in H_{V''}^4\;|\; z\notin V'' \textrm{ and }\pd z\cap \pd y \neq\emptyset\}$\; 
+				Attach an $(i+1)$--cell to $H_{V''}^4$ over the triangulated $i$--sphere in $H_{V''}^4$ that is precisely $y\cup Z(y)\cup x$\;
+			}
+		}
+	}
+\end{algorithm}
+
 The triangulated 4--manifold $W'''$ has only one boundary component: $M_0$.
 By construction, $M_0$ is equivalent to the original input 3--manifold triangulation $N$ by subdivision of $N$, hence $W'''$ is a triangulated 4--manifold with boundary $N$, as desired.
+Each algorithm in the construction is now chained together in Algorithm \ref{alg:chain}.
+
+\begin{algorithm}[h!]
+	\caption{Full construction of a triangulated 4--manifold with prescribed 3--manifold boundary}
+	\label{alg:chain}
+	\KwData{$N$, a 3--manifold triangulation}
+	\KwResult{A 4--manifold triangulation whose boundary is equivalent to $N$ through subdivision}
+	\Begin{
+		Obtain a subdiving map $f$ for $N$ from Algorithm \ref{alg:subdividing-map}\;
+		Construct $M$, a 3--dimensional cell complex equivalent to $N$ from Algorithm \ref{alg:subdividing-manifold} applied to $(N,f)$\;
+		Construct $W$, the triangulation obtained by inductively subdividing the cells of $M\times\Ilit$ that are not simplices\;
+		$\mathfrak{B}=$ the collection of combinatorial face blocks of $M_1\subset\pd W$\;
+		\ForEach{$B\in\mathfrak{B}$}{
+			$H_B^2=$ the (4,2)--handle produced by Algorithm \ref{alg:build-2-handle} applied to $B$\;
+		}
+		$W' = $ the 4--manifold triangulation obtained by attaching $H_B^2$ to $W$ over $B$ for each $B\in\mathfrak{B}$\;
+		$M_1' = \pd W'\setminus M_0$\;
+		Apportion the cells of $\{H_B^2\}_{B\in\mathfrak{B}}$ to the combinatorial edge and vertex blocks of $W'$ to form primed combinatorial edge and vertex blocks\;
+		$\mathfrak{E}'=$ the collection of primed combinatorial edge blocks of $M_1'\subset\pd W'$\;
+		\ForEach{$E'\in\mathfrak{E}'$}{
+			$H_{E'}^3=$ the (4,3)--handle produced by Algorithm \ref{alg:build-3-handle} applied to $E'$\;
+		}
+		$W'' = $ the 4--manifold triangulation obtained by attaching $H_{E'}^3$ to $W'$ over $E'$ for each $E'\in\mathfrak{E}'$\;
+		$M_1'' = \pd W''\setminus M_0$\;
+		Apportion the cells of $\{H_{E'}^3\}_{E'\in\mathfrak{E}'}$ to the primed combinatorial vertex blocks of $W''$ to form double primed combinatorial vertex blocks\;
+		$\mathfrak{V}'' = $ the collection of double primed combinatorial vertex blocks of $M_1''\subset\pd W''$\;
+		\ForEach{$V''\in\mathfrak{V}''$}{
+			$H_{V''}^4=$ the (4,4)--handle produced by Algorithm \ref{alg:build-4-handle} applied to $V''$\;
+		}
+		$W''' = $ the 4--manifold triangulation obtained by attaching $H_{V''}^4$ to $W''$ over $V''$ for each $V''\in\mathfrak{V}''$\;
+		$\pd W'''=M_0$ and $M_0\equiv N$ through subdivision\;
+		\textbf{return} $W'''$\;	
+	}
+\end{algorithm}
 
