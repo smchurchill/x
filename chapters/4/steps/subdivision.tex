@@ -56,32 +56,60 @@ Recall that the goal of this subdivision is to identify combinatorial analogues 
 If we were to subdivide $N$ using the quads and triangles induced by the edges of $N$, such blocks are ill-defined.
 We amend this by introducing a set of line segments analogous to the sleeves of Section \ref{section:smooth-decompose}.
 
-For each edge $e$ of $N^1$, consider $e_\varepsilon^+ = s(e+\varepsilon_e e_\perp)$ and $e_\varepsilon^- =s(e-\varepsilon_e e_\perp)$, secants in the circle that are parallel to $f(e)$ and located a small orthogonal distance away from $f(e)$.
-Here we are using $s(\cdot)$ as a function that extends and trims line segments in the plane into secants in the circle.
-We require that, for each $e\in N^1$, $\varepsilon_e$ is small enough that the rectangle $R_e$ in the plane defined by $e_\varepsilon^+$ and $e_\varepsilon^-$ does not fully contain $g_\varepsilon^\pm$ for any $g\in N^1$.
-This requirement also ensures that the only crossings of $f(N^1)$ contained in $R_e$ are crossings involving $e$.
-The segments $e_\varepsilon^\pm$ for each $e\in N^1$ are called \emph{sleeve segments}, and their preimages form exterior triangles and quads inside of the tetrahedra of $N$, as shown in Figure \ref{fig:pl-sleeves}.
+The vertices of $N$ are sent to the edge of the boundary of the disc in the plane, and this boundary is the only location in the plane that our smooth singularity theory does not apply.
+Our first set of line segments remedies this.
+Let $p$ be a vertex of $N$ and $s$ a secant in the disc that separates $f(p)$ from $f(N^0\setminus{p})$.
+Then $f\inv(s)$ is a triangulated 2--sphere, and is the boundary of a triangulated 3--disc centred at $p$.
+We use such 3--discs as our first collection of combinatorial vertex blocks
+
+The vertices of $N$ are mapped to the $k\nth$ roots of unity and the rest of the simplices of $N$ are mapped to the plane via linear extension.
+Consider the regular $k$--gon $G_k$ with vertices the $k\nth$ roots of unity reflected through the origin.
+Because $k$ is odd, each of these segments is a secant in the disc that separates the image of one vertex of $N$ from the rest.
+Moreover, $G_k$ separates $f(N^0)$ from the interior edge-edge crossings of $f(N)$.
+We use $G_k$ as our first set of line segments.
+
+Next, we introduce segments that induce the edge and face blocks and the rest of the vertex blocks.
+For each edge $e$ of $N^1$, consider $e_\varepsilon^+ = s(e+\varepsilon_e e_\perp)$ and $e_\varepsilon^- =s(e-\varepsilon_e e_\perp)$, secants in $G_k$ that are parallel to $f(e)$ and located a small orthogonal distance away from $f(e)$.
+Here we are using $s(\cdot)$ as a function that extends and trims line segments in the plane into secants in $G_k$.
+We require that our $\varepsilon$'s are small enough that if $e,g\in N^1$ share a boundary vertex then $e_\varepsilon^\pm$ and $g_\varepsilon^\pm$ do not intersect (i.e. $G_k$ truncates the segments so that their intersection occurs outside of $G_k$).
+%the rectangle $R_e$ in the plane defined by $e_\varepsilon^+$ and $e_\varepsilon^-$ does not fully contain $g_\varepsilon^\pm$ for any $g\in N^1$.
+%This requirement also ensures that the only crossings of $f(N^1)$ contained in $R_e$ are crossings involving $e$.
+The segments $e_\varepsilon^\pm$ for each $e\in N^1$ are called \emph{sleeve segments}, and their preimages form exterior triangles and quads inside of the tetrahedra of $N$.
+Figure \ref{fig:pl-segments} depicts the inclusion of $G_k$ and all sleeve segments for a mapping of a triangulated $S^3$ to the plane.
+Here, the triangulation of $S^3$ used is the 2-tetrahedron triangulation.
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.9\textwidth]{figures/pl-sleeves.png}
 	\caption{
-		\textbf{A pair of sleeve segments in the plane.}
-		We show a pair of edges projections $f(e)$ and $f(g)$ in the plane, along with their associated sleeve segments.
-		Sleeve segments are necessary to ensure well-defined face, edge, and vertex block analogues in the subdivision of $N$.
+		\textbf{The process of including additional segments into the plane to form piecewise-linear sleeves.}
+		We first add the regular polygon $G_5$, which forms vertex sleeves around the image of each vertex of $N$.
+		Then, sleeve segments are included as secants of $G_5$ to form face and edge sleeves as well as vertex sleeves around each interior edge-edge crossing of $N$.
 	}
-	\label{fig:pl-sleeves}
+	\label{fig:pl-segments}
 \end{figure}
 
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=0.9\textwidth]{figures/pl-regions.png}
-	\caption{
-		\textbf{Regions in the plane that correspond to combinatorial vertex, edge, and face block.}
-		The sleeve segments provide the same functionality as the sleeves in Chapter \ref{chapter:smooth}, in that the preimages of the regions they form behave similarly to the vertex, edge, and face blocks defined in Chapter \ref{chapter:smooth}.
-	}
-	\label{fig:pl-regions}
-\end{figure}
+
+%\begin{figure}[h!]
+%	\centering
+%	\includegraphics[width=0.9\textwidth]{figures/pl-sleeves.png}
+%	\caption{
+%		\textbf{A pair of sleeve segments in the plane.}
+%		We show a pair of edges projections $f(e)$ and $f(g)$ in the plane, along with their associated sleeve segments.
+%		Sleeve segments are necessary to ensure well-defined face, edge, and vertex block analogues in the subdivision of $N$.
+%	}
+%	\label{fig:pl-sleeves}
+%\end{figure}
+%
+%\begin{figure}[h!]
+%	\centering
+%	\includegraphics[width=0.9\textwidth]{figures/pl-regions.png}
+%	\caption{
+%		\textbf{Regions in the plane that correspond to combinatorial vertex, edge, and face block.}
+%		The sleeve segments provide the same functionality as the sleeves in Chapter \ref{chapter:smooth}, in that the preimages of the regions they form behave similarly to the vertex, edge, and face blocks defined in Chapter \ref{chapter:smooth}.
+%	}
+%	\label{fig:pl-regions}
+%\end{figure}
 
 Take $G$ to be the set of line segments in the plane that consists of $f(e)$ for each $e\in N^1$ along with the sleeve segments $e_\varepsilon^\pm$.
 For each tetrahedron $\sigma$ of $N$, the triangles, quads, and intersections of $f\inv G\cap\sigma$ define a subdivision of $\sigma$ into a cell complex.
@@ -131,15 +159,15 @@ Then Algorithm \ref{alg:subdividing-manifold} produces a pair of 3--complexes $\
 				}
 				\ForEach{intersection $d_1\in\delta\cap\tau^2$}{
 					$d_1 = \delta\cap t_2$ for some 2--cell $t_2$ of $\tau$\;
-					Subdivive $t_2$ by $d_1$ into a pair of 2--cells $td_2$ and $dt_2$\;
+					Subdivide $t_2$ by $d_1$ into a pair of 2--cells $td_2$ and $dt_2$\;
 				}
 				\ForEach{intersection $d_2\in\delta\cap\tau^3$}{
 					$d_2 = \delta\cap t_3$ for some 3--cell $t_3$ of $\tau$\;
-					Subdivive $t_3$ by $d_2$ into a pair of 3--cells $td_3$ and $dt_3$\;
+					Subdivide $t_3$ by $d_2$ into a pair of 3--cells $td_3$ and $dt_3$\;
 				}
 			}
 		}
-		$M = $ the set of 3--complexes $\tau$ constructed above, glued together as prescribed by the gluing maps of $N$ and the identification of the $\tau$ as subdivsions of the tetrahedra of $N$\;
+		$M = $ the set of 3--complexes $\tau$ constructed above, glued together as prescribed by the gluing maps of $N$ and the identification of the $\tau$ as subdivisions of the tetrahedra of $N$\;
 	}
 \end{algorithm}
 
