@@ -80,11 +80,11 @@ Here, the triangulation of $S^3$ used is the 2-tetrahedron triangulation.
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.9\textwidth]{figures/pl-sleeves.png}
+	\includegraphics[width=0.9\textwidth]{figures/pl-segments.png}
 	\caption{
 		\textbf{The process of including additional segments into the plane to form piecewise-linear sleeves.}
-		We first add the regular polygon $G_5$, which forms vertex sleeves around the image of each vertex of $N$.
-		Then, sleeve segments are included as secants of $G_5$ to form face and edge sleeves as well as vertex sleeves around each interior edge-edge crossing of $N$.
+		From left to right, we see first the image of the 1--skeleton of $N$ mapped to the plane, then the inclusion of the regular polygon $G_5$, which forms (red) vertex sleeves around the image of each vertex of $N$.
+		The rightmost image depicts all sleeve segments as secants of $G_5$, forming the remaining (red) vertex sleeve, six (blue) edge sleeves, and four (green) face sleeves that subdivide $N$.
 	}
 	\label{fig:pl-segments}
 \end{figure}
@@ -111,21 +111,24 @@ Here, the triangulation of $S^3$ used is the 2-tetrahedron triangulation.
 %	\label{fig:pl-regions}
 %\end{figure}
 
-Take $G$ to be the set of line segments in the plane that consists of $f(e)$ for each $e\in N^1$ along with the sleeve segments $e_\varepsilon^\pm$.
-For each tetrahedron $\sigma$ of $N$, the triangles, quads, and intersections of $f\inv G\cap\sigma$ define a subdivision of $\sigma$ into a cell complex.
+Take $L$ to be the set of line segments in the plane.
+This consists of each segment of $G_k$, $f(e)$ for each $e\in N^1$, and the sleeve segments $e_\varepsilon^\pm$.
+For each tetrahedron $\sigma$ of $N$, the polygons and intersections of $f\inv L\cap\sigma$ define a subdivision of $\sigma$ into a cell complex.
 We implement this subdivision in Algorithm \ref{alg:subdividing-manifold} by constructing a new cell complex that is equivalent to $N$.
 The subdivision iterates over all of the triangles and quads inside of $\sigma$, and the subdivision induced by a polygon is fully realized before moving onto the next.
 
 For an example of subdivision, refer to Figure \ref{fig:standard-position-interior-exterior}, where a tetrahedron is being subdivided by an exterior triangle, an interior triangle, and an exterior quad.
 We construct the subdivision of $\sigma$ as a 3--complex $\tau$, starting by setting $\tau = \sigma$.
-Starting at the loop on line 6 of Algorithm \ref{alg:subdividing-manifold}, we set $g$ to be the brown segment that separates the pink vertex from the rest of $f(\sigma)$, making $\delta$ the brown exterior triangle in $\sigma$.
-Then the loop on line 8 loops over all 1--cells of $\tau$ that intersect the exterior triangle $\delta$ which are the three 1--cells of $\tau$ incident with the pink vertex.
+Starting at the loop on line 6 of Algorithm \ref{alg:subdividing-manifold}, we'll assume that the brown segment that separates the pink vertex from the rest of $f(\sigma)$ is a segment from $G_k$ and set this segment as $l$.
+This makes $\delta$ on line 7 the brown exterior triangle in $\sigma$.
+Then the loop on line 8 runs over all 1--cells of $\tau$ that intersect the exterior triangle $\delta$ which are the three 1--cells of $\tau$ incident with the pink vertex.
 We subdivide these 1--cells by their intersection with $\delta$, which amounts to including the corners of the $\delta$ exterior triangle into the complex, splitting the relevant 1--cells into a pair of 1--cells on either side of the corner.
 We move to the loop on line 12, where we subdivide the three boundary pentagons (formerly triangles) of $\tau$ that contain the pink vertex by the three triangular edges of $\delta$.
 Each pentagon is subdivided into a triangle and a quadrilateral.
 Finally, the loop at line 16 we subdivide the only 3--cell of $\tau$ into a tetrahedron containing the pink vertex and a triangular cylinder away from the pink vertex.
 
-Heading back to the top of the loop at line 6, we set $g$ to be the blue interior edge of Figure \ref{fig:standard-position-interior-exterior} hence $\delta$ to be the blue interior triangle.
+Heading back to the top of the loop at line 6 and assuming we have exhausted all segments of $G_k$, we may now consider any segment.
+Setting $l$ to be the blue interior edge of Figure \ref{fig:standard-position-interior-exterior} makes $\delta$ the blue interior triangle.
 Moving through the loop at line 8, we find
 \begin{enumerate}
 	\item the intersection of $\delta$ with the 1--cell of $\tau$ containing the blue and red vertices and 
@@ -147,12 +150,14 @@ Then Algorithm \ref{alg:subdividing-manifold} produces a pair of 3--complexes $\
 	\KwData{A closed, orientable 3--manifold triangulation $N$ with subdividing map $f:N\to\RR$}
 	\KwResult{A closed, orientable 3--dimensional cell complex $M$ that is a subdivision of $N$}
 	\Begin{
-		$G = \{f(e)\;|\;e\in N^1\}\cup\{e_\varepsilon^\pm\;|\;e\in N^1\}$\;
+%		$k = $ the smallest odd number greater than or equal to $|N^0|$\;
+%		$G_k = $ the secants of the regular $k$-gon inscribed in the circle with one corner at $(-1,0)$\;
+		$L = G_k\cup\{f(e)\;|\;e\in N^1\}\cup\{e_\varepsilon^\pm\;|\;e\in N^1\}$\;
 		\ForEach{tetrahedron $\sigma$ of $N^3$}{
 			We construct a 3--dimensional cell complex $\tau$ that is the subdivision of $\sigma$ prescribed by $f$\;
-			$\tau = \sigma$\;
-			\ForEach{segment $g$ in $G$ such that $g\cap f(\sigma)\neq\emptyset$ and $g\nsubseteq \pd f(\sigma)$}{
-				$\delta = $ the intersection of $\sigma$ with $f\inv g$\;
+			$\tau = \sigma$\;			
+			\ForEach{segment $l$ in $L$ such that $l\cap f(\sigma)\neq\emptyset$ and $l\nsubseteq \pd f(\sigma)$, iterating over the segments of $G_k$ first}{
+				$\delta = $ the intersection of $\sigma$ with $f\inv l$\;
 				\ForEach{intersection $d_0 \in\delta\cap\tau^1$ such that $d_0\notin \tau^1$}{
 					$d_0 = \delta\cap t_1$ for some 1--cell $t_1$ of $\tau$\;
 					Subdivide $t_1$ by $d_0$ into a pair of 1--cells $td_1$ and $dt_1$\;
@@ -174,20 +179,48 @@ Then Algorithm \ref{alg:subdividing-manifold} produces a pair of 3--complexes $\
 
 We subdivided $N$ into $M$ in order to identify analogues to the face, edge, and vertex blocks of Chapter \ref{chapter:smooth}.
 The analogous blocks are defined exactly as they were in Chapter \ref{chapter:smooth} --- the sleeve segments subdivide the plane into regions homeomorphic to disks, those disks are classified by whether they contain a crossing of $f(N^1)$, intersect $f(N^1)$ but do not contain a crossing, or do not intersect $f(N^1)$ at all.
-The preimage of a region that contains a crossing is a \emph{combinatorial vertex block}, the preimage of a region that intersects $f(N^1)$ but does not contain a crossing is an \emph{combinatorial edge block}, and the preimage of a region that is disjoint from $f(N^1)$ is a \emph{combinatorial face block}.
+The preimage of a region that contains a crossing is a \emph{combinatorial vertex block}, the preimage of a region that intersects $f(N^1)$ but does not contain a crossing is a \emph{combinatorial edge block}, and the preimage of a region that is disjoint from $f(N^1)$ is a \emph{combinatorial face block}.
 Symmetric names are used for the regions that these blocks project onto --- combinatorial face (resp. edge, vertex) blocks map through $f$ to \emph{combinatorial face (}resp. \emph{edge, vertex) regions}.
-Figure \ref{fig:pl-regions} illustrates the regions in the plane that produce such blocks.
+Figure \ref{fig:pl-segments} illustrates the regions in the plane that produce such blocks.
 These preimages exhaust the cells of $M$, providing a decomposition into subcomplexes.
 This decomposition is not a partition --- some cells are assigned to more than one block.
 Such an assignment happens precisely when a cell is mapped through $f$ to the shared boundary of different combinatorial regions.
 
 %Note: we 'need' to include S^1\in\RR to actually form the regions discussed, but that's pretty obvious so we won't address it unless requested.
 
+Algorithm \ref{alg:subdividing-manifold} produces a cell complex $M$ that is a polyhedral gluing, and we would prefer to replace $M$ with an equivalent triangulation.
+This is done by first replacing each polyhedron $P$ that is not a tetrahedron with the cone on $\pd P$.
+At each polyhedron $P$ this replaces the single 3--cell interior of $P$ with $|P^2|$ new polyhedra, each of which has exactly one non-triangular face.
+Because $M$ is closed, that face is glued to another face of the same polygonal type.
+If $P,Q$ are a pair of polyhedra of $M$ that are glued over the faces $P_i^2$ and $Q_j^2$, each of which is a $k$--gon, then we further subdivide $P_i^2\sim Q_j^2$ into $k-1$ triangles, and replace the newly introduced polyhedra with $k-1$ new tetrahedra, as illustrated in Figure \ref{fig:subdivide-polyhedra}.
+This process thus adds $2k-2$ tetrahedra per polygonal 2--cell of $M$.
+Note that if the boundary of $P$ and $Q$ is not essential, i.e.\ is not contained in the boundary of some combinatorial block, then we can instead replace the polyhedra incident to that face with the triangulation of the suspension of the $k$--gon with $k$ tetrahedra, also illustrated in Figure \ref{fig:subdivide-polyhedra}.
+
+Next, we form the 4--thickening $W=M\times\Ilit$.
+This is done by attaching triangulated 4--prisms to each tetrahedron of $M$, where a triangulated 4--prism is the 4--dimensional extension of the triangulated 3--prism described in Theorem 3.1 of \cite{burton2011simplification}.
+Specifically, the $(n+1)$-prism triangulation is constructed as the cone of the triangulated $n$--sphere whose `top' and `bottom' are $n$--simplices and whose `sides' are the triangulated $n$--prism, where the triangulated 1--prism is a single edge connecting a pair of vertices.
+Triangulated 1--, 2--, and 3--prisms are illustrated in Figure \ref{fig:prisms}.
+We use prisms at this stage because the `walls' of the prisms are identical, making the gluing of prisms automatic.
+Denoting the number of $n$--simplices used to triangulate the $n$--prism by $p(n)$, and setting $p(1)=1$, we find that
+\[
+	p(n) = 2 + n\cdot p(n-1)
+\]
+due to the recursive nature of prism construction.
+This means a 2--prism is triangulated with 4 triangles, a 3--prism with 14 tetrahedra, and a 4--prism with 86 pentachora.
+
+Finally, we examine how the smooth singularity theory is adapted by examining our combinatorial blocks.
+As in the smooth case, each combinatorial face block is a triangulated solid torus and each combinatorial edge block has the structure of an interval crossed with a triangulated surface that projects over a small transversal to the edge sleeve, and a combinatorial vertex block has the structure of a regular neighbourhood of the 1--dimensional subcomplex over its planar vertex.
+For combinatorial vertex blocks, this amounts to being a (3,1)--handlebody, this handlebody is determined by how its boundary surface is constructed.
+However, this boundary surface is the union of subtriangulations of combinatorial edge block boundaries, and these subtriangulations are precisely the surfaces that project over small transversals to the edge sleeve, making these surfaces perhaps the most topologically interesting structure in our construction.
 
 
-The Cartesian product of a pair of cell complexes is again a cell complex, so we form the base 4--dimensional cell-complex to which we attach handles as $M\times\Ilit$.
-Every cell of $M\times\Ilit$ is homeomorphic to a disk, so we form a 4--manifold triangulation $W$ as a subdivision of $M\times\Ilit$.
-This triangulation is obtained by inductively subdividing each cell of $M\times\Ilit$ that is not a simplex.
+
+%We subdivide $M$ iThe simplest subdivision method that is sufficient for our purposes and is more efficient than a barycentric subdivision is de
+%For each 
+%
+%The Cartesian product of a pair of cell complexes is again a cell complex, so we form the base 4--dimensional cell-complex to which we attach handles as $M\times\Ilit$.
+%Every cell of $M\times\Ilit$ is homeomorphic to a disk, so we form a 4--manifold triangulation $W$ as a subdivision of $M\times\Ilit$.
+%This triangulation is obtained by inductively subdividing each cell of $M\times\Ilit$ that is not a simplex.
 
 
 
