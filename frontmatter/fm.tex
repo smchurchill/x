@@ -5,9 +5,10 @@ Samuel Churchill\\
 B.Sc., University of Victora, 2013
 }
 \newcommand\panel{%
-\HRule\\\panelist{Dr. Ryan Budney}{Supervisor}{Department of Mathematics and Statistics}
-\HRule\\\panelist{Dr. Heath Emerson}{Departmental Member}{Department of Mathematics and Statistics}
-\HRule\\\panelist{Dr. Alan Mehlenbacher}{Outside Member}{Department of Economics}
+\HRule\\\panelist{Dr. Ryan Budney}{Primary Supervisor}{Department of Mathematics and Statistics}
+%\HRule\\\panelist{Dr. Heath Emerson}{Departmental Member}{Department of Mathematics and Statistics}
+\HRule\\\panelist{Dr. Alan Mehlenbacher}{Co-Supervisor}{Department of Economics}
+%\HRule\\\panelist{Dr. Sue Whitesides}{External Member}{Department of Computer Science}
 %\HRule\\\panelist{Dr. \Ans{Current Unknown}}{Additional Member}{Department of \Ans{Current Unknown Department}}}
 }
 % Titlepage break
@@ -30,13 +31,19 @@ B.Sc., University of Victora, 2013
 }
 
 % Front Matter
-\input frontmatter/tp
-\input frontmatter/sc
-%\input frontmatter/abs
-\TOCadd{Table of Contents}\tableofcontents
+\input{frontmatter/tp}
+\input{frontmatter/sc}
+\input{frontmatter/abs}
+%\TOCadd{Table of Contents}
 %\TOCadd{List of Tables}\listoftables
 \setcounter{lofdepth}{2}
-\TOCadd{List of Figures}\listoffigures
+%\TOCadd{List of Figures}
+%\TOCadd{List of Algorithms}
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listofalgorithms
 %\input frontmatter/ack
 %\input frontmatter/ded
 

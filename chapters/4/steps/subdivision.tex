@@ -145,7 +145,7 @@ To see this, let $\sigma$ and $\sigma'$ be tetrahedra of $N$ that are glued toge
 Then Algorithm \ref{alg:subdividing-manifold} produces a pair of 3--complexes $\tau$ and $\tau'$, and $\Delta$, $\Delta'$ are subdivided equivalently inside of $\pd\tau$ and $\pd\tau'$, so the gluing that defines $M$ is constructed by subdividing the gluing that defined $N$.
 
 \begin{algorithm}[h!]
-	\caption{Subdividing $N$}
+	\caption{Using a subdividing map to subdivide the input 3--manifold triangulation}
 	\label{alg:subdividing-manifold}
 	\KwData{A closed, orientable 3--manifold triangulation $N$ with subdividing map $f:N\to\RR$}
 	\KwResult{A closed, orientable 3--dimensional cell complex $M$ that is a subdivision of $N$}
@@ -196,6 +196,19 @@ If $P,Q$ are a pair of polyhedra of $M$ that are glued over the faces $P_i^2$ an
 This process thus adds $2k-2$ tetrahedra per polygonal 2--cell of $M$.
 Note that if the boundary of $P$ and $Q$ is not essential, i.e.\ is not contained in the boundary of some combinatorial block, then we can instead replace the polyhedra incident to that face with the triangulation of the suspension of the $k$--gon with $k$ tetrahedra, also illustrated in Figure \ref{fig:subdivide-polyhedra}.
 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/subdivide-polyhedra.png}
+	\caption{
+		\textbf{Subdividing polyhedral cells.}
+		From left to right, we see first the polygonal boundary 2--cell between a pair of polyhedral cells.
+		Next, the polyhedral cells are subdivided by replacing them with the cone of their boundaries.
+		Finally, either the polyhedra on each side of the polygon are subdivided into reflection-identical triangulations or the pair is replaced by a $k$ simplex triangulation  of the suspended $k$--gon.
+	}
+	\label{fig:subdivide-polyhedra}
+\end{figure}
+
+
 Next, we form the 4--thickening $W=M\times\Ilit$.
 This is done by attaching triangulated 4--prisms to each tetrahedron of $M$, where a triangulated 4--prism is the 4--dimensional extension of the triangulated 3--prism described in Theorem 3.1 of \cite{burton2011simplification}.
 Specifically, the $(n+1)$-prism triangulation is constructed as the cone of the triangulated $n$--sphere whose `top' and `bottom' are $n$--simplices and whose `sides' are the triangulated $n$--prism, where the triangulated 1--prism is a single edge connecting a pair of vertices.
@@ -208,11 +221,71 @@ Denoting the number of $n$--simplices used to triangulate the $n$--prism by $p(n
 due to the recursive nature of prism construction.
 This means a 2--prism is triangulated with 4 triangles, a 3--prism with 14 tetrahedra, and a 4--prism with 86 pentachora.
 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/prisms.png}
+	\caption{
+		\textbf{The first three triangulated prisms.}
+		From left to right, we see the triangulated prisms with identical walls in dimensions 1, 2, and 3.
+	}
+	\label{fig:prisms}
+\end{figure}
+
 Finally, we examine how the smooth singularity theory is adapted by examining our combinatorial blocks.
 As in the smooth case, each combinatorial face block is a triangulated solid torus and each combinatorial edge block has the structure of an interval crossed with a triangulated surface that projects over a small transversal to the edge sleeve, and a combinatorial vertex block has the structure of a regular neighbourhood of the 1--dimensional subcomplex over its planar vertex.
 For combinatorial vertex blocks, this amounts to being a (3,1)--handlebody, this handlebody is determined by how its boundary surface is constructed.
 However, this boundary surface is the union of subtriangulations of combinatorial edge block boundaries, and these subtriangulations are precisely the surfaces that project over small transversals to the edge sleeve, making these surfaces perhaps the most topologically interesting structure in our construction.
 
+
+Each edge $e$ of $N$ is mapped to a secant of circle, splitting the disc into exactly 2 sectors: the `left' and `right' sides of $f(e)$.
+Denote the set of tetrahedra of $N$ containing $e$ by $\Delta^3(e)$.
+Each tetrahedron $\sigma$ of  $\Delta^3(e)$ is either mapped to the left of $e$, to the right of $e$, or across $e$ based on the image of the edge in $\sigma$ opposite $e$.
+
+First, we consider the situation when all of the tetrahedra containing $e$ are mapped to the same side of $f(e)$.
+The happens, for example, when $f(e)$ is on the boundary of $f(N)$ and in this situation $e$ is analogous to a definite fold.
+Let $\gamma$ be the boundary between an edge sleeve around a section of $e$ and an adjacent vertex sleeve.
+Then $\gamma$ is a short interval transverse to $e$, so we expect $\gamma$ to have preimage in $\Delta^3(e)$ of a triangulated 2--disc.
+
+The interval is triangulated with two edges and three vertices: one vertex at each of the sleeve segments around $f(e)$ and one vertex on $f(e)$.
+We'll call these vertices $x,y,z$, letting $x$ be the vertex on the side of $e$ that $\Delta^3(e)$ is mapped to and $y$ the vertex on $f(e)$.
+In $M$, our subdivision of $N$, $f\inv(x)\cap\Delta^3(e)$ is a triangulated circle, $f\inv(y)\cap\Delta^3(e)$ is a single vertex, and $f\inv(z)\cap\Delta^3(e)$ is empty.
+The preimage of the edge $[x,y]$ in $\gamma$ forms the triangles that complete the 2--disc we expected to find, illustrated in Figure \ref{fig:pl-definite-fold}.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/pl-definite-fold.png}
+	\caption{
+		\textbf{An edge link and its image through a subdividing map.}
+		We see the 2--disc triangulation, where the preimage of the boundary point of $\gamma$ in the image of $f$ is a single triangulated circle and that circle is wholly contained in the tetrahedra incident to the edge $\gamma$ transverses.
+	}
+	\label{fig:pl-definite-fold}
+\end{figure}
+
+Next, what happens when a tetrahedron of $\Delta^3(e)$ is mapped across $f(e)$?
+Because $N$ is closed, the number of tetrahedron in $\Delta^3(e)$ that map across $f(e)$ is always even.
+The tetrahedra of $\Delta^3(e)$ have a circular order defined by edges in $\Delta^3(e)$ that are opposite $e$, and all tetrahedra between a crossing pair are mapped to the same side of $f(e)$.
+When the number of crossing pairs is exactly one, we have a situation analogous to that of the regular edge block.
+The tetrahedra of $\Delta^3(e)$ that map to one side of $f(e)$ each contribute a single triangle to the surface $f\inv(\gamma)$, so 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/pl-regular-surface.png}
+	\caption{
+		\textbf{An edge link and its image through a subdividing map.}
+		We see the 2--disc triangulation, where the preimage of the boundary point of $\gamma$ in the image of $f$ is a single triangulated circle and that circle is wholly contained in the tetrahedra incident to the edge $\gamma$ transverses.
+	}
+	\label{fig:pl-regular-surface}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/pl-indefinite-fold.png}
+	\caption{
+		\textbf{An edge link and its image through a subdividing map.}
+		We see the 2--disc triangulation, where the preimage of the boundary point of $\gamma$ in the image of $f$ is a single triangulated circle and that circle is wholly contained in the tetrahedra incident to the edge $\gamma$ transverses.
+	}
+	\label{fig:pl-indefinite-fold}
+\end{figure}
 
 
 %We subdivide $M$ iThe simplest subdivision method that is sufficient for our purposes and is more efficient than a barycentric subdivision is de
