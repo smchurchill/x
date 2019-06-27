@@ -222,7 +222,7 @@ Each algorithm in the construction is now chained together in Algorithm \ref{alg
 	\Begin{
 		Obtain a subdiving map $f$ for $N$ from Algorithm \ref{alg:subdividing-map}\;
 		Construct $M$, a 3--dimensional cell complex equivalent to $N$ from Algorithm \ref{alg:subdividing-manifold} applied to $(N,f)$\;
-		$M$ is a polyhedral gluing, so we replace $M$ with the triangulation obtained from this gluing via barycentric subdivision\;
+		$M$ is a polyhedral gluing, so we replace $M$ with the triangulation obtained from this gluing via polyhedral subdivision\;
 		Construct $W$, the 4--manifold triangulation $M\times I$ obtained by gluing a triangulated 4--prism to each tetrahedron of $M$\;
 		$\mathfrak{B}=$ the collection of combinatorial face blocks of $M_1\subset\pd W$\;
 		\ForEach{$B\in\mathfrak{B}$}{

@@ -190,11 +190,11 @@ Such an assignment happens precisely when a cell is mapped through $f$ to the sh
 
 Algorithm \ref{alg:subdividing-manifold} produces a cell complex $M$ that is a polyhedral gluing, and we would prefer to replace $M$ with an equivalent triangulation.
 This is done by first replacing each polyhedron $P$ that is not a tetrahedron with the cone on $\pd P$.
-At each polyhedron $P$ this replaces the single 3--cell interior of $P$ with $|P^2|$ new polyhedra, each of which has exactly one non-triangular face.
+At each polyhedron $P$ this replaces the single 3--cell interior of $P$ with $|P^2|$ new polyhedra, each of which has at most one non-triangular face.
 Because $M$ is closed, that face is glued to another face of the same polygonal type.
-If $P,Q$ are a pair of polyhedra of $M$ that are glued over the faces $P_i^2$ and $Q_j^2$, each of which is a $k$--gon, then we further subdivide $P_i^2\sim Q_j^2$ into $k-1$ triangles, and replace the newly introduced polyhedra with $k-1$ new tetrahedra, as illustrated in Figure \ref{fig:subdivide-polyhedra}.
-This process thus adds $2k-2$ tetrahedra per polygonal 2--cell of $M$.
-Note that if the boundary of $P$ and $Q$ is not essential, i.e.\ is not contained in the boundary of some combinatorial block, then we can instead replace the polyhedra incident to that face with the triangulation of the suspension of the $k$--gon with $k$ tetrahedra, also illustrated in Figure \ref{fig:subdivide-polyhedra}.
+If $P,Q$ are a pair of polyhedra of $M$ that are glued over the faces $P_i^2$ and $Q_j^2$, each of which is a $k$--gon, $k>3$, then we further subdivide $P_i^2\sim Q_j^2$ into $k-2$ triangles, and replace the newly introduced polyhedra with $k-2$ new tetrahedra, as illustrated in Figure \ref{fig:subdivide-polyhedra}.
+This process thus adds $2k-4$ tetrahedra per $k$--gon 2--cell of $M$, $k>3$.
+Note that if the boundary of $P$ and $Q$ is not essential, i.e.\ is not contained in the boundary of some combinatorial block, then we can instead replace the polyhedra incident to that face with the more efficient (when $k>4$) triangulation of the suspension of the $k$--gon with $k$ tetrahedra, also illustrated in Figure \ref{fig:subdivide-polyhedra}.
 
 \begin{figure}[h!]
 	\centering
@@ -232,23 +232,24 @@ This means a 2--prism is triangulated with 4 triangles, a 3--prism with 14 tetra
 \end{figure}
 
 Finally, we examine how the smooth singularity theory is adapted by examining our combinatorial blocks.
-As in the smooth case, each combinatorial face block is a triangulated solid torus and each combinatorial edge block has the structure of an interval crossed with a triangulated surface that projects over a small transversal to the edge sleeve, and a combinatorial vertex block has the structure of a regular neighbourhood of the 1--dimensional subcomplex over its planar vertex.
-For combinatorial vertex blocks, this amounts to being a (3,1)--handlebody, this handlebody is determined by how its boundary surface is constructed.
+As in the smooth case, a combinatorial face block is a triangulated solid torus, a combinatorial edge block has the structure of an interval crossed with a triangulated surface that projects over a small transversal to the corresponding edge sleeve, and a combinatorial vertex block has the structure of a regular neighbourhood of the 1--dimensional subcomplex over its planar vertex.
+For combinatorial vertex blocks, this amounts to being a (3,1)--handlebody and this handlebody is determined by how its boundary surface is constructed.
 However, this boundary surface is the union of subtriangulations of combinatorial edge block boundaries, and these subtriangulations are precisely the surfaces that project over small transversals to the edge sleeve, making these surfaces perhaps the most topologically interesting structure in our construction.
 
 
+
 Each edge $e$ of $N$ is mapped to a secant of circle, splitting the disc into exactly 2 sectors: the `left' and `right' sides of $f(e)$.
-Denote the set of tetrahedra of $N$ containing $e$ by $\Delta^3(e)$.
-Each tetrahedron $\sigma$ of  $\Delta^3(e)$ is either mapped to the left of $e$, to the right of $e$, or across $e$ based on the image of the edge in $\sigma$ opposite $e$.
+Denote the set of tetrahedra of $N$ containing $e$ by $\del$.
+Each tetrahedron $\sigma$ of  $\del$ is either mapped to the left of $e$, to the right of $e$, or across $e$ based on the image of the edge in $\sigma$ opposite $e$.
 
 First, we consider the situation when all of the tetrahedra containing $e$ are mapped to the same side of $f(e)$.
 The happens, for example, when $f(e)$ is on the boundary of $f(N)$ and in this situation $e$ is analogous to a definite fold.
 Let $\gamma$ be the boundary between an edge sleeve around a section of $e$ and an adjacent vertex sleeve.
-Then $\gamma$ is a short interval transverse to $e$, so we expect $\gamma$ to have preimage in $\Delta^3(e)$ of a triangulated 2--disc.
+Then $\gamma$ is a short interval transverse to $e$, so we expect $\gamma$ to have preimage in $\del$ of a triangulated 2--disc.
 
 The interval is triangulated with two edges and three vertices: one vertex at each of the sleeve segments around $f(e)$ and one vertex on $f(e)$.
-We'll call these vertices $x,y,z$, letting $x$ be the vertex on the side of $e$ that $\Delta^3(e)$ is mapped to and $y$ the vertex on $f(e)$.
-In $M$, our subdivision of $N$, $f\inv(x)\cap\Delta^3(e)$ is a triangulated circle, $f\inv(y)\cap\Delta^3(e)$ is a single vertex, and $f\inv(z)\cap\Delta^3(e)$ is empty.
+We'll call these vertices $x,y,z$, letting $x$ be the vertex on the side of $e$ that $\del$ is mapped to and $y$ the vertex on $f(e)$.
+In $M$, our subdivision of $N$, $f\inv(x)\cap\del$ is a triangulated circle, $f\inv(y)\cap\del$ is a single vertex, and $f\inv(z)\cap\del$ is empty.
 The preimage of the edge $[x,y]$ in $\gamma$ forms the triangles that complete the 2--disc we expected to find, illustrated in Figure \ref{fig:pl-definite-fold}.
 
 \begin{figure}[h!]
@@ -261,32 +262,86 @@ The preimage of the edge $[x,y]$ in $\gamma$ forms the triangles that complete t
 	\label{fig:pl-definite-fold}
 \end{figure}
 
-Next, what happens when a tetrahedron of $\Delta^3(e)$ is mapped across $f(e)$?
-Because $N$ is closed, the number of tetrahedron in $\Delta^3(e)$ that map across $f(e)$ is always even.
-The tetrahedra of $\Delta^3(e)$ have a circular order defined by edges in $\Delta^3(e)$ that are opposite $e$, and all tetrahedra between a crossing pair are mapped to the same side of $f(e)$.
+Next, what happens when a tetrahedron of $\del$ is mapped across $f(e)$?
+Because $N$ is closed, the number of tetrahedron in $\del$ that map across $f(e)$ is always even.
+The tetrahedra of $\del$ have a circular order defined by edges in $\del$ that are opposite $e$, and all tetrahedra between a crossing pair are mapped to the same side of $f(e)$.
 When the number of crossing pairs is exactly one, we have a situation analogous to that of the regular edge block.
-The tetrahedra of $\Delta^3(e)$ that map to one side of $f(e)$ each contribute a single triangle to the surface $f\inv(\gamma)$, so 
+The tetrahedra of $\del$ that map to one side of $f(e)$ each contribute a single triangle to the surface $f\inv(\gamma)$, and the tetrahedra that map across $f(e)$ cause the disc that is $f\inv(\gamma)\cap\del$ to lie incident to the boundary of $\del$, as depicted in Figure \ref{fig:pl-regular-surface}.
+This boundary portion of $f\inv(\gamma)\cap\del$ is a pair of (2,1)--handle attachment sites, but because there are only two sides of $f(e)$ in the disc the handle is attached in an orientation preserving way.
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.9\textwidth]{figures/pl-regular-surface.png}
 	\caption{
-		\textbf{An edge link and its image through a subdividing map.}
-		We see the 2--disc triangulation, where the preimage of the boundary point of $\gamma$ in the image of $f$ is a single triangulated circle and that circle is wholly contained in the tetrahedra incident to the edge $\gamma$ transverses.
+		\textbf{A transversal surface around an edge $e$ when exactly one pair of tetrahedra map across $f(e)$.}
+		The transversal $\gamma$ has two halves, one on either side of $f(e)$.
+		Lifted to $N$, $f\inv(\gamma)\cap\del$ is a disc incident to $\pd\del$ in exactly two (2,1)--handle attachment sites, and the (2,1)--handle attachment is orientation preserving.
 	}
 	\label{fig:pl-regular-surface}
 \end{figure}
+
+When multiple tetrahedra of $\del$ map across $f(e)$, the idea generalizes.
+If $2n$ such tetrahedra map across $f(e)$, then there are $2n$ (2,1)--handle attachment sites in $f\inv(\gamma)\cap\pd\del$, these handles are attached in an orientation preserving way, and the pairing of attachment sites depends on the topology of $N$ outside of $\del$.
+Figure \ref{fig:pl-indefinite-fold} shows a possible resolution of the case $2n=4$, where we always obtain a pair-of-pants surface (note that the only handle attachments that would not produce a pants surface are not orientation preserving).
+Moreover, every surface in the disjoint collection of surfaces $f\inv(\gamma)$ is a (multiply) punctured 2--sphere.
+The surface of $f\inv(\gamma)$ that intersects $\del$ is an $(n+1)$--punctured 2--sphere, and all other surfaces are twice-punctured (i.e. annuli).
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.9\textwidth]{figures/pl-indefinite-fold.png}
 	\caption{
-		\textbf{An edge link and its image through a subdividing map.}
-		We see the 2--disc triangulation, where the preimage of the boundary point of $\gamma$ in the image of $f$ is a single triangulated circle and that circle is wholly contained in the tetrahedra incident to the edge $\gamma$ transverses.
+		\textbf{A transversal surface around an edge $e$ when exactly two pairs of tetrahedra map across $f(e)$.}
+		When two pairs of tetrahedra map across $f(e)$ we find two pairs of (2,1)--handle attachment sites and the handle attachment is still orientation preserving.
+		The pairing of attachment sites is determined by the structure of $N$: the (2,1)--handle attachments could be different in $N$, with the sites near the red and blue vertices being connected rather than the green and purple sites as depicted in the figure.
+		However, the identification of sites across the disc $f\inv(\gamma)\cap\del$ is not possible because such a handle attachment would not be orientation preserving.
 	}
 	\label{fig:pl-indefinite-fold}
 \end{figure}
 
+We prove the transversal surfaces of $f\inv(\gamma)$ are always (multiply) punctured 2--spheres by first visiting the vertices of $N$.
+Our first action in the $N\leadsto M$ subdivision was the sequestering of the vertices of $N$ into vertex blocks.
+This was done via the preimage of a regular $k$--gon inscribed in the circle, so all of vertices of $N$ are contained in vertex blocks in $M$.
+If $v$ is vertex of $N$, then the vertex block around $v$ is a triangulated 3--disc, hence has 2--sphere boundary.
+As depicted in Figure \ref{fig:pl-segments-zoom}, this 2--sphere boundary maps through $f$ over the boundaries of face and edge sleeves.
+The boundaries of face sleeves lie under annuli, the boundaries of edge sleeves lie under transversal surfaces, and the $S^2$ boundary of the vertex block around $v$ in $M$ is the union of all such surfaces over their boundary circles.
+Genus is additive under this union, so all of the singular transverse surfaces must have genus 0, hence are (multiply) punctured spheres.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/pl-segments-zoom.png}
+	\caption{
+		\textbf{A magnification of vertex and edge sleeve boundaries from Figure \ref{fig:pl-segments}.}
+		A boundary combinatorial vertex sleeve intersects combinatorial face and edge sleeves at intervals, while an internal vertex sleeve intersects face sleeves at points and edge sleeves at intervals.
+	}
+	\label{fig:pl-segments-zoom}
+\end{figure}
+
+Moving to internal transversal surfaces, observe that the topology of a surface above a transversal $\gamma$ traveling along the secant $f(e)$ changes only when $\gamma$ encounters a vertex sleeve, so we need only examine the surfaces $f\inv(\gamma)$ when $\gamma$ lies on the boundary of a vertex sleeve.
+Let $H$ be a vertex block, $f(H)$ the internal sleeve below $H$, and $e,e'$ the pair of edges of $N$ whose crossing induced the vertex sleeve.
+Then $f(H)$ has boundary constructed from transversals over $e,e'$, two from each edge on opposite sides of $f(H)$, and we'll call these transversals $\gamma_i$, $i=1:4$.
+Then $f\inv(\gamma_i)$ is a disjoint collection of triangulated surfaces in $M$ for each $i$, and we'll denote the surface incident with $H$ by
+\[
+	\Sigma_i = H\cap f\inv(\gamma_i).
+\]
+Then the boundary of $H$ is given by
+\[
+	\pd H = \bigcup_{i=1}^4 \Sigma_i.
+\]
+Now suppose $\Sigma_i$ has genus at least 1 for some $i$.
+This means there is a pair of curves $J,K$ in $\Sigma_i$ that are essential in the surface formed by filling in the boundary components of $\Sigma_i$ with discs, the oriented intersection number of $J$ and $K$ is exactly 1, and $J\cup K$ is disjoint from the surfaces $\Sigma_j$ for $j\neq i$.
+The vertex block $H$ is a triangulated (3,1)--handlebody, so one of $J,K$ is meridinal in $H$, say $J$.
+
+The block $H$ is a (3,1)--handlebody because $H$ is a regular neighbourhood of the triangulated wedge of circles above $f(e_1)\cap f(e_2)$ in $M$, so all meridinal discs of $H$ are mapped bijectively to the vertex sleeve $f(H)$.
+Specifically, meridians of $H$ are mapped bijectively to $\pd f(H) = \cup_i\gamma_i$, but $J$ is a meridian and $f(J)\subseteq \gamma_i$ for a single $\gamma_i$.
+This is a contradiction, hence the genus of $\Sigma_i$ is 0 for each $i$, therefore $\Sigma_i$ is a (multiply) punctured 2--sphere for each $i$.
+
+%
+%Projecting $H$ through $f$ yields the vertex sleeve under $H$, and the boundary of this sleeve 
+%
+%
+%The boundary $\pd H$ is a triangulated surface and $f(\pd H)$ projects over four edge sleeve boundaries, hence $\pd H = \bigcup_{i}f\inv(\gamma_i)$
+%The block $H$ is the (3,1)--handlebody bounded by $\pd H$, and every meridinal disc of $H$ projects over the vertex sleeve that lies under $H$ in the plane, hence 
+%Supposing 
 
 %We subdivide $M$ iThe simplest subdivision method that is sufficient for our purposes and is more efficient than a barycentric subdivision is de
 %For each 
