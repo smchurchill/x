@@ -24,12 +24,17 @@ Figures \ref{fig:X_f}-\ref{fig:face-sleeve} are used to illustrate the stratific
 	\includegraphics[width=0.9\textwidth]{figures/vertex-sleeve.png}
 	\caption{
 		\textbf{Forming vertex regions.}
-		Octagonal sleeves are fit around the vertices of $X_f$ to form vertex regions.
-		Note that the 1--strata vertex sleeves alternate between containing exactly one singular value, its intersection with an edge of $X_f$, or consisting entirely of regular values.
-		New vertex regions are shaded orange.
+		Octagonal sleeves are fit around the vertices of $X_f$ to form vertex regions, shaded orange.
+		Vertex regions are fit around vertices so that each 1-strata either consists entirely of regular values or contains exactly one singular value: its intersection with an edge of $X_f$.
+		Furthermore, this classification is an alternating pattern around the boundary of a vertex sleeve.
 	}
 	\label{fig:vertex-sleeve}
 \end{figure}
+
+%		and this forms an alternating pattern.
+%		Note that the 1--strata vertex sleeves alternate between containing exactly one singular value,  or consisting entirely of regular values.
+%		New vertex regions are shaded orange.
+
 
 We begin by fitting sleeves around codimension 2 singular values as in Figure \ref{fig:vertex-sleeve}.
 These sleeves are each boundary-stratified 2--discs with exactly eight 1--dimensional boundary strata (i.e. octagons).
@@ -90,15 +95,15 @@ With all of the regions defined, we can describe precisely how $f$ stratifies $\
 The stratification of $\RR$ is a stratification into subsets $R_{(i,j)}$ where $i,j$ are integers.
 Subset indexing is defined so that a subset $R_{(i,j)}$ is an $i$--dimensional submanifold of $\RR$, thus $R_{(i,j)}\nleq R_{(k,l)}$ if $i\nleq k$.
 The first collection of subsets used to filter $\RR$ are the 0--strata of the octagonal vertex sleeves.
-We assign to these subsets the indices $(0,i)$ for $i=1\dots N_0$, where $N_0$ is the number of 0--strata.
+We assign to these subsets the indices $(0,i)$ for $i=1,\dots, N_0$, where $N_0$ is the number of 0--strata.
 Our 0--strata are disjoint, so for any $i,j$ with $i\neq j$, $R_{(0,i)}$ is not contained in $R_{(0,j)}$, hence $(0,i)\nleq (0,j)$.
 
 The boundary 1--strata connect the $(0,i)$--level strata.
-These 1--strata are indexed by $(1,j)$ for $j=1\dots N_1$, where $N_1$ is the number of arcs.
+These 1--strata are indexed by $(1,j)$ for $j=1,\dots, N_1$, where $N_1$ is the number of arcs.
 The boundary points of 1--strata are 0--strata and are subsets of the filtration indexed by the $(0,i)$ indices, so $(0,i)\leq (1,j)$ if and only if $R_{(0,i)}$ is one of the boundary points of $R_{(1,j)}$.
 Our 1--strata intersect only at their boundary points, so $(1,j)\nleq(1,k)$ for any $j,k$. 
 
-The regions themselves are indexed by $(2,k)$ for $k=1\dots N_2$, where $N_2$ is the number of regions.
+The regions themselves are indexed by $(2,k)$ for $k=1,\dots, N_2$, where $N_2$ is the number of regions.
 These indices work similarly to the 1--strata indices.
 The boundary of a region consists of 0-- and 1--strata, so $(n,i)\leq(2,k)$ if and only if $R_{(n,i)}$ is contained in the boundary of $R_{(2,k)}$.
 

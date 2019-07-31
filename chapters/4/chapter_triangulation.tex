@@ -2,13 +2,15 @@
 \chapter{Algorithm for triangulated manifolds}
 \label{chapter:triangulation}
 
-Algorithmic construction of a triangulated 4--manifold with a prescribed closed, orientable 3--manifold boundary broadly follows the steps we used in the construction of a 4--manifold a with prescribed smooth, orientable 3--manifold boundary.
+Algorithmic construction of a triangulated 4--manifold with prescribed closed, orientable 3--manifold boundary broadly follows the steps we used in the construction of a 4--manifold a with prescribed smooth, orientable 3--manifold boundary.
 Let $N$ be a closed, orientable 3--manifold triangulation.
 Then the steps of construction are:
 \begin{enumerate}
 	\item Define a projection $f:N\to\RR$.
 	
-	\item Induce a subdivision of $N$ from $f$.  The result is a 3--dimensional cell complex $M$ that is equivalent to $N$.  $M\times\Ilit$ is a 4--dimensional cell complex with boundary components $M_0 = M\times\{0\}$ and $M_1 = M\times\{1\}$.  Let $W$ be the triangulation obtained by inductively triangulating each cell of $M$.
+	\item Induce a subdivision of $N$ from $f$.  The result is a 3--dimensional triangulation $M$ that is equivalent to $N$.
+	
+	\item Form the 4--manifold triangulation $W=M\times\Ilit$ with boundary components $M_0 = M\times\{0\}$ and $M_1 = M\times\{1\}$.  This is done by gluing a 4--prism to each tetrahedron of $M$.
 	
 	\item Attach 4--dimensional 2--handles to $W$ over its $M_1$ boundary as prescribed by the subdivision of $M$ from $f$.  Call the result $W'$ and let $M_1'=\pd W' \setminus M_0$.
 	

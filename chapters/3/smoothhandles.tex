@@ -4,7 +4,7 @@ Stratifying $M$ allows the definition of attachment neighbourhoods for stratifie
 A 4--dimensional 2--handle is attached over a closed solid torus embedded in the boundary of a 4--manifold, so attachment neighbourhoods for our stratified 2--handles are straightforward: they are the face blocks of $M$.
 We alter the boundary of $W$ by attaching handles, so the attachment neighbourhoods for 3--handles (4--handles, resp.) must be found after 2--handles (3--handles, resp.) are attached.
 For a 3--handle, an attachment neighbourhood consists of the union of an edge block with some strata introduced by 2--handle attachment.
-For a 4--handles, an attachment neighbourhood consists of the union of an edge block with some strata introduced by 2-- and 3--handle attachment.
+For a 4--handle, an attachment neighbourhood consists of the union of an edge block with some strata introduced by 2-- and 3--handle attachments.
 We investigate the consequences of handle attachment by comparing the boundary of the initial manifold with the boundary of the manifold resulting from handle attachment, and use a precisely defined handle structure to focus the investigation.
 Our first step is to precisely define the structure of the stratified 2--handles that we are attaching.
 
@@ -18,7 +18,7 @@ The tori $B$ and $B'$ are depicted as cylinders with top and bottom identified i
 
 We stratify $B'$ as follows.
 First include the shared stratified boundary of $B$.
-Next, introduce meridinal disks of $B'$ that are bounded by the $(1,i)$--indexed strata in $B$, i.e.\ the boundary curves in $B$ corresponding to $S^1\times c_m$ where $c_m$ is a corner of $G_n$, $m=1\dots n$.
+Next, introduce meridinal disks of $B'$ that are bounded by the $(1,i)$--indexed strata in $B$, i.e.\ the boundary curves in $B$ corresponding to $S^1\times c_m$ where $c_m$ is a corner of $G_n$, $m=1,\dots, n$.
 Finally, add the homeomorphic 3--disks of $B'$ whose boundaries consist of one longitudinal annulus of $B$ along with the two meridinal disks in $B'$ that are bounded by the annulus's circular boundary components.
 The filtration of $B'$ is created identically to that of the original face blocks, using inclusion as a partial ordering and indexing a stratum by its dimension as a submanifold of $B'$.
 Figure \ref{fig:face-block-complement} illustrates a face block $B$ and its complement inside of $S^3$.
@@ -140,9 +140,12 @@ The full extent of this surgery can be detected by examining the edge and vertex
 	This implies that the $\alpha_i$ are pairwise non-parallel.
 	Let $\beta_i$ be the attaching spheres of the (3,2)--handles that we attach to $V$ in the construction of $V'$.
 	For each $i,j$, $|\alpha_i\cap\beta_j|=$ 0 or 1 by construction.
-	Moreover, for every $i$, $\alpha_i\cap\{\beta_j\}_j>0$ and $\beta_i\cap\{\alpha_j\}_j>0$.
-	In words, every (3,1)--handle belt sphere transversely intersects at least one of the (3,2)--handle attaching spheres, every (3,2)--handle attaching sphere intersects at least one of the (3,1)--handle belt spheres, and all intersection numbers are at most 1.
-	Thus every (3,2)--handle attached to $V$ either cancels out an existing (3,1)--handle or adds a new 2--sphere boundary component.
+	Moreover, 
+%	every belt sphere $\alpha_i$ intersects at least one attaching sphere of $\{\beta_j\}$ and every attaching sphere $\beta_j$ intersects at least one belt sphere $\{\alpha_i\}$.
+%	for every $i$, the quantities $\alpha_i\cap\{\beta_j\}_j$ and $\beta_i\cap\{\alpha_j\}_j$ are positive integers.
+%	In words, 
+	every (3,1)--handle belt sphere transversely intersects at least one of the (3,2)--handle attaching spheres, every (3,2)--handle attaching sphere intersects at least one of the (3,1)--handle belt spheres.
+	All intersection numbers are at most 1, so every (3,2)--handle attached to $V$ either cancels out an existing (3,1)--handle or adds a new 2--sphere boundary component.
 	Because $\pd V'$ is a disjoint collection of 2--spheres we conclude that every (3,1)--handle of $V$ has been cancelled by a (3,2)--handle, thus $V'$ is a (3,2)--handlebody.
 	We present an example of how these handle attachment sites are arranged in Figure \ref{fig:vertex-block-incidence}.
 	
@@ -190,9 +193,9 @@ The full extent of this surgery can be detected by examining the edge and vertex
 
 	\textbf{Part 3:}
 	To show that primed edge and vertex blocks exhaust $M_1'$, we show that the entirety of $B'$ has been apportioned among the primed blocks for each $B'$.
-	The $(3,k)$ strata of $B'$ are each cylinders whose annular boundary strata corresponds directly to a longitudinal boundary annulus of $B$.
+	The $(3,k)$ strata of $B'$ are each cylinders whose annular boundary strata correspond directly to a longitudinal boundary annulus of $B$.
 %	Such an annulus projects through $f$ to a boundary edge of a face region.
-	Face regions do not intersect even on their boundary, so all of the annular boundary strata of $B$, hence $B'$, are shared only by edge and vertex blocks.
+	Face regions do not intersect even on their boundaries, so all of the annular boundary strata of $B$, hence $B'$, are shared only by edge and vertex blocks.
 	Thus each cylinder of $B'$ has been assigned as a (3,2)--handle and attached to a primed edge or vertex block.
 	Because (4,2)--handle attachment altered $M_1$ to $M_1'$ only by replacing each face block $B$ with its complementary $B'$, the primed blocks must exhaust $M_1'$.
 \end{proof}

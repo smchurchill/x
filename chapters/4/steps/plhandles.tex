@@ -14,15 +14,16 @@ The output is a 4--disk triangulation $H$ satisfying the following:
 	\item $\pd H$ is a triangulated $S^3$ with a genus 1 Heegard splitting over $\pd T$, i.e.\ $T$ is a subtriangulation of $\pd H$ such that $\pd H\setminus \interior{T}$ is a solid torus.
 	\item For each $\gamma_i$ in $\Gamma$, $\gamma_i$ bounds a triangulated disk in $\pd H$, i.e.\ each $\gamma_i$ is an explicit 0-framing for the (4,2)--handle attachment.
 \end{enumerate}
-We take $H$ to be a (4,2)--handle and attach $H$ to $W$ over $T$.
-Constructing the handle involves building a solid torus $T'$ that complements $T$, combining $T$ and $T'$ over their shared boundary to build a triangulated 3--sphere, then coning that 3--sphere into the 4--disk $H$.
+%We take $H$ to be a (4,2)--handle and attach $H$ to $W$ over $T$.
+Constructing this disk involves building a solid torus $T'$ that complements $T$, combining $T$ and $T'$ over their shared boundary to build a triangulated 3--sphere, then coning that 3--sphere into a 4--disk.
+The resulting disk has a (4,2)--handle structure and we attach it to $W$ over the copy of $T$ contained in its boundary.
 
 We find pairs $(T,\Gamma)$ inside $M_1\subset\pd W$, the subdivision of $N$ induced by the subdividing map $f:N\to\RR$.
 Let $B$ be a combinatorial face block of $M_1$.
 $B$ is a 3--dimensional subtriangulation of $M_1$ that forms a closed solid torus,
 % Prove?
 and $B$ projects through $f$ over an $n$--gon for some $n$.
-Call the $n$ corners of $f(B)$ by $c_i$, $i=1\dots n$, and take $C=\{c_1\dots c_n\}$.
+Call the $n$ corners of $f(B)$ by $c_i$, $i=1,\dots, n$, and take $C=\{c_1,\dots, c_n\}$.
 Then the $f\inv c_i$ are disjoint parallel triangulated longitudes of $B$.
 We take $(B, f\inv C)$ as our pair $(T,\Gamma)$ for each combinatorial face block $B$ of $M$.
 
@@ -131,7 +132,7 @@ Each of these new disks has been assigned to two primed combinatorial edge block
 This means that each primed combinatorial vertex block is now equivalent to a triangulated (3,2)--handlebody.
 Let $V$ be a combinatorial vertex block and $V'$ be $V$ primed.
 Considering each new disc in $V'$ to be a flattened (3,2)--handle, we conclude that $V'$ is a (3,2)--handlebody using the argument found in Theorem \ref{thm:primed-block-structure}.
-The attaching spheres of (3,2)--handles transversely intersect the belt spheres of the (3,1)--handles at most once, each belt sphere intersects at least one attaching sphere and vice versa, and the boundary of $V'$ is a disjoint collection of 2--spheres, thus $V'$ is a (3,2)--handlebody.
+Restating a sketch of that argument here, the attaching spheres of (3,2)--handles transversely intersect the belt spheres of the (3,1)--handles at most once, each belt sphere intersects at least one attaching sphere and vice versa, and the boundary of $V'$ is a disjoint collection of 2--spheres, thus $V'$ is a (3,2)--handlebody.
 
 \subsection{3--handles}
 
@@ -190,7 +191,7 @@ W''' = W''\cup\{H_{V''}^4\}_{V''\in\mathfrak{V}''}/\sim,
 where $\sim$ is defined by $v\sim \iota(v)$, $\iota$ the identity map $H_{V''}^4\supset V''\overset{\iota}{\to} V''\subset M_1''$.
 
 \begin{algorithm}[h!]
-	\caption{(4,4)--handle construction for a triangulated $S^3$ attachment site ; equivalently, coning a 3--sphere}
+	\caption{(4,4)--handle construction for a triangulated $S^3$ attachment site; equivalently, coning a 3--sphere}
 	\label{alg:build-4-handle}
 	\KwData{$V''$, a triangulated $S^3$}
 	\KwResult{A 4--disk triangulation $H_{V''}^4$ such that $\pd H_{V''}^4=V''$}
@@ -201,10 +202,12 @@ where $\sim$ is defined by $v\sim \iota(v)$, $\iota$ the identity map $H_{V''}^4
 %			Attach a 1--cell $\{x,y\}$ to $H$\;
 %%			Track $\{x,y\}$ as a `new' 1--cell\;
 %		}
-		\For{$i=0\dots 3$}{
-			\ForEach{$i$--cell $y$ of $V''\subset H$}{
+		\For{$i=0,\dots, 3$}{
+			\ForEach{$i$--cell $y$ of $V''\subset H_{V''}^4$}{
 				$Z(y)=\{z\in H_{V''}^4\;|\; z\notin V'' \textrm{ and }\pd z\cap \pd y \neq\emptyset\}$\; 
-				Attach an $(i+1)$--cell to $H_{V''}^4$ over the triangulated $i$--sphere in $H_{V''}^4$ that is precisely $y\cup Z(y)\cup x$\;
+				Attach an $(i+1)$--cell to $H_{V''}^4$ over 
+%				the triangulated $i$--sphere in $H_{V''}^4$ that is precisely 
+				$y\cup Z(y)\cup x$\;
 			}
 		}
 	}

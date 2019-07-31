@@ -6,7 +6,7 @@ We use a similar technique to that found in Chapter \ref{chapter:smooth}, iterat
 Tetrahedron subdivisions are compatible, i.e.\ tetrahedron subdivisions fit together exactly as the undivided tetrahedra do inside of $N$.
 
 Let $\sigma$ be a tetrahedron of $N$ and let $s$ be a line segment in the plane such that $s\cap f(\sigma)$ is nonempty, the endpoints of $s$ are outside of $f(\sigma)$,  and $s\cap f(\sigma)$ is a line segment in $f(\sigma)$ disjoint from any vertices or crossings of $f(\sigma)$.
-Figure \ref{fig:standard-position-intersection} demonstrates the possible configurations of these line segments, and shows that their preimages inside of $\sigma$ are triangles and quads.
+Figure \ref{fig:standard-position-intersection} demonstrates the possible configurations of these line segments, and shows that their preimages inside of $\sigma$ are triangles and quadrilateral (or \emph{quads}).
 We refer to these preimages as \emph{exterior triangles} and \emph{exterior quads}.
 When a pair of these preimages intersect, the intersection is a line segment with endpoints interior to a pair of triangles of $\sigma^2$.
 
@@ -23,9 +23,9 @@ When a pair of these preimages intersect, the intersection is a line segment wit
 \end{figure}
 
 For each $\sigma\in N^3$ and each edge $e$ of $N^1$ such that $e\notin\sigma^1$, $f(e)$ is a line segment in the plane that is either disjoint from $f(\sigma)$ or induces an exterior triangle or quad in $\sigma$.
-There are two edges of $\sigma$ whose preimages in $\sigma$ form \emph{interior triangles} and these are the \emph{interior edges} of $\sigma$.
-The image of $\sigma$ is a quadrilateral, and four of $\sigma$'s edges map to the boundary of that quadrilateral.
-The remaining two edges are the interior edges.
+%There are two edges of $\sigma$ whose preimages in $\sigma$ form \emph{interior triangles} and these are the \emph{interior edges} of $\sigma$.
+The image of $\sigma$ is a quadrilateral in the plane, and four of $\sigma$'s edges map to the boundary of that quadrilateral.
+The remaining two edges are the \emph{interior edges} of $\sigma$, and the subdividing preimage triangles they induce in $\sigma$ are \emph{interior triangles}.
 %These are the preimages of the edges of $\sigma$ that map through $f$ across $f(\sigma)$ as in Figure \ref{fig:standard-position}, and we refer to these edges as \emph{interior edges}.
 %The three edges of the interior triangle induced by $e$ are $e$ itself along with a pair of edges that bisect the triangles of $\sigma$ not containing $e$ as an edge.
 %The three vertices of the interior triangle induced by $e$ are the two vertices of $\sigma$ that are the endpoints of $e$ along with a third vertex located in the edge of $\sigma$ opposite $e$.
@@ -56,7 +56,7 @@ Recall that the goal of this subdivision is to identify combinatorial analogues 
 If we were to subdivide $N$ using the quads and triangles induced by the edges of $N$, such blocks are ill-defined.
 We amend this by introducing a set of line segments analogous to the sleeves of Section \ref{section:smooth-decompose}.
 
-The vertices of $N$ are sent to the edge of the boundary of the disc in the plane, and this boundary is the only location in the plane that our smooth singularity theory does not apply.
+The vertices of $N$ are sent to the edge of the boundary of the disc in the plane, and this boundary is the only location in the plane where our smooth singularity theory does not apply.
 Our first set of line segments remedies this.
 Let $p$ be a vertex of $N$ and $s$ a secant in the disc that separates $f(p)$ from $f(N^0\setminus{p})$.
 Then $f\inv(s)$ is a triangulated 2--sphere, and is the boundary of a triangulated 3--disc centred at $p$.
@@ -64,7 +64,7 @@ We use such 3--discs as our first collection of combinatorial vertex blocks
 
 The vertices of $N$ are mapped to the $k\nth$ roots of unity and the rest of the simplices of $N$ are mapped to the plane via linear extension.
 Consider the regular $k$--gon $G_k$ with vertices the $k\nth$ roots of unity reflected through the origin.
-Because $k$ is odd, each of these segments is a secant in the disc that separates the image of one vertex of $N$ from the rest.
+Because $k$ is odd, each of $G_k$'s edges is a secant in the disc that separates the image of one vertex of $N$ from the rest.
 Moreover, $G_k$ separates $f(N^0)$ from the interior edge-edge crossings of $f(N)$.
 We use $G_k$ as our first set of line segments.
 
@@ -115,17 +115,18 @@ Take $L$ to be the set of line segments in the plane.
 This consists of each segment of $G_k$, $f(e)$ for each $e\in N^1$, and the sleeve segments $e_\varepsilon^\pm$.
 For each tetrahedron $\sigma$ of $N$, the polygons and intersections of $f\inv L\cap\sigma$ define a subdivision of $\sigma$ into a cell complex.
 We implement this subdivision in Algorithm \ref{alg:subdividing-manifold} by constructing a new cell complex that is equivalent to $N$.
-The subdivision iterates over all of the triangles and quads inside of $\sigma$, and the subdivision induced by a polygon is fully realized before moving onto the next.
+The subdivision iterates over all of the triangles and quads inside of $\sigma$, and the subdivision induced by a polygon is fully realized before moving on to the next.
 
 For an example of subdivision, refer to Figure \ref{fig:standard-position-interior-exterior}, where a tetrahedron is being subdivided by an exterior triangle, an interior triangle, and an exterior quad.
 We construct the subdivision of $\sigma$ as a 3--complex $\tau$, starting by setting $\tau = \sigma$.
-Starting at the loop on line 6 of Algorithm \ref{alg:subdividing-manifold}, we'll assume that the brown segment that separates the pink vertex from the rest of $f(\sigma)$ is a segment from $G_k$ and set this segment as $l$.
+Starting at the loop on line 6 of Algorithm \ref{alg:subdividing-manifold}, p. \pageref{alg:subdividing-manifold}, we'll assume that the brown segment that separates the pink vertex from the rest of $f(\sigma)$ is a segment from $G_k$ and set this segment as $l$.
 This makes $\delta$ on line 7 the brown exterior triangle in $\sigma$.
 Then the loop on line 8 runs over all 1--cells of $\tau$ that intersect the exterior triangle $\delta$ which are the three 1--cells of $\tau$ incident with the pink vertex.
 We subdivide these 1--cells by their intersection with $\delta$, which amounts to including the corners of the $\delta$ exterior triangle into the complex, splitting the relevant 1--cells into a pair of 1--cells on either side of the corner.
-We move to the loop on line 12, where we subdivide the three boundary pentagons (formerly triangles) of $\tau$ that contain the pink vertex by the three triangular edges of $\delta$.
+This subdivision turns the three boundary triangles of $\tau$ that contained the pink vertex into pentagons.
+We move to the loop on line 12, where we subdivide these three boundary pentagons by the three triangular edges of $\delta$.
 Each pentagon is subdivided into a triangle and a quadrilateral.
-Finally, the loop at line 16 we subdivide the only 3--cell of $\tau$ into a tetrahedron containing the pink vertex and a triangular cylinder away from the pink vertex.
+Finally, in the loop at line 16 we subdivide the only 3--cell of $\tau$ into a tetrahedron containing the pink vertex and a triangular cylinder away from the pink vertex.
 
 Heading back to the top of the loop at line 6 and assuming we have exhausted all segments of $G_k$, we may now consider any segment.
 Setting $l$ to be the blue interior edge of Figure \ref{fig:standard-position-interior-exterior} makes $\delta$ the blue interior triangle.
@@ -141,8 +142,10 @@ Finally, the loop at line 16 subdivides both 3--cells of $\tau$, splitting them 
 It is left to the reader to continue the subdivision of $\tau$ in Figure \ref{fig:standard-position-interior-exterior}, where the remaining exterior quad subdivides five 1--cells, five 2--cells, and two 3--cells.
 
 Observe also that the gluing defined on the tetrahedra of $N$ is used to produce $M$ as well.
-To see this, let $\sigma$ and $\sigma'$ be tetrahedra of $N$ that are glued together over a triangular face, $\Delta\in\sigma_2$ and $\Delta'\in\sigma'$.
-Then Algorithm \ref{alg:subdividing-manifold} produces a pair of 3--complexes $\tau$ and $\tau'$, and $\Delta$, $\Delta'$ are subdivided equivalently inside of $\pd\tau$ and $\pd\tau'$, so the gluing that defines $M$ is constructed by subdividing the gluing that defined $N$.
+To see this, let $\sigma$ and $\sigma'$ be tetrahedra of $N$ that are glued together over a triangular face, $\Delta\in\sigma$ and $\Delta'\in\sigma'$.
+Then Algorithm \ref{alg:subdividing-manifold} produces a pair of 3--complexes $\tau$ and $\tau'$, and $\Delta$, $\Delta'$ are each subdivided into boundary 2-complexes of $\tau$ and $\tau'$.
+These subdivisions are induced by the subdivisions of $f(\Delta)$ and $f(\Delta')$ in the plane but, because $\Delta$ and $\Delta'$ are identified in the gluing of $N$, $f(\Delta)=f(\Delta')$ and the subdivisions of $\Delta$ and $\Delta'$ are equivalent.
+The gluing that defines $M$ is therefore constructed by subdividing the gluing that defined $N$.
 
 \begin{algorithm}[h!]
 	\caption{Using a subdividing map to subdivide the input 3--manifold triangulation}
@@ -219,7 +222,7 @@ Denoting the number of $n$--simplices used to triangulate the $n$--prism by $p(n
 	p(n) = 2 + n\cdot p(n-1)
 \]
 due to the recursive nature of prism construction.
-This means a 2--prism is triangulated with 4 triangles, a 3--prism with 14 tetrahedra, and a 4--prism with 86 pentachora.
+This means a 2--prism is triangulated with 4 triangles, a 3--prism with 14 tetrahedra, and a 4--prism with 58 pentachora.
 
 \begin{figure}[h!]
 	\centering
@@ -243,9 +246,9 @@ Denote the set of tetrahedra of $N$ containing $e$ by $\del$.
 Each tetrahedron $\sigma$ of  $\del$ is either mapped to the left of $e$, to the right of $e$, or across $e$ based on the image of the edge in $\sigma$ opposite $e$.
 
 First, we consider the situation when all of the tetrahedra containing $e$ are mapped to the same side of $f(e)$.
-The happens, for example, when $f(e)$ is on the boundary of $f(N)$ and in this situation $e$ is analogous to a definite fold.
+This happens, for example, when $f(e)$ is on the boundary of $f(N)$ and in this situation $e$ is analogous to a definite fold.
 Let $\gamma$ be the boundary between an edge sleeve around a section of $e$ and an adjacent vertex sleeve.
-Then $\gamma$ is a short interval transverse to $e$, so we expect $\gamma$ to have preimage in $\del$ of a triangulated 2--disc.
+Then $\gamma$ is a short interval transverse to $e$ and we show that the preimage of $\gamma$ in $\del$ is a triangulated 2--disc.
 
 The interval is triangulated with two edges and three vertices: one vertex at each of the sleeve segments around $f(e)$ and one vertex on $f(e)$.
 We'll call these vertices $x,y,z$, letting $x$ be the vertex on the side of $e$ that $\del$ is mapped to and $y$ the vertex on $f(e)$.

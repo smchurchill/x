@@ -2,7 +2,7 @@
 \label{section:pl-projection}
 
 In this algorithm, we use a projection of $f:N\to\RR$ in the same way that we used a stratifying map in Chapter \ref{chapter:smooth}: preimages of sleeves around important features of the projection in the plane define handle attachment sites.
-The important features are the images of the 1--skeleton of $N$, and we want a high amount of control over how these features present.
+The important features are the images of the 1--skeleton of $N$, and we want a high amount of control over how we construct these features in the plane.
 We first lay out conditions required of the projection, describe a method for ensuring these conditions are met, and then turn the method into an algorithm.
 We do all of this before forming the base 4--manifold so that the boundary components of $W$ contain the desired handle attachment sites.
 
@@ -61,7 +61,7 @@ The subdividing map projects each tetrahedron to the plane in \emph{standard pos
 	\caption{
 		\textbf{A tetrahedron $\sigma$ projected to the plane in standard position through a subdividing map $f$.}
 		The four vertices of $\sigma^0$ map to the unit circle in the plane, thus form a convex arrangement.
-		Four of the six edge of $\sigma^1$ map to the boundary of $f(\sigma)$, connecting $f(\sigma^0)$.
+		Four of the six edges of $\sigma^1$ map to the boundary of $f(\sigma)$, connecting $f(\sigma^0)$.
 		The last two edges map across $f(\sigma)$, forming an intersection interior to $f(\sigma)$.
 		Each vertex of the arrangement is essential in forming the convex hull of $f(\sigma^0)$.
 	}

@@ -14,7 +14,7 @@ To understand the structure of face, edge, and vertex blocks we investigate the 
 
 The subsets used to stratify $M$ are the fibers of $f$ that lie above the individual strata of our $\RR$ stratification.
 Because the $(0,\cdot)$--strata are regular values, their fibers are regular, hence a finite collection of disjointly embedded circles in $M$.
-We take these circles as the first collection of subsets that filter $M$, and assign to them the indices $(1,i)$ for $i = 1\dots N_1$, where $N_1$ is the number of circles.
+We take these circles as the first collection of subsets that filter $M$, and assign to them the indices $(1,i)$ for $i = 1,\dots, N_1$, where $N_1$ is the number of circles.
 These circles are disjoint, so $(1,i)\nleq (1,j)$ for any $i,j$.
 
 The $(1,\cdot)$--strata of the $\RR$ stratification connect the $(0,\cdot)$--strata of the $\RR$ stratification and either consist entirely of regular values or contain exactly one singular value.
@@ -53,61 +53,74 @@ The last stratification condition is trivially satisfied because $X$ is closed, 
 	\label{fig:saeki-fibers}	
 \end{figure}
 
-The surface fibers above the $(1,\cdot)$--strata are the second collection of subsets that filter $M$, and they are assigned the indices $(2,j)$ for $j=1\dots N_2$, where $N_2$ is the number of surfaces.
+The surface fibers above the $(1,\cdot)$--strata are the second collection of subsets that filter $M$, and they are assigned the indices $(2,j)$ for $j=1,\dots, N_2$, where $N_2$ is the number of surfaces.
 The boundary circles of the surfaces are each subsets of the filtration, indexed by the $(1,i)$ indices, so $(1,i)\leq (2,j)$ if and only if $M_{(1,i)}$ is one of the boundary components of $M_{(2,j)}$.
 These surfaces intersect one another only when they share a boundary circle, so $(2,j)\nleq (2,k)$ for any $j,k$.
 
 There are three types of region in the decomposition: face, edge, and vertex.
 Regardless of the type of region, they are indexed in our filtration similarly to the edges.
 A fiber above a region is a 3--manifold with corners formed by the $(1,i)$- and $(2,j)$-level strata, and fibers are disjoint away from their boundaries.
-We therefore index fibers above regions with the indices $(3,k)$ for $k=1\dots N_3$ where $N_3$ is the total number of fibers above regions, put $(n,i)\leq (3,k)$ if and only if $M_{(n,i)}$ is contained in the boundary of $M_{(3,k)}$.
+We therefore index fibers above regions with the indices $(3,k)$ for $k=1,\dots, N_3$ where $N_3$ is the total number of fibers above regions, put $(n,i)\leq (3,k)$ if and only if $M_{(n,i)}$ is contained in the boundary of $M_{(3,k)}$.
 
 Recall that we call a closed 3--dimensional stratum of $M$ a \emph{block}.
-We now restate the desired block structure laid out at the beginning of this chapter and prove that the stratification conditions impose this structure on the blocks of $M$.
+At the beginning of this chapter we laid out the structure of the blocks that we expect to find inside of $M$ and, with stratification complete, we are now able to investigate these structures and determine how they are formed.
+Blocks are categorized by the $\RR$-stratification regions they project to: as face, edge, or vertex blocks.
+This classification determines the possible singularities that we can find inside of a block.
+We first restate the definitions of the various blocks and include partial justifications based on the singularities of $M$.
+In Theorem \ref{thm:block-structure} we prove that the stratification conditions impose this structure on the blocks of $M$.
 
-\begin{theorem}
-	\label{thm:block-structure}
-	Let $M$ be a smooth, closed, orientable 3--manifold, let $f:M\to\RR$ be a stratifying map, suppose $\RR$ has been decomposed as in Section \ref{section:smooth-decompose} and $M$ has been stratified as in this section.
-	Then each closed strata $M_{(3,k)}$ is classified as either a \emph{face}, \emph{edge}, or \emph{vertex block} depending on whether it is a fiber above a face, edge, or vertex region respectively, and a block has one of the following structures:
-	{\renewcommand\labelitemi{}
-		\begin{itemize}
-			\item \textbf{Face block:}
-			Let $B$ be a face block that fibers over the face region $F$.
-			Then $B$ is stratified--homeomorphic to $S^1\times F$.
-			
-			\item \textbf{Edge block:}
-			Let $B$ be an edge block that fibers over the edge region $E$.
-			Let $A$ be the annulus $S^1\times\Ilit$ and $P$ the pair-of pants surface (i.e.\ $D^2$ minus a pair of disjoint open balls).
-			If $B$ is a regular fiber over $E$ then $B$ is stratified--homeomorphic to $S^1\times E$, hence also stratified--homeomorphic to $A\times\Ilit$.
-			Otherwise, $B$ is a singular fiber over $E$ and contains part of definite or indefinite fold.
-			In this case we call $B$ a \emph{definite} or \emph{indefinite edge block}.
-			A definite edge block is stratified--homeomorphic to $D^2\times\Ilit$ and an indefinite edge block is stratified--homeomorphic to $P\times\Ilit$.
-	
-			\item \textbf{Vertex block:}
-			Let $B$ be a vertex block that fibers over the vertex region $V$.
-			If $B$ is a regular fiber then it is homeomorphic to $S^1\times V$, therefore homeomorphic to a (3,1)--handlebody of genus 1.
-			Otherwise, we see from Figure \ref{fig:saeki-fibers} that the singular fiber above the codimension 2 singularity contained in $V$ is either connected or disconnected.
-			If the singular fiber is disconnected then there are a pair of disjoint vertex blocks that each contain one of the singular fibers, hence part of a definite or indefinite fold.
-			We therefore classify these blocks as \emph{definite} or \emph{indefinite vertex blocks}.
-			If the singular fiber is connected, then the block containing it is an \emph{interactive vertex block}.
-			A definite (resp.\ indefinite) vertex block extends and connects definite (resp.\ indefinite) edge blocks, and is homeomorphic to a (3,1)--handlebody of genus 0 (resp.\ 2).
-			An interactive vertex block is homeomorphic to a (3,1)--handlebody of genus 3.
-		\end{itemize}
-	}
-\end{theorem}
+{\renewcommand\labelitemi{}
+	\begin{itemize}
+		\item \textbf{Face block:}
+		Let $B$ be a face block that fibers over the face region $F$.
+		Then $B$ is stratified--homeomorphic to $S^1\times F$.
+		
+		\item \textbf{Edge block:}
+		Let $B$ be an edge block that fibers over the edge region $E$.
+		Let $A$ be the annulus $S^1\times\Ilit$ and $P$ the pair-of pants surface (i.e.\ $D^2$ minus a pair of disjoint open balls).
+		If $B$ is a regular fiber over $E$ then $B$ is stratified--homeomorphic to $S^1\times E$, hence also stratified--homeomorphic to $A\times\Ilit$.
+		Otherwise, $B$ is a singular fiber over $E$ and contains part of a definite or indefinite fold.
+		In this case we call $B$ a \emph{definite} or \emph{indefinite edge block}.
+		A definite edge block is stratified--homeomorphic to $D^2\times\Ilit$ and an indefinite edge block is stratified--homeomorphic to $P\times\Ilit$.
+		
+		\item \textbf{Vertex block:}
+		Let $B$ be a vertex block that fibers over the vertex region $V$.
+		If $B$ is a regular fiber then it is homeomorphic to $S^1\times V$, therefore homeomorphic to a (3,1)--handlebody of genus 1.
+		Otherwise, we see from Figure \ref{fig:saeki-fibers} that the singular fiber above the codimension 2 singularity contained in $V$ is either connected or disconnected.
+		If the singular fiber is disconnected then there is a pair of disjoint vertex blocks that each contain one of the singular fibers, hence part of a definite or indefinite fold.
+		We therefore classify these blocks as \emph{definite} or \emph{indefinite vertex blocks}.
+		If the singular fiber is connected, then the block containing it is an \emph{interactive vertex block}.
+		A definite (resp.\ indefinite) vertex block extends and connects definite (resp.\ indefinite) edge blocks, and is homeomorphic to a (3,1)--handlebody of genus 0 (resp.\ 2).
+		An interactive vertex block is homeomorphic to a (3,1)--handlebody of genus 3.
+	\end{itemize}
+}
 
 \begin{rmk}
-	The structures of the blocks described in Theorem \ref{thm:block-structure} are roughly disk bundles over a representative fiber for the given region or, equivalently, regular neighbourhoods of that fiber.
+	The structures of the blocks
+	%	 described in Theorem \ref{thm:block-structure}
+	are roughly disk bundles over a representative fiber for the given region or, equivalently, regular neighbourhoods of that fiber.
 	For a block that is a regular fiber, the representative is a circle.
 	For a definite or indefinite block, the representative is the singular fiber containing a definite or indefinite fold, and for an interactive block the representative fiber is the singular fiber above the codimension 2 singular value.
 \end{rmk}
 
+
+\begin{theorem}
+	\label{thm:block-structure}
+	Let $M$ be a smooth, closed, orientable 3--manifold, let $f:M\to\RR$ be a stratifying map, suppose $\RR$ has been decomposed as in Section \ref{section:smooth-decompose} and $M$ has been stratified as in this section.
+	Let $B$ be a block of $M$.
+	Then $B$ is a face, edge, or vertex block if $f(B)$ is a face, edge, or vertex region respectively.
+	
+%	, and a block has one of the following structures:
+
+\end{theorem}
+
+
 \begin{proof}[Proof of Theorem \ref{thm:block-structure}]
 	We split the proof into three parts.
 	The first part proves that if a block $B$ is a regular fiber over the region $R$ then $B$ is stratified--homeomorphic to $S^1\times R$.
-	In the second part, we prove that definite and indefinite blocks are stratified--homeomorphic to $D^2\times\Ilit$ or $P\times\Ilit$ respectively.
+	In the second part, we prove that definite and indefinite blocks are stratified--homeomorphic to $D^2\times\Ilit$ or to $P\times\Ilit$ respectively.
 	In the final part we discuss interactive vertex blocks, and show that they are homeomorphic to (3,1)--handlebodies of genus 3.
-	Figures illustrate the block structures.
+	Figures \ref{fig:codim-1-surfaces}-\ref{fig:vertex-block-incidence} illustrate block structures.
 	
 	\textbf{Part 1:}
 	Let $B$ be a block over the region $R$, and suppose $B$ consists entirely of regular fibers over $R$.
@@ -127,13 +140,7 @@ We now restate the desired block structure laid out at the beginning of this cha
 %		\label{fig:regular-blocks}
 %	\end{figure}
 %	
-	\textbf{Part 2:}
-	Let $B$ be a definite or indefinite block over the region $R$.
-	$R$ is a subset of the plane homeomorphic to $D^2$ with an arc $\gamma_s \subset X_f$ of singular values running from one of its edges to another.
-	Let $\gamma_t$ be a second simple arc that crosses $\gamma_s$ transversely, and consider the cross-sectional surface obtained by $f\inv(\gamma_t)$.
-	Figure \ref{fig:codim-1-surfaces} illustrates the possible surfaces containing the singular fiber over $x=\gamma_s\cap\gamma_t$.
-	
-	\begin{figure}[h]
+	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=\textwidth]{figures/codim-1-surfaces.png}
 		\caption{
@@ -144,11 +151,7 @@ We now restate the desired block structure laid out at the beginning of this cha
 		\label{fig:codim-1-surfaces}
 	\end{figure}
 	
-	This cross section is general, so we fit a tubular neighbourhood $\nu(\gamma_s)$ about $\gamma_s$ in $R$ to obtain a bundle structure for $f\inv(\nu(\gamma_s))$ whose fiber is one of the cross-sectional surfaces (a disk or a pair-of-pants) and whose base is the arc $\gamma_s$, i.e. an interval.
-	The interval is contractible, so $f\inv(\nu(\gamma_s))$ is homeomorphic to $\Sigma\times\Ilit$ for $\Sigma$ a disk or a pair-of-pants surface.
-	Away from $\nu(\gamma_s)$, $R$ consists entirely of regular values so we obtain solid tori (cf. Part 1) that extend the $\Sigma\times\Ilit$ structure as seen in Figure \ref{fig:codim-1-blocks}.
-		
-	\begin{figure}[h]
+	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=\textwidth]{figures/codim-1-blocks.png}
 		\caption{
@@ -158,6 +161,21 @@ We now restate the desired block structure laid out at the beginning of this cha
 		}
 		\label{fig:codim-1-blocks}
 	\end{figure}
+
+
+
+	\textbf{Part 2:}
+	Let $B$ be a definite or indefinite block over the region $R$.
+	$R$ is a subset of the plane homeomorphic to $D^2$ with an arc $\gamma_s \subset X_f$ of singular values running from one of its edges to another.
+	Let $\gamma_t$ be a second simple arc that crosses $\gamma_s$ transversely, and consider the cross-sectional surface obtained by $f\inv(\gamma_t)$.
+	Figure \ref{fig:codim-1-surfaces} illustrates the possible surfaces containing the singular fiber over $x=\gamma_s\cap\gamma_t$.
+		
+
+
+
+	This cross section is general, so we fit a tubular neighbourhood $\nu(\gamma_s)$ about $\gamma_s$ in $R$ to obtain a bundle structure for $f\inv(\nu(\gamma_s))$ whose fiber is one of the cross-sectional surfaces (a disk or a pair-of-pants) and whose base is the arc $\gamma_s$, i.e. an interval.
+	The interval is contractible, so $f\inv(\nu(\gamma_s))$ is homeomorphic to $\Sigma\times\Ilit$ for $\Sigma$ a disk or a pair-of-pants surface.
+	Away from $\nu(\gamma_s)$, $R$ consists entirely of regular values so we obtain solid tori (cf. Part 1) that extend the $\Sigma\times\Ilit$ structure as seen in Figure \ref{fig:codim-1-blocks}.
 
 	As with Part 1, the homeomorphism described is stratified by ensuring the strata of $B$ are mapped to the strata of $\Sigma \times \Ilit$, where the stratification of $\Sigma \times \Ilit$ is defined by the manifold with corners structure induced by the product topology.
 	
@@ -172,7 +190,7 @@ We now restate the desired block structure laid out at the beginning of this cha
 	We first note that all of the displayed fibers have inherited an orientation from $M$.
 	This forces fiber resolution to be unambiguous, and allows us to identify fibers when forming the surface shown in Figure \ref{fig:codim-2-surface-1}.
 	
-	\begin{figure}[h]
+	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=\textwidth]{figures/codim-2-interactive-fiber-1.png}
 		\caption{
@@ -184,7 +202,7 @@ We now restate the desired block structure laid out at the beginning of this cha
 		\label{fig:codim-2-interactive-fiber-1}
 	\end{figure}
 
-	\begin{figure}[h]
+	\begin{figure}[h!]
 	\centering
 	\includegraphics[width=\textwidth]{figures/codim-2-surface-1.png}
 	\caption{
@@ -224,19 +242,19 @@ We now restate the desired block structure laid out at the beginning of this cha
 	Outside of $\bar\nu(x)$ we use the investigations from Parts 1 and 2 of this proof. The rest of $R$, $f\inv(R\setminus\bar\nu(x))$, has the structure of a $\Sigma$-bundle over the interval, and the bundle extends $H(B_x)$ to the boundary of $R$, preserving the structure as a genus-3 (3,1)--handlebody.
 	We conclude that $B$ is homeomorphic to a genus-3 (3,1)--handlebody.
 	
-		\begin{figure}[h]
+		\begin{figure}[h!]
 		\centering
 		\includegraphics[width=\textwidth]{figures/codim-2-interactive-fiber-2.png}
 		\caption{
 			\textbf{Resolutions of the singular points in the second interactive fiber.}
 			The singular fiber inside of $B_x$ and its possible resolutions over nearby codimension 1 singular values and regular values.
 			The fibers inherit orientation from $M$, and this illustration is presented without loss of generality.
-			his figure is modeled after Figure 16 from \cite{CostThur08}.
+			This figure is modeled after Figure 16 from \cite{CostThur08}.
 		}
 		\label{fig:codim-2-interactive-fiber-2}
 	\end{figure}
 	
-	\begin{figure}[h]
+	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=\textwidth]{figures/codim-2-surface-2.png}
 		\caption{
