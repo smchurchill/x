@@ -5,8 +5,15 @@ The goal of subdividing $N$ is to create and identify handle attachment sites an
 We use a similar technique to that found in Chapter \ref{chapter:smooth}, iteratively subdividing the tetrahedra of $N$ by certain preimages of $f$.
 Tetrahedron subdivisions are compatible, i.e.\ tetrahedron subdivisions fit together exactly as the undivided tetrahedra do inside of $N$.
 
+We perform two subdivisions and one 4--thickening in this chapter.
+The first is from the triangulation $N$ into the polyhedral gluing $N'$, and this produces combinatorial blocks.
+The second is the subdivision of $N'$ into an equivalent triangulation $M$, preserving the combinatorial blocks.
+The 4--thickening is completed by attaching 4--prisms to every tetrahedron of $M$, gluing the prisms over their walls.
+
+\subsection{Triangulation to Polyhedral Gluing}
+
 Let $\sigma$ be a tetrahedron of $N$ and let $s$ be a line segment in the plane such that $s\cap f(\sigma)$ is nonempty, the endpoints of $s$ are outside of $f(\sigma)$,  and $s\cap f(\sigma)$ is a line segment in $f(\sigma)$ disjoint from any vertices or crossings of $f(\sigma)$.
-Figure \ref{fig:standard-position-intersection} demonstrates the possible configurations of these line segments, and shows that their preimages inside of $\sigma$ are triangles and quadrilateral (or \emph{quads}).
+Figure \ref{fig:standard-position-intersection} demonstrates the possible configurations of these line segments, and shows that their preimages inside of $\sigma$ are triangles and quadrilaterals (or \emph{quads}).
 We refer to these preimages as \emph{exterior triangles} and \emph{exterior quads}.
 When a pair of these preimages intersect, the intersection is a line segment with endpoints interior to a pair of triangles of $\sigma^2$.
 
@@ -190,6 +197,8 @@ Such an assignment happens precisely when a cell is mapped through $f$ to the sh
 
 %Note: we 'need' to include S^1\in\RR to actually form the regions discussed, but that's pretty obvious so we won't address it unless requested.
 
+\subsection{Polyhedral Gluing to Triangulation}
+
 Algorithm \ref{alg:subdividing-manifold} produces a cell complex $N'$ that is a polyhedral gluing, and we would prefer to replace $M$ with an equivalent triangulation.
 This is done by first replacing each polyhedron $P$ that is not a tetrahedron with the cone on $\pd P$.
 At each polyhedron $P$ this replaces the single 3--cell interior of $P$ with $|P^2|$ new polyhedra, each of which has at most one non-triangular face.
@@ -206,11 +215,12 @@ The further subdivision of $N'$ into the equivalent triangulation $M$ is detaile
 	\KwResult{A closed, orientable 3--manifold triangulation that is a subdivision of $N'$}
 	\Begin{
 		\ForEach{polyhedral 3--cell $\tau$ of $N'$ that is not a tetrahedron}{
-			Replace $\tau$ into the cone on $\pd \tau$\;
+			Replace $\tau$ with the cone on $\pd \tau$\;
 		}
 		\ForEach{polygonal 2--cell $\delta$ of $N'$ that is not a triangle}{
 			$\delta$ is the shared boundary of the polyhedral 3--cells $\tau_+$ and $\tau_-$\;
-			Each of $\tau_+$, $\tau_-$ contains one vertex $v_+$, $v_-$ respectively, such that each of $v_+$, $v_-$ are disjoint from $\delta$\;
+			Each of $\tau_+$, $\tau_-$ contains one vertex that is disjoint from $\delta$\;
+			Call these vertices $v_+$, $v_-$ respectively\;
 			Delete $\tau_+$ and $\tau_-$ from $N'$\;
 			Subdivide $\delta$ using $|\delta^0|-2$ triangles\;
 			\ForEach{new 1--cell $e$ in the triangulation of $\delta$}{
@@ -235,6 +245,7 @@ The further subdivision of $N'$ into the equivalent triangulation $M$ is detaile
 	\label{fig:subdivide-polyhedra}
 \end{figure}
 
+\subsection{Thickening a Triangulation}
 
 Next, we form the 4--thickening $W=M\times\Ilit$.
 This is done by attaching triangulated 4--prisms to each tetrahedron of $M$, where a triangulated 4--prism is the 4--dimensional extension of the triangulated 3--prism described in Theorem 3.1 of \cite{burton2011simplification}.
@@ -284,7 +295,7 @@ For our construction to be correct when we attach 2--handles, these surfaces mus
 This is because 2--handle attachments need to transform combinatorial edge blocks into copies of $S^2\times D^1$.
 We first inspect some worked examples that have genus zero, then provide a general proof.
 
-Each edge $e$ of $N$ is mapped to a secant of circle, splitting the disc into exactly 2 sectors: the `left' and `right' sides of $f(e)$.
+Each edge $e$ of $N$ is mapped to a secant of the circle, splitting the disc into exactly 2 sectors: the `left' and `right' sides of $f(e)$.
 Denote the set of tetrahedra of $N$ containing $e$ by $\del$.
 Each tetrahedron $\sigma$ of  $\del$ is either mapped to the left of $e$, to the right of $e$, or across $e$ based on the image of the edge in $\sigma$ opposite $e$.
 
@@ -319,7 +330,7 @@ The preimage of the edge $[x,y]$ in $\gamma$ forms the triangles that complete t
 	\label{fig:pl-regular-surface}
 \end{figure}
 
-Next, what happens when a tetrahedron of $\del$ is mapped across $f(e)$?
+What happens when a tetrahedron of $\del$ is mapped across $f(e)$?
 Because $N$ is closed, the number of tetrahedron in $\del$ that map across $f(e)$ is always even.
 The tetrahedra of $\del$ have a circular order defined by edges in $\del$ that are opposite $e$, and all tetrahedra between a crossing pair are mapped to the same side of $f(e)$.
 When the number of crossing pairs is exactly one, we have a situation analogous to that of the regular edge block.
