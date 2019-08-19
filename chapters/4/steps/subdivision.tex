@@ -199,7 +199,7 @@ Such an assignment happens precisely when a cell is mapped through $f$ to the sh
 
 \subsection{Polyhedral Gluing to Triangulation}
 
-Algorithm \ref{alg:subdividing-manifold} produces a cell complex $N'$ that is a polyhedral gluing, and we would prefer to replace $M$ with an equivalent triangulation.
+Algorithm \ref{alg:subdividing-manifold} produces a cell complex $N'$ that is a polyhedral gluing, and we would prefer to replace $N'$ with an equivalent triangulation.
 This is done by first replacing each polyhedron $P$ that is not a tetrahedron with the cone on $\pd P$.
 At each polyhedron $P$ this replaces the single 3--cell interior of $P$ with $|P^2|$ new polyhedra, each of which has at most one non-triangular face.
 Because $N'$ is closed, that face is glued to another face of the same polygonal type.
@@ -212,16 +212,17 @@ The further subdivision of $N'$ into the equivalent triangulation $M$ is detaile
 	\caption{Triangulating a polyhedral gluing}
 	\label{alg:triangulating-polyhedral-gluing}
 	\KwData{A closed, orientable 3--manifold $N'$ expressed as a 3--dimensional polyhedral gluing}
-	\KwResult{A closed, orientable 3--manifold triangulation that is a subdivision of $N'$}
+	\KwResult{A closed, orientable 3--manifold triangulation $M$ that is a subdivision of $N'$}
 	\Begin{
-		\ForEach{polyhedral 3--cell $\tau$ of $N'$ that is not a tetrahedron}{
+		$M = N'$\;
+		\ForEach{polyhedral 3--cell $\tau$ of $M$ that is not a tetrahedron}{
 			Replace $\tau$ with the cone on $\pd \tau$\;
 		}
-		\ForEach{polygonal 2--cell $\delta$ of $N'$ that is not a triangle}{
+		\ForEach{polygonal 2--cell $\delta$ of $M$ that is not a triangle}{
 			$\delta$ is the shared boundary of the polyhedral 3--cells $\tau_+$ and $\tau_-$\;
 			Each of $\tau_+$, $\tau_-$ contains one vertex that is disjoint from $\delta$\;
 			Call these vertices $v_+$, $v_-$ respectively\;
-			Delete $\tau_+$ and $\tau_-$ from $N'$\;
+			Delete $\tau_+$ and $\tau_-$ from $M$\;
 			Subdivide $\delta$ using $|\delta^0|-2$ triangles\;
 			\ForEach{new 1--cell $e$ in the triangulation of $\delta$}{
 				Attach triangles over $e$ and $v_+$ and over $e$ and $v_-$\;
