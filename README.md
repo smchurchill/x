@@ -1,7 +1,7 @@
 # 3-manifolds algorithmically bound 4-manifolds
 There are two major components to this project: design of the algorithm and implementation of the algorithm.
 
-Algorithm design is complete, pending revisions to my M.Sc thesis.
+Algorithm design is complete, M.Sc awarded Summer 2019.
 
 Implementation will be as a module for Regina: Software for 3-Manifold Topology.  Ideally, this would be done in partial fulfillment of a PhD research project.
 
